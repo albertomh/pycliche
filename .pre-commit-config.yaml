@@ -30,6 +30,14 @@ repos:
         args: [ --fix ]
       - id: ruff-format
 
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.10
+    hooks:
+    - id: bandit
+      exclude: ^tests/
+      args: ["-c", "pyproject.toml"]
+      additional_dependencies: ["bandit[toml]"]
+
   - repo: https://github.com/DavidAnson/markdownlint-cli2
     rev: v0.15.0
     hooks:
