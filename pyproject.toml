@@ -1,0 +1,9 @@
+[project]
+name = "pycliche"
+version = "0.1.0"
+description = ""
+authors = ["Alberto Morón Hernández <alberto.moronh@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
