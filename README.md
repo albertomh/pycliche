@@ -9,6 +9,17 @@ To use `pycliche` the following must be available locally:
 - [Python 3.10](https://docs.python.org/3.10/) or above
 - [uv](https://docs.astral.sh/uv/)
 
+## Generate a new project
+
+Create a new project based on `pycliche`:
+
+1. Navigate to the directory under which you wish to create a new project.
+1. Run `uvx cookiecutter gh:albertomh/pycliche` and follow the wizard.
+
+Note that it is not necessary to clone `pycliche` itself to your local
+environment in order to use it as a template. The `gh:albertomh/pycliche`
+argument will use the latest version hosted on GitHub.
+
 ## Develop
 
 This repo follows trunk-based development. This means:
