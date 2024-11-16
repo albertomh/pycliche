@@ -9,3 +9,13 @@ authors = [
 readme = "README.md"
 requires-python = ">={{cookiecutter.python_version}}"
 dependencies = []
+
+[tool.ruff]
+target-version = "py{{cookiecutter.python_version_nodot}}"
+line-length = 90
+indent-width = 4
+
+[tool.ruff.lint]
+# pycodestyle (`E`), isort (`I`), Pyflakes (`F`), pycodestyle warnings (`W`)
+select = ["E", "I", "F", "W"]
+ignore = []
