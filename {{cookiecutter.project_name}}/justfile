@@ -1,0 +1,10 @@
+# {{cookiecutter.project_name}} - local development tooling
+
+default:
+  @just --list
+
+test:
+  @uv sync --group test
+  @uv run coverage run -m pytest tests/ -s -vvv -W always --pdb
+  @uv run coverage report
+  @uv run coverage html
