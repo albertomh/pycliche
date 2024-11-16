@@ -10,8 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Minimal template package structure and entrypoint.
-- cookiecutter.json config file
-- git hooks to keep the developer experience consistent, including:
+- cookiecutter.json config file.
+- git hooks for both pycliché and the project template, including:
   - commitlint
   - ruff (linter & formatter)
   - bandit (SAST)
