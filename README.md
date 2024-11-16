@@ -34,6 +34,16 @@ following to develop `pycliche`:
 
 - [pre-commit](https://pre-commit.com/)
 
+### Dependency management
+
+Dependencies are defined in the `pyproject.toml` file. `uv` is used to manage
+dependencies:
+
+```sh
+# add a dependency to the project
+uv add some-package
+```
+
 ### Style
 
 Code style is enforced by pre-commit hooks. Linter rules are configured in the `ruff`
@@ -42,6 +52,9 @@ tables in `pyproject.toml`.
 ```sh
 # before you start developing, install pre-commit hooks
 pre-commit install
+
+# update pre-commit hooks
+pre-commit autoupdate
 ```
 
 Docstrings should follow the conventions set out in the [Google styleguide](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings).
