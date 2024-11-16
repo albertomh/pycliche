@@ -6,7 +6,11 @@ To use `{{cookiecutter.project_name}}` the following must be available locally:
 
 - [Python {{cookiecutter.python_version}}](https://docs.python.org/{{cookiecutter.python_version}}/) or above
 - [uv](https://docs.astral.sh/uv/)
+- [just](https://github.com/casey/just)
 
+## Quickstart: run locally
+
+A `justfile` defines common development tasks. Run `just` to show all available recipes.
 
 ## Develop
 
@@ -50,3 +54,5 @@ Valid commit types are defined in `.commitlintrc.yaml`.
 ## Test
 
 `pytest` and `coverage` are defined as test dependencies.
+
+Run `just test` to execute all unit tests and report on code coverage.
