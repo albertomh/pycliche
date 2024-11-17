@@ -1,0 +1,8 @@
+{
+  "tasks": {
+    "release": "release-it"
+  },
+  "imports": {
+    "release-it": "npm:release-it@^17.10.0"
+  }
+}
