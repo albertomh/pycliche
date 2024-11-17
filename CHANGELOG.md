@@ -7,10 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2024-11-17
+
 ### Added
 
-- Minimal template package structure and entrypoint.
+- Project template package structure and entrypoint.
 - cookiecutter.json config file.
+- Minimal unit test suite structure. Configuration for running tests and reporting on coverage.
 - git hooks for both pycliché and the project template, including:
   - commitlint
   - ruff (linter & formatter)
