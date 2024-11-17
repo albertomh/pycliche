@@ -4,7 +4,7 @@
 
 A simple template for starting Python projects.
 
-[![python: 3.12](https://img.shields.io/badge/3.12-4584b6?logo=python&logoColor=ffde57)](https://docs.python.org/3.12/whatsnew/3.12.html)
+[![python: 3.10](https://img.shields.io/badge/>=3.10-4584b6?logo=python&logoColor=ffde57)](https://docs.python.org/3.10/whatsnew/3.10.html)
 [![justfile](https://img.shields.io/badge/🤖_justfile-EFF1F3)](https://github.com/casey/just)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json&labelColor=261230&color=de60e9)](https://github.com/astral-sh/uv)
 [![pre-commit](https://img.shields.io/badge/pre--commit-FAB040?logo=pre-commit&logoColor=1f2d23)](https://github.com/pre-commit/pre-commit)
@@ -20,16 +20,19 @@ To use `pycliche` the following must be available locally:
 - [Python 3.10](https://docs.python.org/3.10/) or above
 - [uv](https://docs.astral.sh/uv/)
 
-## Generate a new project
+## Start a new project
 
-Create a new project based on `pycliche`:
+Start a new project based on `pycliche`:
 
 1. Navigate to the directory under which you wish to create a new project.
 1. Run `uvx cookiecutter gh:albertomh/pycliche` and follow the wizard.
 
-Note that it is not necessary to clone `pycliche` itself to your local
-environment in order to use it as a template. The `gh:albertomh/pycliche`
-argument will use the latest version hosted on GitHub.
+This creates a directory under your current location. Follow the README in
+the new directory to get started with your project.
+
+NB. It is not necessary to clone `pycliche` itself to your local environment
+in order to use it as a template. The `gh:albertomh/pycliche` argument
+will use the latest version hosted on GitHub.
 
 ## Develop
 

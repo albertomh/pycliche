@@ -4,6 +4,7 @@
 
 To use `{{cookiecutter.project_name}}` the following must be available locally:
 
+<!-- markdownlint-disable MD013 -->
 - [Python {{cookiecutter.python_version}}](https://docs.python.org/{{cookiecutter.python_version}}/) or above
 - [uv](https://docs.astral.sh/uv/)
 - [just](https://github.com/casey/just)
