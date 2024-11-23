@@ -21,7 +21,7 @@ repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.7.3
     hooks:
-      # --config to stop ruff from using {{cookiecutter.project_name}}/pyproject.toml
+      # --config to stop ruff from using {{project_name}}/pyproject.toml
       # https://github.com/astral-sh/ruff/issues/9585
       - id: ruff
         args: ["--fix", "--config", "pyproject.toml"]

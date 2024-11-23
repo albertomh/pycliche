@@ -1,4 +1,4 @@
-# {{cookiecutter.project_name}} - local development tooling
+# {{project_name}} - local development tooling
 
 default:
   @just --list

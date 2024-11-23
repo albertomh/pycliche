@@ -1,5 +1,5 @@
 def main():
-    """Entrypoint for {{cookiecutter.project_name}}."""
+    """Entrypoint for {{project_name}}."""
     return
 
 

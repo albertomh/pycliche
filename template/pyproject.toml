@@ -1,13 +1,13 @@
 # https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
 [project]
-name = "{{cookiecutter.project_name}}"
+name = "{{project_name}}"
 version = "0.1.0"
 description = ""
 authors = [
-  {name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}"}
+  {name = "{{author_name}}", email = "{{author_email}}"}
 ]
 readme = "README.md"
-requires-python = ">={{cookiecutter.python_version}}"
+requires-python = ">={{python_version}}"
 dependencies = []
 
 [dependency-groups]
@@ -17,7 +17,7 @@ test = [
 ]
 
 [tool.ruff]
-target-version = "py{{cookiecutter.python_version_nodot}}"
+target-version = "py{{python_version_nodot}}"
 line-length = 90
 indent-width = 4
 
@@ -28,7 +28,7 @@ ignore = []
 
 [tool.coverage.run]
 source = [
-  "./{{cookiecutter.project_name}}/",
+  "./{{project_name}}/",
 ]
 omit = [
   "*/tests/*"

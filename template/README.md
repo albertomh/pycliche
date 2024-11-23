@@ -1,11 +1,11 @@
-# {{cookiecutter.project_name}}
+# {{project_name}}
 
 ## Prerequisites
 
-To use `{{cookiecutter.project_name}}` the following must be available locally:
+To use `{{project_name}}` the following must be available locally:
 
 <!-- markdownlint-disable MD013 -->
-- [Python {{cookiecutter.python_version}}](https://docs.python.org/{{cookiecutter.python_version}}/) or above
+- [Python {{python_version}}](https://docs.python.org/{{python_version}}/) or above
 - [uv](https://docs.astral.sh/uv/)
 - [just](https://github.com/casey/just)
 
@@ -23,7 +23,7 @@ This repo follows trunk-based development. This means:
 ### Development prerequisites
 
 In addition to the [Prerequisites](#prerequisites) above, you will need the following to
-develop `{{cookiecutter.project_name}}`:
+develop `{{project_name}}`:
 
 - [pre-commit](https://pre-commit.com/)
 

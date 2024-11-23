@@ -15,7 +15,7 @@ target-version = "py312"
 line-length = 90
 indent-width = 4
 force-exclude = true
-extend-exclude = ["*cookiecutter.project_name*"]
+extend-exclude = ["*project_name*"]
 
 [tool.ruff.lint]
 # pycodestyle (`E`), isort (`I`), Pyflakes (`F`), pycodestyle warnings (`W`)

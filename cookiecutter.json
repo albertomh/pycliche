@@ -1,7 +1,7 @@
 {
     "project_name": null,
     "python_version": "3.12",
-    "python_version_nodot": "{{ cookiecutter.python_version.replace('.', '') }}",
+    "python_version_nodot": "{{ python_version.replace('.', '') }}",
     "author_name": "Alberto Morón Hernández",
     "author_email": "alberto.moronh@gmail.com"
 }

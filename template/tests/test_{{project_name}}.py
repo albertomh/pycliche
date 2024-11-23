@@ -1,6 +1,6 @@
 import pytest
 
-from {{cookiecutter.project_name}} import main as entrypoint
+from {{project_name}} import main as entrypoint
 
 
 def test_main_runs_without_error():
