@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- copier.yaml config file.
+
+### Changed
+
+- Switch from cookiecutter to copier as the project templating tool.
+
+### Removed
+
+- cookiecutter.json config file.
+
 ## [1.0.0] - 2024-11-17
 
 ### Added
