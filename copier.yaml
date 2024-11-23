@@ -1,0 +1,31 @@
+_subdirectory: template
+
+project_name:
+    help: What is your project name?
+    type: str
+    validator: "{% if project_name == '' %}Must have value{% endif %}"
+
+python_version:
+    help: "Specify the Python version"
+    type: str
+    choices:
+        - "3.10"
+        - "3.11"
+        - "3.12"
+        - "3.13"
+    default: "3.12"
+
+python_version_no_dot:
+    type: str
+    default: "{{ python_version.replace('.', '') }}"
+    help: "Python version without dots (auto-generated)"
+
+author_name:
+    type: str
+    default: "Alberto Morón Hernández"
+    validator: "{% if author_name == '' %}Must have value{% endif %}"
+
+author_email:
+    type: str
+    default: "alberto.moronh@gmail.com"
+    validator: "{% if author_email == '' %}Must have value{% endif %}"
