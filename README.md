@@ -2,9 +2,10 @@
 
 ![pycliche logo](docs/pycliche-logo-sm.webp "pycliche logo - a printing plate embossed with the Python logo")
 
-A simple template for starting Python projects.
+A Python project template with opinionated tooling.
 
 [![python: 3.10](https://img.shields.io/badge/>=3.10-4584b6?logo=python&logoColor=ffde57)](https://docs.python.org/3.10/whatsnew/3.10.html)
+[![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/albertomh/pycliche/main/docs/copier-badge.json)](https://github.com/copier-org/copier)
 [![justfile](https://img.shields.io/badge/🤖_justfile-EFF1F3)](https://github.com/casey/just)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json&labelColor=261230&color=de60e9)](https://github.com/astral-sh/uv)
 [![pre-commit](https://img.shields.io/badge/pre--commit-FAB040?logo=pre-commit&logoColor=1f2d23)](https://github.com/pre-commit/pre-commit)
@@ -12,6 +13,15 @@ A simple template for starting Python projects.
 [![pytest](https://img.shields.io/badge/pytest-0A9EDC?logo=pytest&logoColor=white)](https://github.com/pytest-dev/pytest)
 [![coverage](https://img.shields.io/badge/😴_coverage-59aabd)](https://coverage.readthedocs.io/)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
+
+Projects created using `pycliche` include:
+
+- A basic Python package and entrypoint, configured via a `pyproject.toml`.
+- A package intended to be managed via `uv`, but flexible enough to use alternatives such as Poetry.
+- Scaffolding for unit tests run via `pytest`.
+- Out-of-the-box code coverage reporting.
+- Batteries-included pre-commit hook configuration to format, lint and run SAST.
+- A basic `justfile` to use `just` as a task runner.
 
 ## Prerequisites
 
@@ -25,7 +35,7 @@ To use `pycliche` the following must be available locally:
 Start a new project based on `pycliche`:
 
 1. Navigate to the directory under which you wish to create a new project.
-1. Run `uvx cookiecutter gh:albertomh/pycliche` and follow the wizard.
+1. Run `uvx copier copy gh:albertomh/pycliche <project_name>` and follow the wizard.
 
 This creates a directory under your current location. Follow the README in
 the new directory to get started with your project.
