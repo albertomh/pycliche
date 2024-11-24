@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD013 -->
 # Changelog
 
 Notable changes to this project are documented in this file.
@@ -7,11 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.1.0](https://github.com/albertomh/pycliche/compare/v2.0.0...v2.1.0) (2024-11-24)
 
-
 ### Features
 
 * Add Release Please config & GitHub Action to the project template ([#12](https://github.com/albertomh/pycliche/issues/12)) ([2247823](https://github.com/albertomh/pycliche/commit/224782304359d35a1e995f43d3c748460249478f))
-
 
 ### Bug Fixes
 
@@ -21,24 +20,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- copier.yaml config file.
+* copier.yaml config file.
 
 ### Changed
 
-- Switch from cookiecutter to copier as the project templating tool.
+* Switch from cookiecutter to copier as the project templating tool.
 
 ### Removed
 
-- cookiecutter.json config file.
+* cookiecutter.json config file.
 
 ## [1.0.0] (2024-11-17)
 
 ### Added
 
-- Project template package structure and entrypoint.
-- cookiecutter.json config file.
-- Minimal unit test suite structure. Configuration for running tests and reporting on coverage.
-- git hooks for both pycliché and the project template, including:
-  - commitlint
-  - ruff (linter & formatter)
-  - bandit (SAST)
+* Project template package structure and entrypoint.
+* cookiecutter.json config file.
+* Minimal unit test suite structure. Configuration for running tests and reporting on coverage.
+* git hooks for both pycliché and the project template, including:
+  * commitlint
+  * ruff (linter & formatter)
+  * bandit (SAST)
