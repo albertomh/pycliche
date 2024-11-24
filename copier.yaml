@@ -1,7 +1,7 @@
 _subdirectory: template
 
 project_name:
-    help: What is your project name?
+    help: "The name of the project"
     type: str
     validator: "{% if project_name == '' %}Must have value{% endif %}"
 
@@ -29,3 +29,9 @@ author_email:
     type: str
     default: "alberto.moronh@gmail.com"
     validator: "{% if author_email == '' %}Must have value{% endif %}"
+
+initial_version:
+    help: "Semantic Version tag on which to start the project"
+    type: str
+    default: "0.1.0"
+    validator: "{% if initial_version == '' %}Must have value{% endif %}"
