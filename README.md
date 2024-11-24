@@ -100,3 +100,16 @@ pre-commit hook. Valid commit types are defined in `.commitlintrc.yaml`.
 Release Please is configured as a GitHub action ([release-please.yaml](.github/workflows/release-please.yaml)).
 It keeps a release pull request open that is refreshed as changes are merged into `main`.
 To cut a release, simply merge the release pull request.
+
+### GitHub Personal Access Token
+
+In order for Release Please to automate the above process, a GitHub Actions secret called
+`PYCLICHE_RELEASE_PLEASE_TOKEN` must exist in GitHub ([albertomh/pycliche/settings/secrets/actions](albertomh/pycliche/settings/secrets/actions)).
+The contents of this secret must be a Personal Access Token (PAT) with the following permissions:
+
+```text
+contents: write
+pull-requests: write
+```
+
+For more information, consult the [release-please-action project](https://github.com/googleapis/release-please-action).
