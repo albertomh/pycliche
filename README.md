@@ -5,7 +5,7 @@
 A Python project template with opinionated tooling.
 
 [![python: 3.10](https://img.shields.io/badge/>=3.10-4584b6?logo=python&logoColor=ffde57)](https://docs.python.org/3.10/whatsnew/3.10.html)
-[![Copier](https://img.shields.io/endpoint?url=https://pastebin.com/raw/9YTAHxcv)](https://github.com/copier-org/copier)
+[![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/albertomh/pycliche/main/docs/copier-badge.json)](https://github.com/copier-org/copier)
 [![justfile](https://img.shields.io/badge/🤖_justfile-EFF1F3)](https://github.com/casey/just)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json&labelColor=261230&color=de60e9)](https://github.com/astral-sh/uv)
 [![pre-commit](https://img.shields.io/badge/pre--commit-FAB040?logo=pre-commit&logoColor=1f2d23)](https://github.com/pre-commit/pre-commit)
@@ -88,3 +88,15 @@ Docstrings should follow the conventions set out in the [Google styleguide](http
 Please follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 guidelines when writing commit messages. `commitlint` is enabled as
 pre-commit hook. Valid commit types are defined in `.commitlintrc.yaml`.
+
+## Release
+
+[Release Please](https://github.com/googleapis/release-please) is used to automate:
+
+- Updating the [changelog](CHANGELOG.md).
+- Calculating the new SemVer tag based on conventional commit types.
+- Creating a new GitHub release.
+
+Release Please is configured as a GitHub action ([release-please.yaml](.github/workflows/release-please.yaml)).
+It keeps a release pull request open that is refreshed as changes are merged into `main`.
+To cut a release, simply merge the release pull request.
