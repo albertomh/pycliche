@@ -90,6 +90,14 @@ Please follow the [Conventional Commits](https://www.conventionalcommits.org/en/
 guidelines when writing commit messages. `commitlint` is enabled as
 pre-commit hook. Valid commit types are defined in `.commitlintrc.yaml`.
 
+## Test
+
+`pytest` is defined as a test dependency. Run unit tests with:
+
+```sh
+uv run -m pytest tests/ [-s] [-vvv] [-W always] [--pdb]
+```
+
 ## Release
 
 [Release Please](https://github.com/googleapis/release-please) is used to automate:
