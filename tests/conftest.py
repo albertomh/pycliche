@@ -24,3 +24,9 @@ def pycliche_test_temp_dir() -> Path:
 def pycliche_test_project_dir(pycliche_test_temp_dir) -> Path:
     """"""
     return pycliche_test_temp_dir / "test_project"
+
+
+def pytest_sessionstart(session):
+    """Hook to perform initial setup before all tests."""
+    if not PYCLICHE_TEST_TEMP_DIR.exists():
+        PYCLICHE_TEST_TEMP_DIR.mkdir()
