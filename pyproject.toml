@@ -21,3 +21,8 @@ extend-exclude = ["*project_name*"]
 # pycodestyle (`E`), isort (`I`), Pyflakes (`F`), pycodestyle warnings (`W`)
 select = ["E", "I", "F", "W"]
 ignore = []
+
+[dependency-groups]
+test = [
+    "pytest>=8.3.3",
+]
