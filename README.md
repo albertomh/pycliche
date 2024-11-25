@@ -23,7 +23,8 @@ Projects created using `pycliche` include:
 - Out-of-the-box code coverage reporting with `coverage.py`.
 - Batteries-included `pre-commit` hook configuration to format, lint and run SAST.
 - A `justfile` to enable using `just` as a task runner.
-- Simple 'Release Please' config to automate cutting releases via GitHub Actions.
+- Simple `Release Please` config to automate cutting releases via GitHub Actions.
+- A `dependabot` configuration to keep Python packages & GitHub Actions up to date.
 
 ## Prerequisites
 
