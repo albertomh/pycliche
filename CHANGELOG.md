@@ -6,6 +6,19 @@ Notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.1](https://github.com/albertomh/pycliche/compare/v2.1.0...v2.1.1) (2024-11-25)
+
+
+### Bug Fixes
+
+* Tag format in project template's 'Release Please manifest' ([#16](https://github.com/albertomh/pycliche/issues/16)) ([deb0572](https://github.com/albertomh/pycliche/commit/deb05726005f2b63d2cdafe550fb8037a17f8a05))
+
+
+### Documentation
+
+* Document release process and use of Release Please ([#13](https://github.com/albertomh/pycliche/issues/13)) ([16f86cb](https://github.com/albertomh/pycliche/commit/16f86cb714006c7687581b433f0080ee1f25b3f3))
+* Document the GitHub PAT needed to automate Release Please ([824f848](https://github.com/albertomh/pycliche/commit/824f8483927714809c5d86398bcf732515b1e31b))
+
 ## [2.1.0](https://github.com/albertomh/pycliche/compare/v2.0.0...v2.1.0) (2024-11-24)
 
 ### Features
