@@ -14,6 +14,7 @@ A Python project template with opinionated tooling.
 [![coverage](https://img.shields.io/badge/😴_coverage-59aabd)](https://coverage.readthedocs.io/)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![Release Please](https://img.shields.io/badge/📦_Release_Please-6C97BB)](https://github.com/googleapis/release-please)
+[![CI](https://github.com/albertomh/pycliche/actions/workflows/ci.yaml/badge.svg)](https://github.com/albertomh/pycliche/actions/workflows/ci.yaml)
 
 Projects created using `pycliche` include:
 
