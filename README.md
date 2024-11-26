@@ -46,7 +46,19 @@ the new directory to get started with your project.
 
 NB. It is not necessary to clone `pycliche` itself to your local environment
 in order to use it as a template. The `gh:albertomh/pycliche` argument
-will use the latest version hosted on GitHub.
+will use the latest tag from GitHub.
+
+## Update existing projects
+
+To update a project created using an older version of `pycliche` to a newer version of the
+template:
+
+```sh
+cd ~/Projects/existing_project/
+uvx copier update --skip-answered
+```
+
+---
 
 ## Develop
 
