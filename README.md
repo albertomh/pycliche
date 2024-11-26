@@ -24,7 +24,9 @@ Projects created using `pycliche` include:
 - Out-of-the-box code coverage reporting with `coverage.py`.
 - Batteries-included `pre-commit` hook configuration to format, lint and run SAST.
 - A `justfile` to enable using `just` as a task runner.
-- Simple `Release Please` config to automate cutting releases via GitHub Actions.
+- GitHub Actions to:
+  - Automate cutting releases via `Release Please`.
+  - Run `pre-commit` hooks and `pytest` as part of a Continuous Integration pipeline.
 - A `dependabot` configuration to keep Python packages & GitHub Actions up to date.
 
 ## Prerequisites
@@ -34,9 +36,9 @@ To use `pycliche` the following must be available locally:
 - [Python 3.10](https://docs.python.org/3.10/) or above
 - [uv](https://docs.astral.sh/uv/)
 
-## Start a new project
+## Bootstrap a new Python project
 
-Start a new project based on `pycliche`:
+Bootstrap a new Python project using `pycliche`:
 
 1. Navigate to the directory under which you wish to create a new project.
 1. Run `uvx copier copy gh:albertomh/pycliche <project_name>` and follow the wizard.
@@ -44,9 +46,8 @@ Start a new project based on `pycliche`:
 This creates a directory under your current location. Follow the README in
 the new directory to get started with your project.
 
-NB. It is not necessary to clone `pycliche` itself to your local environment
-in order to use it as a template. The `gh:albertomh/pycliche` argument
-will use the latest tag from GitHub.
+NB. It is not necessary to clone `pycliche` to your local environment in order to use it
+as a template. The `gh:albertomh/pycliche` argument will pull the latest tag from GitHub.
 
 ## Update existing projects
 
@@ -62,76 +63,17 @@ uvx copier update --skip-answered
 
 ## Develop
 
-This repo follows trunk-based development. This means:
+The developer README ([docs/README-dev.md](docs/README-dev.md)) covers how to work on
+`pycliche` itself. It covers:
 
-- the `main` branch should always be in a releasable state
-- use short-lived feature branches
+- [Develop](docs/README-dev.md#develop)
+  - [Development prerequisites](docs/README-dev.md#development-prerequisites)
+  - [Git principles](docs/README-dev.md#git-principles)
+  - [Dependency management](docs/README-dev.md#dependency-management)
+  - [Generate project using development version](docs/README-dev.md#generate-project-using-development-version)
+  - [Style](docs/README-dev.md#style)
 
-### Development prerequisites
+- [Test](docs/README-dev.md#test)
 
-In addition to the [Prerequisites](#prerequisites) above, you will need the
-following to develop `pycliche`:
-
-- [pre-commit](https://pre-commit.com/)
-
-### Dependency management
-
-Dependencies are defined in the `pyproject.toml` file. `uv` is used to manage
-dependencies:
-
-```sh
-# add a dependency to the project
-uv add some-package
-```
-
-### Style
-
-Code style is enforced by pre-commit hooks. Linter rules are configured in the `ruff`
-tables in `pyproject.toml`.
-
-```sh
-# before you start developing, install pre-commit hooks
-pre-commit install
-
-# update pre-commit hooks
-pre-commit autoupdate
-```
-
-Docstrings should follow the conventions set out in the [Google styleguide](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings).
-
-Please follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
-guidelines when writing commit messages. `commitlint` is enabled as
-pre-commit hook. Valid commit types are defined in `.commitlintrc.yaml`.
-
-## Test
-
-`pytest` is defined as a test dependency. Run unit tests with:
-
-```sh
-uv run -m pytest tests/ [-s] [-vvv] [-W always] [--pdb]
-```
-
-## Release
-
-[Release Please](https://github.com/googleapis/release-please) is used to automate:
-
-- Updating the [changelog](CHANGELOG.md).
-- Calculating the new SemVer tag based on conventional commit types.
-- Creating a new GitHub release.
-
-Release Please is configured as a GitHub action ([release-please.yaml](.github/workflows/release-please.yaml)).
-It keeps a release pull request open that is refreshed as changes are merged into `main`.
-To cut a release, simply merge the release pull request.
-
-### GitHub Personal Access Token
-
-In order for Release Please to automate the above process, a GitHub Actions secret called
-`PYCLICHE_RELEASE_PLEASE_TOKEN` must exist in GitHub ([albertomh/pycliche/settings/secrets/actions](albertomh/pycliche/settings/secrets/actions)).
-The contents of this secret must be a Personal Access Token (PAT) with the following permissions:
-
-```text
-contents: write
-pull-requests: write
-```
-
-For more information, consult the [release-please-action project](https://github.com/googleapis/release-please-action).
+- [Release](docs/README-dev.md#release)
+  - [GitHub Personal Access Token](docs/README-dev.md#github-personal-access-token)
