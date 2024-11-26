@@ -4,7 +4,7 @@ from pathlib import Path
 def test_pycliche_jinja_templates_converted(
     pycliche_root_dir: Path,
     pycliche_test_project_dir: Path,
-    run_copier,
+    copier_copy,
 ):
     """
     Smoke test to validate the generation process converted Jinja templates to files.
@@ -14,12 +14,12 @@ def test_pycliche_jinja_templates_converted(
         "author_name": "Miguel de Cervantes",
         "author_email": "mike@alcala.net",
     }
-    run_copier(copier_input_data)
+    copier_copy(copier_input_data)
 
     template_files: list[Path] = [
         f.relative_to(pycliche_root_dir / "template")
         for f in pycliche_root_dir.rglob("*.jinja")
-        if not f.name.startswith("{{")
+        if not f.name.startswith("{")
     ]
 
     def _transform_file_name(fname: str):
