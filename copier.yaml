@@ -37,3 +37,8 @@ initial_version:
         - "0.0.0"
     default: "0.1.0"
     validator: "{% if initial_version == '' %}Must have value{% endif %}"
+
+is_github_project:
+    help: "Will this project be hosted on GitHub?"
+    type: bool
+    default: yes
