@@ -15,11 +15,6 @@ python_version:
         - "3.13"
     default: "3.12"
 
-python_version_no_dot:
-    type: str
-    default: "{{ python_version.replace('.', '') }}"
-    help: "Python version without dots (auto-generated)"
-
 author_name:
     type: str
     default: "Alberto Morón Hernández"
