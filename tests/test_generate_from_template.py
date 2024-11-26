@@ -2,18 +2,14 @@ from pathlib import Path
 
 
 def test_pycliche_jinja_templates_converted(
-    pycliche_root_dir: Path,
-    pycliche_test_project_dir: Path,
     copier_copy,
+    pycliche_root_dir: Path,
+    test_project_dir: Path,
+    copier_input_data,
 ):
     """
     Smoke test to validate the generation process converted Jinja templates to files.
     """
-    copier_input_data = {
-        "project_name": "test_project",
-        "author_name": "Miguel de Cervantes",
-        "author_email": "mike@alcala.net",
-    }
     copier_copy(copier_input_data)
 
     template_files: list[Path] = [
@@ -31,7 +27,7 @@ def test_pycliche_jinja_templates_converted(
     template_file_names: list[str] = list(map(_transform_file_name, template_file_names))
 
     for file_name in template_file_names:
-        expected_file_path = pycliche_test_project_dir / file_name
+        expected_file_path = test_project_dir / file_name
 
         assert (
             expected_file_path.exists()

@@ -23,23 +23,37 @@ def pycliche_test_temp_dir() -> Path:
 
 
 @pytest.fixture
-def pycliche_test_project_dir(pycliche_test_temp_dir) -> Path:
+def test_project_dir(pycliche_test_temp_dir) -> Path:
     """"""
     return pycliche_test_temp_dir / "test_project"
 
 
 @pytest.fixture
-def copier_copy(pycliche_root_dir: Path, pycliche_test_project_dir: Path):
-    """Fixture to run `copier copy`, cleaning up destination directory beforehand."""
+def copier_input_data() -> dict:
+    """Answers to core pycliche template questions."""
+    return {
+        "project_name": "test_project",
+        "author_name": "Miguel de Cervantes",
+        "author_email": "mike@alcala.net",
+    }
+
+
+@pytest.fixture
+def copier_copy(pycliche_root_dir: Path, test_project_dir: Path):
+    """
+    Fixture to run `copier copy`, cleaning up destination directory beforehand.
+    Uses the `pycliche_root_dir` & `test_project_dir` fixtures as source and
+    destination directories respectively, so tests should use these fixtures
+    """
 
     def _run(copier_data: dict):
-        if pycliche_test_project_dir.exists():
-            shutil.rmtree(pycliche_test_project_dir)
+        if test_project_dir.exists():
+            shutil.rmtree(test_project_dir)
 
         copier.run_copy(
             vcs_ref="HEAD",
             src_path=str(pycliche_root_dir),
-            dst_path=str(pycliche_test_project_dir),
+            dst_path=str(test_project_dir),
             defaults=True,
             data=copier_data,
         )
