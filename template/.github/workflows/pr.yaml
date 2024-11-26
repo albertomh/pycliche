@@ -1,17 +1,17 @@
-# pycliche Continuous Integration pipeline
-# Runs when a Pull Request is merged into the 'main' branch.
-name: CI
+# Pull Request pipeline
+# Runs when a commit on a feature branch is pushed up to GitHub.
+name: PR
 
 on:
+  push:
+    branches-ignore:
+      - main
   pull_request:
-    types:
-      - closed
-    branches:
+    branches-ignore:
       - main
 
 jobs:
   pre_commit:
-    if: ${{ github.event.pull_request.merged }}
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
