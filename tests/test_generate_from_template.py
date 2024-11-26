@@ -1,5 +1,9 @@
 from pathlib import Path
 
+import pytest
+
+from tests._utils import count_dirs_and_files
+
 
 def test_pycliche_jinja_templates_converted(
     copier_copy,
@@ -32,3 +36,30 @@ def test_pycliche_jinja_templates_converted(
         assert (
             expected_file_path.exists()
         ), f"Expected file {expected_file_path} not found."
+
+
+@pytest.mark.parametrize(
+    "is_github_project, expected_directory_count, expected_file_count",
+    [(True, 3, 13), (False, 2, 11)],
+)
+def test_is_github_project(
+    is_github_project,
+    expected_directory_count,
+    expected_file_count,
+    copier_copy,
+    pycliche_root_dir: Path,
+    test_project_dir: Path,
+    copier_input_data,
+):
+    """ """
+    copier_copy(
+        {
+            **copier_input_data,
+            "is_github_project": is_github_project,
+        }
+    )
+
+    num_dirs, num_files = count_dirs_and_files(test_project_dir)
+
+    assert num_dirs == expected_directory_count
+    assert num_files == expected_file_count
