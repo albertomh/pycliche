@@ -4,7 +4,6 @@
 
 To use `{{project_name}}` the following must be available locally:
 
-<!-- markdownlint-disable MD013 -->
 - [Python {{python_version}}](https://docs.python.org/{{python_version}}/) or above
 - [uv](https://docs.astral.sh/uv/)
 - [just](https://github.com/casey/just)
@@ -24,7 +23,7 @@ This repo follows trunk-based development. This means:
 
 In addition to the [Prerequisites](#prerequisites) above, you will need the following to
 develop `{{project_name}}`:
-
+`
 - [pre-commit](https://pre-commit.com/)
 
 ### Dependency management
@@ -35,10 +34,10 @@ Dependencies are defined in the `pyproject.toml` file. `uv` is used to manage de
 # add a dependency to the project
 uv add some-package
 ```
-
+{%if is_github_project%}
 Dependabot is configured to run weekly and update Python packages (minor & patch) and
 GitHub Actions. See [.github/dependabot.yaml](.github/dependabot.yaml).
-
+{%endif%}
 ### Style
 
 Code style is enforced by pre-commit hooks. Linter rules are configured in the `ruff`
@@ -60,7 +59,7 @@ Valid commit types are defined in `.commitlintrc.yaml`.
 `pytest` and `coverage` are defined as test dependencies.
 
 Run `just test` to execute all unit tests and report on code coverage.
-
+{%if is_github_project%}
 ## Release
 
 [Release Please](https://github.com/googleapis/release-please) is used to automate:
@@ -85,3 +84,4 @@ pull-requests: write
 ```
 
 For more information, consult the [release-please-action project](https://github.com/googleapis/release-please-action).
+{%endif%}
