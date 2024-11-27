@@ -75,6 +75,7 @@ The developer README ([docs/README-dev.md](docs/README-dev.md)) covers how to wo
   - [Development prerequisites](docs/README-dev.md#development-prerequisites)
   - [Git principles](docs/README-dev.md#git-principles)
   - [Dependency management](docs/README-dev.md#dependency-management)
+    - [Updating dependencies in the template](docs/README-dev.md#updating-dependencies-in-the-template)
   - [Generate project using development version](docs/README-dev.md#generate-project-using-development-version)
   - [Style](docs/README-dev.md#style)
 

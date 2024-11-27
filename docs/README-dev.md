@@ -26,6 +26,22 @@ dependencies:
 uv add some-package
 ```
 
+#### Updating dependencies in the template
+
+There are two places where dependencies are currently declared in the template:
+
+1. `.pre-commit-config.yaml`
+1. `pyproject.toml.jinja`
+
+Update git hooks in the former via:
+
+```sh
+cd template/ && pre-commit autoupdate
+```
+
+Update Python packages in the latter manually. Automated option pending on account of
+commands like `uv lock --upgrade-package` not taking kindly to Jinja templates.
+
 ### Generate project using development version
 
 When developing `pycliche` it is useful to observe the outcome of generating new projects
