@@ -89,3 +89,8 @@ pull-requests: write
 ```
 
 For more information, consult the [release-please-action project](https://github.com/googleapis/release-please-action).
+
+## Record demo
+
+The main [README](../README.md) includes a GIF showcasing generating a project using
+`pycliche`. To record a new demo, record the output of running `docs/media/auto_pycliche_demo.sh`.
