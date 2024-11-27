@@ -55,7 +55,7 @@ Docstrings should follow the conventions set out in the [Google styleguide](http
 
 Please follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 guidelines when writing commit messages. `commitlint` is enabled as
-pre-commit hook. Valid commit types are defined in `.commitlintrc.yaml`.
+pre-commit hook. Valid commit types are defined in `.commitlintrc.ts`.
 
 ## Test
 
