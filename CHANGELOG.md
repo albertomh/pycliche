@@ -6,6 +6,31 @@ Notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0](https://github.com/albertomh/pycliche/compare/v2.2.0...v2.3.0) (2024-11-27)
+
+
+### Features
+
+* Add 'is_github_project' as a question ([cc53de5](https://github.com/albertomh/pycliche/commit/cc53de5e3301379d13630a4d56921293fddbf677))
+* Make .github/ and Release Please config conditional on 'is_github_project' ([6a4df3f](https://github.com/albertomh/pycliche/commit/6a4df3f19310358e775051cd8deb1dd73972e3ca))
+* Make template README sections conditional on 'is_github_project' ([8a68477](https://github.com/albertomh/pycliche/commit/8a68477b4c0b13b85f9415b51c22c6a79773ae78))
+* Upgrade 'ruff' & 'bandit' git hooks in template ([#26](https://github.com/albertomh/pycliche/issues/26)) ([006c1f3](https://github.com/albertomh/pycliche/commit/006c1f3d8edbac54871c27f5017fd0d1b6b04d3e))
+
+
+### Bug Fixes
+
+* Populate 'tool.ruff.target-version' in generated pyproject.toml ([ced39ee](https://github.com/albertomh/pycliche/commit/ced39ee194ffd544351a6a834d638715f0932d78))
+
+
+### Dependencies
+
+* Add copier as a test dependency ([c4b8279](https://github.com/albertomh/pycliche/commit/c4b827935459a5110077c6b29cb7af3b469f5bc9))
+
+
+### Documentation
+
+* Document which features of generated projects are conditional on 'is_github_project' ([cb35680](https://github.com/albertomh/pycliche/commit/cb35680e51687ce8134f19a4a8320856436649d2))
+
 ## [2.2.0](https://github.com/albertomh/pycliche/compare/v2.1.1...v2.2.0) (2024-11-26)
 
 
