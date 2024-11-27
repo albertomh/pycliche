@@ -1,6 +1,6 @@
 # pycliché
 
-![pycliche logo](docs/pycliche-logo-sm.webp "pycliche logo - a printing plate embossed with the Python logo")
+![pycliche logo](docs/media/pycliche-logo-sm.webp "pycliche logo - a printing plate embossed with the Python logo")
 
 A Python project template with opinionated tooling.
 
@@ -31,6 +31,8 @@ Optionally, for projects intended to be hosted on GitHub, also include:
   - Automate cutting releases via `Release Please`.
   - Run `pre-commit` hooks and `pytest` as part of a Continuous Integration pipeline.
 - A `dependabot` configuration to keep Python packages & GitHub Actions up to date.
+
+![Creating a new Python project using pycliche 2.3.0](docs/media/pycliche-demo-2.3.0-sm.gif)
 
 ## Prerequisites
 
@@ -80,3 +82,5 @@ The developer README ([docs/README-dev.md](docs/README-dev.md)) covers how to wo
 
 - [Release](docs/README-dev.md#release)
   - [GitHub Personal Access Token](docs/README-dev.md#github-personal-access-token)
+
+- [Record demo](docs/README-dev.md#record-demo)
