@@ -1,4 +1,5 @@
 import shutil
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -80,3 +81,17 @@ def pytest_sessionstart(session):
     """Hook to perform initial setup before all tests."""
     if not PYCLICHE_TEST_TEMP_DIR.exists():
         PYCLICHE_TEST_TEMP_DIR.mkdir()
+
+
+def is_git_repo(path: Path) -> bool:
+    """Check if the given path is a Git repository."""
+    try:
+        subprocess.run(
+            ["git", "-C", str(path), "status"],
+            check=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+        return True
+    except subprocess.CalledProcessError:
+        return False
