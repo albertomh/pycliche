@@ -6,6 +6,19 @@ Notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.0](https://github.com/albertomh/pycliche/compare/v2.3.0...v2.4.0) (2024-11-28)
+
+
+### Features
+
+* Init git repo and generate uv lockfile after creating a project ([#32](https://github.com/albertomh/pycliche/issues/32)) ([933101e](https://github.com/albertomh/pycliche/commit/933101e527209d1147fa59482ef4816f4a70c45c))
+
+
+### Documentation
+
+* Add demo of generating project using 2.3.0 to README ([#27](https://github.com/albertomh/pycliche/issues/27)) ([d59449b](https://github.com/albertomh/pycliche/commit/d59449beee6fbb0d74a25ac596cdac0e4a4d1d86))
+* Updating dependencies in the template ([#31](https://github.com/albertomh/pycliche/issues/31)) ([a400a1e](https://github.com/albertomh/pycliche/commit/a400a1ea3e8506a71b77d666578a5cb0a5070e43))
+
 ## [2.3.0](https://github.com/albertomh/pycliche/compare/v2.2.0...v2.3.0) (2024-11-27)
 
 
