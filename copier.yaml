@@ -45,3 +45,4 @@ is_github_project:
 
 _tasks:
     - "git init"
+    - "uv lock"
