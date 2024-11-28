@@ -40,14 +40,13 @@ def test_pycliche_jinja_templates_converted(
 
 @pytest.mark.parametrize(
     "is_github_project, expected_directory_count, expected_file_count",
-    [(True, 3, 13), (False, 2, 11)],
+    [(True, 4, 14), (False, 3, 12)],
 )
 def test_is_github_project(
     is_github_project,
     expected_directory_count,
     expected_file_count,
     copier_copy,
-    pycliche_root_dir: Path,
     test_project_dir: Path,
     copier_input_data,
 ):
