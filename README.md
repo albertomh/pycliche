@@ -19,7 +19,7 @@ A Python project template with opinionated tooling.
 Projects created using `pycliche` include:
 
 - A basic Python package and entrypoint, configured via a `pyproject.toml`.
-- A package intended to be managed via `uv`, but flexible enough to use alternatives such as Poetry.
+- Dependencies managed via `uv`, using a `uv.lock` file for consistent and reproducible builds.
 - Scaffolding for unit tests run via `pytest`.
 - Out-of-the-box code coverage reporting with `coverage.py`.
 - Batteries-included `pre-commit` hook configuration to format, lint and run SAST.
@@ -46,13 +46,17 @@ To use `pycliche` the following must be available locally:
 Bootstrap a new Python project using `pycliche`:
 
 1. Navigate to the directory under which you wish to create a new project.
-1. Run `uvx copier copy gh:albertomh/pycliche <project_name>` and follow the wizard.
+1. Run `uvx copier copy --trust gh:albertomh/pycliche <project_name>` and follow the wizard.
 
-This creates a directory under your current location. Follow the README in
-the new directory to get started with your project.
+This creates a directory under your current location. Follow the README in the new directory
+to get started with your project.
 
-NB. It is not necessary to clone `pycliche` to your local environment in order to use it
-as a template. The `gh:albertomh/pycliche` argument will pull the latest tag from GitHub.
+Note:
+
+- it is not necessary to clone `pycliche`. The `gh:albertomh/pycliche` argument will pull
+  the latest tag from GitHub.
+- the `--trust` flag is necessary since a post-creation task initialises the new directory
+  as a git repository and generates a `uv` lockfile.
 
 ## Update existing projects
 
