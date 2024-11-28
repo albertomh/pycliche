@@ -9,3 +9,10 @@ def test_is_git_repo(test_project_dir: Path, copier_copy, copier_input_data):
     copier_copy(copier_input_data)
 
     assert is_git_repo(test_project_dir), "The test project is not a Git repository."
+
+
+def test_uv_lockfile_exists(test_project_dir: Path, copier_copy, copier_input_data):
+    copier_copy(copier_input_data)
+
+    uv_lock_file = test_project_dir / "uv.lock"
+    assert uv_lock_file.exists(), f"Expected lock file {uv_lock_file} not found."
