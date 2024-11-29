@@ -19,14 +19,17 @@ def pycliche_root_dir() -> Path:
 
 @pytest.fixture
 def pycliche_test_temp_dir() -> Path:
-    """"""
     return PYCLICHE_TEST_TEMP_DIR
 
 
 @pytest.fixture
-def test_project_dir(pycliche_test_temp_dir) -> Path:
-    """"""
-    return pycliche_test_temp_dir / "test_project"
+def test_project_name() -> str:
+    return "test_project"
+
+
+@pytest.fixture
+def test_project_dir(pycliche_test_temp_dir: Path, test_project_name: str) -> Path:
+    return pycliche_test_temp_dir / test_project_name
 
 
 @pytest.fixture
