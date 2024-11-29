@@ -78,6 +78,7 @@ pre-commit hook. Valid commit types are defined in `.commitlintrc.ts`.
 `pytest` is defined as a test dependency. Run unit tests with:
 
 ```sh
+uv sync --group test
 uv run -m pytest tests/ [-s] [-vvv] [-W always] [--pdb]
 ```
 
