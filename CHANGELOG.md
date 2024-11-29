@@ -6,6 +6,13 @@ Notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.1](https://github.com/albertomh/pycliche/compare/v2.4.0...v2.4.1) (2024-11-29)
+
+
+### Bug Fixes
+
+* __version__ sourced from metadata instead of being hardcoded ([#33](https://github.com/albertomh/pycliche/issues/33)) ([a7cec2f](https://github.com/albertomh/pycliche/commit/a7cec2f8a49ff172e775dd44001a253e00075ca0))
+
 ## [2.4.0](https://github.com/albertomh/pycliche/compare/v2.3.0...v2.4.0) (2024-11-28)
 
 
