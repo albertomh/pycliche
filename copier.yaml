@@ -5,7 +5,10 @@ project_name:
         What is the project called?
            (all-lowercase, may contain underscores)
     type: str
-    validator: "{% if project_name == '' %}Must have value{% endif %}"
+    validator: >-
+        {% if not (project_name | regex_search('^[a-z][a-z0-9\_]+$')) %}
+        project_name must start with a letter, be lowercase and may contain underscores
+        {% endif %}
 
 python_version:
     help: "What version of Python do you wish to use?"
