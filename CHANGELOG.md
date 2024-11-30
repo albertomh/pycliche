@@ -6,6 +6,14 @@ Notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.5.0](https://github.com/albertomh/pycliche/compare/v2.4.1...v2.5.0) (2024-11-30)
+
+
+### Features
+
+* Regex validator for the author_email question ([#37](https://github.com/albertomh/pycliche/issues/37)) ([45d8690](https://github.com/albertomh/pycliche/commit/45d869031289da0115c2a19a5de223952e613439))
+* Regex validator for the project_name question ([#35](https://github.com/albertomh/pycliche/issues/35)) ([1b45246](https://github.com/albertomh/pycliche/commit/1b452468d50d27821a56a276eeeee58c38f319ca))
+
 ## [2.4.1](https://github.com/albertomh/pycliche/compare/v2.4.0...v2.4.1) (2024-11-29)
 
 
