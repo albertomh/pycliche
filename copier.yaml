@@ -1,7 +1,9 @@
 _subdirectory: template
 
 project_name:
-    help: "What is the project called?"
+    help: |
+        What is the project called?
+           (all-lowercase, may contain underscores)
     type: str
     validator: "{% if project_name == '' %}Must have value{% endif %}"
 
@@ -39,7 +41,9 @@ initial_version:
     validator: "{% if initial_version == '' %}Must have value{% endif %}"
 
 is_github_project:
-    help: "Will this project be hosted on GitHub?"
+    help: |
+        Will this project be hosted on GitHub?
+           (if 'yes', generates GitHub Actions for 'Release Please', 'pre-commit', 'dependabot')
     type: bool
     default: yes
 
