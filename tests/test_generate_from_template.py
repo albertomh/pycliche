@@ -52,7 +52,6 @@ def test_is_github_project(
     test_project_dir: Path,
     copier_input_data,
 ):
-    """ """
     copier_copy(
         {
             **copier_input_data,
