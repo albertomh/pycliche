@@ -30,7 +30,10 @@ author_email:
     help: "What is the project author's email?"
     type: str
     default: "alberto.moronh@gmail.com"
-    validator: "{% if author_email == '' %}Must have value{% endif %}"
+    validator: >-
+        {% if not (author_email | regex_search('^[^@]+@[^@]+\.[^@]+$')) %}
+        author_email must be an email address
+        {% endif %}
 
 initial_version:
     help: "What Semantic Version tag should the project start on?"
