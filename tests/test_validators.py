@@ -1,6 +1,8 @@
 # Test the custom validators defined for certain questions in `copier.yaml`.
 
 
+from typing import Callable
+
 import pytest
 
 
@@ -17,8 +19,8 @@ def test_validator_is_empty(
     question: str,
     answer: str,
     error_msg: str | None,
-    copier_copy,
-    copier_input_data,
+    copier_copy: Callable[[dict], None],
+    copier_input_data: dict,
 ):
     def _copier_copy_with_project_name():
         copier_copy(

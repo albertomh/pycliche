@@ -1,6 +1,7 @@
 import subprocess
 import sys
 from pathlib import Path
+from typing import Callable
 
 import pytest
 
@@ -8,10 +9,10 @@ from tests._utils import count_dirs_and_files
 
 
 def test_pycliche_jinja_templates_converted(
-    copier_copy,
+    copier_copy: Callable[[dict], None],
+    copier_input_data: dict,
     pycliche_root_dir: Path,
     test_project_dir: Path,
-    copier_input_data,
 ):
     """
     Smoke test to validate the generation process converted Jinja templates to files.
@@ -45,12 +46,12 @@ def test_pycliche_jinja_templates_converted(
     [(True, 4, 14), (False, 3, 12)],
 )
 def test_is_github_project(
-    is_github_project,
-    expected_directory_count,
-    expected_file_count,
-    copier_copy,
+    is_github_project: bool,
+    expected_directory_count: int,
+    expected_file_count: int,
     test_project_dir: Path,
-    copier_input_data,
+    copier_copy: Callable[[dict], None],
+    copier_input_data: dict,
 ):
     copier_copy(
         {
@@ -66,10 +67,10 @@ def test_is_github_project(
 
 
 def test_version_is_importable(
-    copier_copy,
+    copier_copy: Callable[[dict], None],
+    copier_input_data: dict,
     test_project_dir: Path,
     test_project_name: str,
-    copier_input_data,
 ):
     copier_copy(copier_input_data)
     subprocess.run(

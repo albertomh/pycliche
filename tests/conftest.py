@@ -1,6 +1,7 @@
 import shutil
 import subprocess
 from pathlib import Path
+from typing import Callable
 
 import pytest
 from copier.cli import CopierApp
@@ -43,7 +44,9 @@ def copier_input_data() -> dict:
 
 
 @pytest.fixture
-def copier_copy(pycliche_root_dir: Path, test_project_dir: Path):
+def copier_copy(
+    pycliche_root_dir: Path, test_project_dir: Path
+) -> Callable[[dict], None]:
     """
     Fixture to run `copier copy`, cleaning up destination directory beforehand.
     Uses the `pycliche_root_dir` & `test_project_dir` fixtures as source and
