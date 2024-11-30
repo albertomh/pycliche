@@ -197,7 +197,7 @@ wheels = [
 
 [[package]]
 name = "pycliche"
-version = "2.4.0"
+version = "2.4.1"
 source = { virtual = "." }
 
 [package.dev-dependencies]

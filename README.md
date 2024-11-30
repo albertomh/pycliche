@@ -51,7 +51,7 @@ Bootstrap a new Python project using `pycliche`:
 This creates a directory under your current location. Follow the README in the new directory
 to get started with your project.
 
-Note:
+Please note:
 
 - it is not necessary to clone `pycliche`. The `gh:albertomh/pycliche` argument will pull
   the latest tag from GitHub.
