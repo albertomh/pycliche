@@ -80,3 +80,43 @@ def test_validator_project_name(
             _copier_copy_with_project_name()
         except Exception as e:
             pytest.fail(f"Unexpected exception raised: {str(e)}")
+
+
+@pytest.mark.parametrize(
+    "author_email, should_raise",
+    [
+        ("user@example.com", False),
+        ("broken@email", True),
+        ("justastring", True),
+        ("nope@@tld", True),
+    ],
+)
+def test_validator_author_email(
+    author_email: str,
+    should_raise: bool,
+    copier_copy,
+    copier_input_data,
+):
+    def _copier_copy_with_author_email():
+        copier_copy(
+            {
+                **copier_input_data,
+                "author_email": author_email,
+            }
+        )
+
+    expected_error_msg = (
+        "Validation error for question 'author_email': "
+        "author_email must be an email address"
+    )
+
+    if should_raise:
+        with pytest.raises(ValueError) as exc_info:
+            _copier_copy_with_author_email()
+        assert str(exc_info.value) == expected_error_msg
+
+    else:
+        try:
+            _copier_copy_with_author_email()
+        except Exception as e:
+            pytest.fail(f"Unexpected exception raised: {str(e)}")
