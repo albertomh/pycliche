@@ -22,6 +22,20 @@ uv pip install -e .
 uv run python -m {{project_name}}.main
 ```
 
+### pycliche
+
+`{{project_name}}` has been generated using the [pycliche](https://github.com/albertomh/pycliche)
+project template.
+
+To update `{{project_name}}` to a newer version of `pycliche`:
+
+```sh
+cd ~/Projects/{{project_name}}/
+uvx copier update --skip-answered --trust [--vcs-ref=<TAG>]
+```
+
+If the `--vcs-ref` flag is not specified, `copier` will use the latest `pycliche` tag.
+
 ### Git principles
 
 This repo follows trunk-based development. This means:
