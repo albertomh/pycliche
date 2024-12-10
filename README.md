@@ -79,6 +79,7 @@ The developer README ([docs/README-dev.md](docs/README-dev.md)) covers how to wo
 
 - [Develop](docs/README-dev.md#develop)
   - [Development prerequisites](docs/README-dev.md#development-prerequisites)
+  - [Recursive pycliche](docs/README-dev.md#recursive-pycliche)
   - [Git principles](docs/README-dev.md#git-principles)
   - [Dependency management](docs/README-dev.md#dependency-management)
     - [Updating dependencies in the template](docs/README-dev.md#updating-dependencies-in-the-template)
