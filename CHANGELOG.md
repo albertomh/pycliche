@@ -6,6 +6,13 @@ Notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.6.0](https://github.com/albertomh/pycliche/compare/v2.5.0...v2.6.0) (2024-12-10)
+
+
+### Features
+
+* Update ruff, commitlint, markdownlint pre-commit hooks in project template ([#38](https://github.com/albertomh/pycliche/issues/38)) ([b20ccc6](https://github.com/albertomh/pycliche/commit/b20ccc62e52773a03783ebd389dafbe7d65bb0ca))
+
 ## [2.5.0](https://github.com/albertomh/pycliche/compare/v2.4.1...v2.5.0) (2024-11-30)
 
 
