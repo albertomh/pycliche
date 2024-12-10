@@ -25,7 +25,7 @@ Projects created using `pycliche` include:
 - Batteries-included `pre-commit` hook configuration to format, lint and run SAST.
 - A `justfile` to enable using `just` as a task runner.
 
-Optionally, for projects intended to be hosted on GitHub, also include:  
+Optionally, for projects intended to be hosted on GitHub, also include:
 
 - GitHub Actions to:
   - Automate cutting releases via `Release Please`.
@@ -65,8 +65,10 @@ template:
 
 ```sh
 cd ~/Projects/existing_project/
-uvx copier update --skip-answered
+uvx copier update --skip-answered --trust [--vcs-ref=<TAG>]
 ```
+
+If the `--vcs-ref` flag is not specified, `copier` will use the latest `pycliche` tag.
 
 ---
 
