@@ -19,14 +19,15 @@ test = [
 ]
 
 [tool.ruff]
-target-version = "py{{python_version.replace('.', '')}}"
-line-length = 90
+exclude = [".pdbrc"]
 indent-width = 4
+line-length = 90
+target-version = "py{{python_version.replace('.', '')}}"
 
 [tool.ruff.lint]
 # pycodestyle (`E`), isort (`I`), Pyflakes (`F`), pycodestyle warnings (`W`)
-select = ["E", "I", "F", "W"]
 ignore = []
+select = ["E", "I", "F", "W"]
 
 [tool.coverage.run]
 source = [

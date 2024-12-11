@@ -43,7 +43,7 @@ def test_pycliche_jinja_templates_converted(
 
 @pytest.mark.parametrize(
     "is_github_project, expected_directory_count, expected_file_count",
-    [(True, 4, 14), (False, 3, 12)],
+    [(True, 4, 15), (False, 3, 13)],
 )
 def test_is_github_project(
     is_github_project: bool,
