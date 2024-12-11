@@ -6,6 +6,15 @@ Notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.8.0](https://github.com/albertomh/pycliche/compare/v2.7.0...v2.8.0) (2024-12-11)
+
+
+### Features
+
+* Enable additional flake8 plugin rules for ruff linter in project template ([#48](https://github.com/albertomh/pycliche/issues/48)) ([62c3a6f](https://github.com/albertomh/pycliche/commit/62c3a6fba45cc229ae15ae1d40f69c6d54dda996))
+* Enable flake8-bandit linting rules for ruff in project template ([#47](https://github.com/albertomh/pycliche/issues/47)) ([ede56c1](https://github.com/albertomh/pycliche/commit/ede56c18be5670a1bde738ba0fd648f90d1a2798))
+* Enable flake8-bugbear linting rules for ruff in project template ([#45](https://github.com/albertomh/pycliche/issues/45)) ([9fa4c5e](https://github.com/albertomh/pycliche/commit/9fa4c5e259b08cf1626a20c56f5832161ca35bfa))
+
 ## [2.7.0](https://github.com/albertomh/pycliche/compare/v2.6.0...v2.7.0) (2024-12-11)
 
 
