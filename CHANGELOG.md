@@ -123,7 +123,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * cookiecutter.json config file.
 
-## [1.0.0] (2024-11-17)
+## [1.0.0](https://github.com/albertomh/pycliche/releases/tag/v1.0.0) (2024-11-17)
 
 ### Added
 
