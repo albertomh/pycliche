@@ -6,6 +6,14 @@ Notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.7.0](https://github.com/albertomh/pycliche/compare/v2.6.0...v2.7.0) (2024-12-11)
+
+
+### Features
+
+* Add IPython as the default shell for generated projects ([#41](https://github.com/albertomh/pycliche/issues/41)) ([e500d34](https://github.com/albertomh/pycliche/commit/e500d34fa7ad234351f9e2d8691ea3765e97b11f))
+* Configure pytest to use ipdb as default debugger ([#43](https://github.com/albertomh/pycliche/issues/43)) ([8dc801a](https://github.com/albertomh/pycliche/commit/8dc801a7beec532b2e6f2ef4723ca04c6ff6eda0))
+
 ## [2.6.0](https://github.com/albertomh/pycliche/compare/v2.5.0...v2.6.0) (2024-12-10)
 
 
