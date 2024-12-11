@@ -25,16 +25,25 @@ line-length = 90
 target-version = "py{{python_version.replace('.', '')}}"
 
 [tool.ruff.lint]
-# (`B`) flake8-bugbear
-# (`D`) pydocstyle
-# (`E`) pycodestyle
-# (`I`) isort
-# (`INP`) flake8-no-pep420
-# (`F`) Pyflakes
-# (`S`) flake8-bandit
-# (`W`) pycodestyle warnings
 ignore = []
-select = ["B", "E", "I", "F", "S", "W"]
+select = [
+    # flake8-bugbear
+    "B",
+    # pydocstyle
+    "E",
+    # isort
+    "I",
+    # flake8-no-pep420
+    "INT",
+    # Pyflakes
+    "F",
+    # flake8-bandit
+    "S",
+    # flake8-tidy-imports
+    "T",
+    # pycodestyle warnings
+    "W",
+]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**.py" = ["S"]
