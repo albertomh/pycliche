@@ -1,6 +1,11 @@
 # pycliché
 
-![pycliche logo](docs/media/pycliche-logo-sm.webp "pycliche logo - a printing plate embossed with the Python logo")
+<!-- markdownlint-disable MD033 no-inline-html -->
+<p align="center">
+  <!-- markdownlint-disable MD013 line-length -->
+  <img src="docs/media/pycliche-logo-sm.webp" alt="pycliche logo - a printing plate embossed with the Python logo"/>
+  <!-- markdownlint-enable MD013 line-length -->
+</p>
 
 A Python project template with opinionated tooling.
 
@@ -68,7 +73,7 @@ cd ~/Projects/existing_project/
 uvx copier update --skip-answered --trust [--vcs-ref=<TAG>]
 ```
 
-If the `--vcs-ref` flag is not specified, `copier` will use the latest `pycliche` tag.
+If the `--vcs-ref` flag is not specified `copier` will use the latest `pycliche` tag.
 
 ---
 
