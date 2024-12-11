@@ -36,6 +36,11 @@ omit = [
   "*/tests/*"
 ]
 
+[tool.pytest.ini_options]
+addopts = [
+    "--pdbcls=IPython.terminal.debugger:TerminalPdb",
+]
+
 [tool.coverage.report]
 omit = [
   "*/tests/*"
