@@ -29,7 +29,7 @@ Projects created using `pycliche` include:
 - IPython as the default shell.
 - Scaffolding for unit tests run via `pytest`.
 - Out-of-the-box code coverage reporting with `coverage.py`.
-- Batteries-included `pre-commit` hook configuration to format, lint and run SAST.
+- Batteries-included `pre-commit` hook configuration to lint & format code, and run SAST.
 - A `justfile` to enable using `just` as a task runner.
 
 Optionally, for projects intended to be hosted on GitHub, also include:
