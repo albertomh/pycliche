@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Callable
 
 import pytest
+import yaml
 
 from tests._utils import count_dirs_and_files
 
@@ -86,3 +87,23 @@ def test_version_is_importable(
         [sys.executable, "-m", "pip", "uninstall", "-y", test_project_name],
         check=True,
     )
+
+
+def test_generated_yaml_is_valid(
+    copier_copy: Callable[[dict], None],
+    copier_input_data: dict,
+    test_project_dir: Path,
+):
+    yaml_files = [
+        test_project_dir / ".markdownlint-cli2.yaml",
+        test_project_dir / ".pre-commit-config.yaml",
+    ]
+
+    copier_copy(copier_input_data)
+
+    for file_path in yaml_files:
+        with open(file_path, "r") as f:
+            try:
+                yaml.safe_load(f)
+            except yaml.YAMLError as e:
+                pytest.fail(f"Invalid YAML file: {file_path}\nError: {e}")
