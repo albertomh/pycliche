@@ -6,13 +6,11 @@ name: CI
 
 on:
   push:
-    branches-ignore:
-      - main
-  pull_request:
-    types:
-      - closed
     branches:
-      - main
+    - main
+    tags:
+    - '**'
+  pull_request:
 
 jobs:
   pre_commit:

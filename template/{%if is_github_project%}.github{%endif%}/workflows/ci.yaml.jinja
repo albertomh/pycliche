@@ -1,8 +1,13 @@
-# Continuous Integration pipeline
-# Runs when a Pull Request is merged into the 'main' branch.
+# {{project_name}} Continuous Integration pipeline
+# Runs when:
+#   - a commit on a feature branch is pushed up to GitHub
+#   - a Pull Request is merged into the 'main' branch
 name: CI
 
 on:
+  push:
+    branches-ignore:
+      - main
   pull_request:
     types:
       - closed
