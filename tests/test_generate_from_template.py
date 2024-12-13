@@ -107,3 +107,28 @@ def test_generated_yaml_is_valid(
                 yaml.safe_load(f)
             except yaml.YAMLError as e:
                 pytest.fail(f"Invalid YAML file: {file_path}\nError: {e}")
+
+
+def test_generated_project_tests_run_successfully(
+    copier_copy: Callable[[dict], None],
+    copier_input_data: dict,
+    test_project_dir: Path,
+    test_project_name: str,
+):
+    copier_copy(copier_input_data)
+
+    install_res = subprocess.run(
+        ["uv", "pip", "install", "-e", "."],
+        cwd=test_project_dir,
+        capture_output=True,
+        text=True,
+    )
+    assert (
+        install_res.returncode == 0
+    ), f"Dependency installation failed:\n{install_res.stdout}\n{install_res.stderr}"
+
+    result = subprocess.run(
+        ["pytest"], cwd=test_project_dir, capture_output=True, text=True
+    )
+
+    assert result.returncode == 0, f"Pytest failed:\n{result.stdout}\n{result.stderr}"
