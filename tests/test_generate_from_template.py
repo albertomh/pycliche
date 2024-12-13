@@ -1,3 +1,4 @@
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -113,7 +114,6 @@ def test_generated_project_tests_run_successfully(
     copier_copy: Callable[[dict], None],
     copier_input_data: dict,
     test_project_dir: Path,
-    test_project_name: str,
 ):
     copier_copy(copier_input_data)
 
@@ -132,3 +132,28 @@ def test_generated_project_tests_run_successfully(
     )
 
     assert result.returncode == 0, f"Pytest failed:\n{result.stdout}\n{result.stderr}"
+
+
+def test_generated_project_pre_commit_hooks_run_successfully(
+    copier_copy: Callable[[dict], None],
+    copier_input_data: dict,
+    test_project_dir: Path,
+):
+    copier_copy(copier_input_data)
+
+    # pre-commit will only run against files tracked by git
+    subprocess.run(["git", "init"], cwd=test_project_dir, check=True)
+    subprocess.run(["git", "add", "."], cwd=test_project_dir, check=True)
+
+    env = os.environ.copy()
+    env["SKIP"] = "no-commit-to-branch"
+    pre_commit_result = subprocess.run(
+        ["uv", "run", "pre-commit", "run", "--all-files"],
+        cwd=test_project_dir,
+        env=env,
+        capture_output=True,
+        text=True,
+    )
+    assert (
+        pre_commit_result.returncode == 0
+    ), f"Pre-commit hooks failed:\n{pre_commit_result.stdout}\n{pre_commit_result.stderr}"
