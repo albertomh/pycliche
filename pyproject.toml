@@ -20,6 +20,9 @@ test = [
     "pyyaml>=6.0.2",
 ]
 
+[tool.pytest.ini_options]
+addopts = "--pdbcls=IPython.terminal.debugger:Pdb"
+
 [tool.ruff]
 exclude = [".pdbrc"]
 extend-exclude = ["*project_name*"]
