@@ -69,6 +69,19 @@ uv add some-package
 Dependabot is configured to run weekly and update Python packages (minor & patch) and
 GitHub Actions. See [.github/dependabot.yaml](.github/dependabot.yaml).
 {%endif%}
+### Logging
+
+`{{project_name}}` uses [structlog](https://www.structlog.org/en/stable/) for structured logging.
+The logging configuration is defined in `logging.py`. Use the `configure_logging` function
+to set up logging when the application starts:
+
+```python
+from logging import configure_logging
+configure_logging()
+
+logger = structlog.get_logger()
+logger.info("{{project_name}} running", key="value")
+
 ### Style
 
 Code style is enforced by pre-commit hooks. Linter rules are configured in the `ruff`
