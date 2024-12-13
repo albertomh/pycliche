@@ -17,5 +17,6 @@ runs:
         version: "0.5.4"
     - run: |
         uv sync --group test
+        uv pip install pre-commit
         uv run -m pytest tests/ -s -vvv -W always
       shell: bash
