@@ -125,3 +125,12 @@ For more information, consult the [release-please-action project](https://github
 
 The main [README](../README.md) includes a GIF showcasing generating a project using
 `pycliche`. To record a new demo, record the output of running `docs/media/auto_pycliche_demo.sh`.
+
+Convert to a gif with:
+
+```sh
+# speed up video by 2x (PTS/2)
+ffmpeg -i pycliche-2.9.1x-demo.mov -filter:v "setpts=PTS/2,fps=60" -an pycliche-2.9.1x-demo_fast.mov
+# convert to GIF
+ffmpeg -i pycliche-2.9.1x-demo_fast.mov -vf "fps=15,scale=iw:-1:flags=lanczos" -loop 0 pycliche-2.9.1x-demo.gif
+```
