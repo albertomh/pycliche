@@ -27,6 +27,7 @@ Projects created using `pycliche` include:
 - A basic Python package and entrypoint, configured via a `pyproject.toml`.
 - Dependencies managed via `uv`, using a `uv.lock` file for consistent and reproducible builds.
 - IPython as the default shell.
+- Simple configuration to enhance your logs with `structlog`.
 - Scaffolding for unit tests run via `pytest`.
 - Out-of-the-box code coverage reporting with `coverage.py`.
 - Batteries-included `pre-commit` hook configuration to lint & format code, and run SAST.
