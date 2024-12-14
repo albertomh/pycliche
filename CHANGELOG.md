@@ -6,6 +6,13 @@ Notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.9.1](https://github.com/albertomh/pycliche/compare/v2.9.0...v2.9.1) (2024-12-14)
+
+
+### Documentation
+
+* Add new wordmark to README ([#58](https://github.com/albertomh/pycliche/issues/58)) ([b28cac0](https://github.com/albertomh/pycliche/commit/b28cac0884396bce5258f783a5bf23806d10f983))
+
 ## [2.9.0](https://github.com/albertomh/pycliche/compare/v2.8.0...v2.9.0) (2024-12-13)
 
 
