@@ -134,7 +134,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-* Switch from cookiecutter to copier as the project templating tool.
+* **BREAKING**: Switch from cookiecutter to copier as the project templating tool.
 
 ### Removed
 
