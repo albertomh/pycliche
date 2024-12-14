@@ -101,3 +101,11 @@ The developer README ([docs/README-dev.md](docs/README-dev.md)) covers how to wo
   - [GitHub Personal Access Token](docs/README-dev.md#github-personal-access-token)
 
 - [Record demo](docs/README-dev.md#record-demo)
+
+---
+
+## Acknowledgements
+
+Several tooling choices have been guided by the work of [Adam Johnson](https://adamj.eu/tech/).
+
+The `pycliche` logo is typeset in [Allerta Stencil](https://fonts.google.com/specimen/Allerta+Stencil).
