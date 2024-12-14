@@ -41,7 +41,11 @@ Optionally, for projects intended to be hosted on GitHub, also include:
   - Run `pre-commit` hooks and `pytest` as part of a Continuous Integration pipeline.
 - A `dependabot` configuration to keep Python packages & GitHub Actions up to date.
 
-![Creating a new Python project using pycliche 2.3.0](docs/media/pycliche-demo-2.3.0-sm.gif)
+<p align="center">
+  <!-- markdownlint-disable MD013 line-length -->
+  <img src="docs/media/pycliche-demo-2.9.1.gif" alt="Creating a Python project using pycliche 2.9.1"/>
+  <!-- markdownlint-enable MD013 line-length -->
+</p>
 
 ## Prerequisites
 

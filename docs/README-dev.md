@@ -114,7 +114,7 @@ In order for Release Please to automate the above process, a GitHub Actions secr
 `PYCLICHE_RELEASE_PLEASE_TOKEN` must exist in GitHub ([albertomh/pycliche/settings/secrets/actions](albertomh/pycliche/settings/secrets/actions)).
 The contents of this secret must be a Personal Access Token (PAT) with the following permissions:
 
-```text
+```yaml
 contents: write
 pull-requests: write
 ```

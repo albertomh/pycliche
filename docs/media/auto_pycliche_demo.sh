@@ -10,7 +10,7 @@ fi
 
 sleep 3
 
-command="uvx copier copy gh:albertomh/pycliche my_project"
+command="uvx copier copy --trust gh:albertomh/pycliche my_project"
 
 printf "\n"
 printf "❯ %s" "$current_prompt"
