@@ -11,6 +11,7 @@ repos:
     rev: v5.0.0
     hooks:
       - id: check-added-large-files
+        exclude: "^docs/media/pycliche_wordmark-logo.xcf"
       - id: check-docstring-first
       - id: check-merge-conflict
       - id: check-toml

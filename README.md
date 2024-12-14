@@ -1,13 +1,13 @@
-# pycliché
+<!-- markdownlint-disable MD041 first-line-heading/first-line-h1 -->
 
 <!-- markdownlint-disable MD033 no-inline-html -->
 <p align="center">
   <!-- markdownlint-disable MD013 line-length -->
-  <img src="docs/media/pycliche-logo-sm.webp" alt="pycliche logo - a printing plate embossed with the Python logo"/>
+  <img src="docs/media/pycliche_wordmark-logo.webp" alt="pycliché logo - a printing plate embossed with the Python logo and the word 'pycliché'"/>
   <!-- markdownlint-enable MD013 line-length -->
 </p>
 
-A Python project template with opinionated tooling.
+`pycliche` - a Python project template with opinionated tooling.
 
 [![python: 3.10](https://img.shields.io/badge/>=3.10-4584b6?logo=python&logoColor=ffde57)](https://docs.python.org/3.10/whatsnew/3.10.html)
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/albertomh/pycliche/main/docs/media/copier-badge.json)](https://github.com/copier-org/copier)
