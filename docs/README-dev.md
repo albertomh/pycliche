@@ -89,12 +89,21 @@ pre-commit hook. Valid commit types are defined in `.commitlintrc.ts`.
 
 ## Test
 
-`pytest` is defined as a test dependency. Run unit tests with:
+Run all tests using `pytest` with:
 
 ```sh
-uv sync --group test
-uv run -m pytest tests/ [-s] [-vvv] [-W always] [--pdb]
+just test
 ```
+
+Tests have marks, allowing you to run a subset:
+
+```sh
+just test -m unit
+# or
+just test -m "not smoke"
+```
+
+See the `tool.pytest.ini_options` table in `pyproject.toml` for a list of all marks.
 
 ## Release
 
@@ -130,7 +139,7 @@ Convert to a gif with:
 
 ```sh
 # speed up video by 2x (PTS/2)
-ffmpeg -i pycliche-2.9.1x-demo.mov -filter:v "setpts=PTS/2,fps=60" -an pycliche-2.9.1x-demo_fast.mov
+ffmpeg -i pycliche-M.m.p-demo.mov -filter:v "setpts=PTS/2,fps=60" -an pycliche-M.m.p-demo_fast.mov
 # convert to GIF
-ffmpeg -i pycliche-2.9.1x-demo_fast.mov -vf "fps=15,scale=iw:-1:flags=lanczos" -loop 0 pycliche-2.9.1x-demo.gif
+ffmpeg -i pycliche-M.m.p-demo_fast.mov -vf "fps=15,scale=iw:-1:flags=lanczos" -loop 0 pycliche-M.m.p-demo.gif
 ```
