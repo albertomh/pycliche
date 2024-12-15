@@ -6,6 +6,14 @@ Notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.10.0](https://github.com/albertomh/pycliche/compare/v2.9.1...v2.10.0) (2024-12-15)
+
+
+### Features
+
+* Add json, case-conflict pre-commit hooks to project template ([#65](https://github.com/albertomh/pycliche/issues/65)) ([359dc26](https://github.com/albertomh/pycliche/commit/359dc2661c3577f54053987bf69a39d2688ab22b))
+* Add pytest marks to pyproject.toml in project template ([#63](https://github.com/albertomh/pycliche/issues/63)) ([c787b93](https://github.com/albertomh/pycliche/commit/c787b9343fb4d546819f590cdbc6306d92970d59))
+
 ## [2.9.1](https://github.com/albertomh/pycliche/compare/v2.9.0...v2.9.1) (2024-12-14)
 
 
