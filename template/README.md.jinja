@@ -102,7 +102,21 @@ Valid commit types are defined in `.commitlintrc.ts`.
 
 `pytest` and `coverage` are defined as test dependencies.
 
-Run `just test` to execute all unit tests and report on code coverage.
+Run all tests and report on code coverage:
+
+```sh
+just test <marker>
+```
+
+Tests can have marks, allowing you to run only a subset:
+
+```sh
+just test -m unit
+# or
+just test -m "not smoke"
+```
+
+See the `tool.pytest.ini_options` table in `pyproject.toml` for a list of all marks.
 {%if is_github_project%}
 ## Release
 

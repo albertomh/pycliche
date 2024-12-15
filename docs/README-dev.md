@@ -95,7 +95,7 @@ Run all tests using `pytest` with:
 just test
 ```
 
-Tests have marks, allowing you to run a subset:
+Tests have marks, allowing you to run only a subset:
 
 ```sh
 just test -m unit
