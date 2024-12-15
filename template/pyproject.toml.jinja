@@ -19,6 +19,28 @@ test = [
     "pytest>=8.3.3",
 ]
 
+[tool.pytest.ini_options]
+addopts = [
+    "--pdbcls=IPython.terminal.debugger:TerminalPdb",
+]
+markers = [
+    "integration",
+    "slow",
+    "smoke",
+    "unit",
+]
+
+[tool.coverage.report]
+omit = [
+  "*/tests/*"
+]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "def __str__",
+    "if settings.debug",
+]
+
 [tool.ruff]
 exclude = [".pdbrc"]
 indent-width = 4
@@ -59,20 +81,4 @@ source = [
 ]
 omit = [
   "*/tests/*"
-]
-
-[tool.pytest.ini_options]
-addopts = [
-    "--pdbcls=IPython.terminal.debugger:TerminalPdb",
-]
-
-[tool.coverage.report]
-omit = [
-  "*/tests/*"
-]
-exclude_lines = [
-    "pragma: no cover",
-    "def __repr__",
-    "def __str__",
-    "if settings.debug",
 ]
