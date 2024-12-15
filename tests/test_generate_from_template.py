@@ -1,6 +1,5 @@
 import os
 import subprocess
-import sys
 from pathlib import Path
 from typing import Callable
 
@@ -69,25 +68,12 @@ def test_is_github_project(
 
 
 def test_version_is_importable(
-    copier_copy: Callable[[dict], None],
-    copier_input_data: dict,
-    test_project_dir: Path,
+    install_test_project,
     test_project_name: str,
 ):
-    copier_copy(copier_input_data)
-    subprocess.run(
-        [sys.executable, "-m", "pip", "install", str(test_project_dir)],
-        check=True,
-    )
-
     from importlib.metadata import version
 
     assert version(test_project_name) == "0.1.0"
-
-    subprocess.run(
-        [sys.executable, "-m", "pip", "uninstall", "-y", test_project_name],
-        check=True,
-    )
 
 
 def test_generated_yaml_is_valid(

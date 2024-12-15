@@ -1,5 +1,6 @@
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 from typing import Callable
 
@@ -87,6 +88,28 @@ def pytest_sessionstart(session):
     """Hook to perform initial setup before all tests."""
     if not PYCLICHE_TEST_TEMP_DIR.exists():
         PYCLICHE_TEST_TEMP_DIR.mkdir()
+
+
+@pytest.fixture
+def install_test_project(
+    copier_copy: Callable[[dict], None],
+    copier_input_data: dict,
+    test_project_dir: Path,
+    test_project_name: str,
+):
+    """Generate a test project, install and remove it before/after a test."""
+    copier_copy(copier_input_data)
+    subprocess.run(
+        [sys.executable, "-m", "pip", "install", str(test_project_dir)],
+        check=True,
+    )
+
+    yield
+
+    subprocess.run(
+        [sys.executable, "-m", "pip", "uninstall", "-y", test_project_name],
+        check=True,
+    )
 
 
 def is_git_repo(path: Path) -> bool:
