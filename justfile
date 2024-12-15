@@ -7,4 +7,6 @@ default:
 
 test +args='':
   @uv sync --group test
-  @uv run -m pytest tests/ -s -vvv -W always --pdb "$@"
+  @uv run coverage run -m pytest tests/ -s -vvv -W always --pdb "$@"
+  @uv run coverage report
+  @uv run coverage html
