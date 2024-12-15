@@ -23,6 +23,12 @@ test = [
 
 [tool.pytest.ini_options]
 addopts = "--pdbcls=IPython.terminal.debugger:Pdb"
+markers = [
+    "integration",
+    "slow",
+    "smoke",
+    "unit",
+]
 
 [tool.ruff]
 exclude = [".pdbrc"]

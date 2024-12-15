@@ -3,9 +3,13 @@
 from pathlib import Path
 from typing import Callable
 
+import pytest
+
 from tests.conftest import is_git_repo
 
 
+@pytest.mark.integration
+@pytest.mark.smoke
 def test_is_git_repo(
     copier_copy: Callable[[dict], None],
     copier_input_data: dict,
@@ -16,6 +20,8 @@ def test_is_git_repo(
     assert is_git_repo(test_project_dir), "The test project is not a Git repository."
 
 
+@pytest.mark.integration
+@pytest.mark.smoke
 def test_uv_lockfile_exists(
     copier_copy: Callable[[dict], None],
     copier_input_data: dict,

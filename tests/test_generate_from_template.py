@@ -9,15 +9,15 @@ import yaml
 from tests._utils import count_dirs_and_files
 
 
+@pytest.mark.integration
+@pytest.mark.smoke
 def test_pycliche_jinja_templates_converted(
     copier_copy: Callable[[dict], None],
     copier_input_data: dict,
     pycliche_root_dir: Path,
     test_project_dir: Path,
 ):
-    """
-    Smoke test to validate the generation process converted Jinja templates to files.
-    """
+    """Validate that generating a project converts Jinja templates to files."""
     copier_copy(copier_input_data)
 
     template_files: list[Path] = [
@@ -42,6 +42,7 @@ def test_pycliche_jinja_templates_converted(
         ), f"Expected file {expected_file_path} not found."
 
 
+@pytest.mark.integration
 @pytest.mark.parametrize(
     "is_github_project, expected_directory_count, expected_file_count",
     [(True, 4, 15), (False, 3, 13)],
@@ -67,6 +68,7 @@ def test_is_github_project(
     assert num_files == expected_file_count
 
 
+@pytest.mark.integration
 def test_version_is_importable(
     install_test_project,
     test_project_name: str,
@@ -76,6 +78,7 @@ def test_version_is_importable(
     assert version(test_project_name) == "0.1.0"
 
 
+@pytest.mark.integration
 def test_generated_yaml_is_valid(
     copier_copy: Callable[[dict], None],
     copier_input_data: dict,
@@ -96,6 +99,8 @@ def test_generated_yaml_is_valid(
                 pytest.fail(f"Invalid YAML file: {file_path}\nError: {e}")
 
 
+@pytest.mark.integration
+@pytest.mark.smoke
 def test_generated_project_tests_run_successfully(
     copier_copy: Callable[[dict], None],
     copier_input_data: dict,
@@ -120,6 +125,8 @@ def test_generated_project_tests_run_successfully(
     assert result.returncode == 0, f"Pytest failed:\n{result.stdout}\n{result.stderr}"
 
 
+@pytest.mark.integration
+@pytest.mark.smoke
 def test_generated_project_pre_commit_hooks_run_successfully(
     copier_copy: Callable[[dict], None],
     copier_input_data: dict,

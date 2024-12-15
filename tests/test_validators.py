@@ -6,6 +6,7 @@ from typing import Callable
 import pytest
 
 
+@pytest.mark.unit
 @pytest.mark.parametrize(
     "question, answer, error_msg",
     [
@@ -42,6 +43,7 @@ def test_validator_is_empty(
         assert str(exc_info.value).endswith(error_msg)
 
 
+@pytest.mark.unit
 @pytest.mark.parametrize(
     "project_name, should_raise",
     [
@@ -82,6 +84,7 @@ def test_validator_project_name(
             pytest.fail(f"Unexpected exception raised: {str(e)}")
 
 
+@pytest.mark.unit
 @pytest.mark.parametrize(
     "author_email, should_raise",
     [
