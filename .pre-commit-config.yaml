@@ -14,15 +14,14 @@ repos:
         exclude: "^docs/media/pycliche_wordmark-logo.xcf"
       - id: check-docstring-first
       - id: check-merge-conflict
+      - id: check-json
       - id: check-toml
       - id: check-yaml
       - id: end-of-file-fixer
       - id: no-commit-to-branch
       - id: trailing-whitespace
         args: [ --markdown-linebreak-ext=md ]
-      # prevent committing inline conflict markers
-      - id: check-merge-conflict
-        args: [--assume-in-merge]
+      - id: check-case-conflict
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.8.2
