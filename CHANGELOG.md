@@ -6,6 +6,13 @@ Notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.11.0](https://github.com/albertomh/pycliche/compare/v2.10.0...v2.11.0) (2024-12-17)
+
+
+### Features
+
+* Editorconfig ignores trailing whitespace in markdown files ([#67](https://github.com/albertomh/pycliche/issues/67)) ([964a7e9](https://github.com/albertomh/pycliche/commit/964a7e90ddfdcef5ccb368e4a406b0b8135b9095))
+
 ## [2.10.0](https://github.com/albertomh/pycliche/compare/v2.9.1...v2.10.0) (2024-12-15)
 
 
