@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.11.0](https://github.com/albertomh/pycliche/compare/v2.10.1...v2.11.0) (2025-01-08)
+
+
+### Features
+
+* Bump version of pre-commit hooks used by template ([#73](https://github.com/albertomh/pycliche/issues/73)) ([16dbe5b](https://github.com/albertomh/pycliche/commit/16dbe5b9cbaa3032b3b6d43b7e37fc8c7f457991))
+
+
+### Documentation
+
+* In changelog, mention it is maintained by Release Please ([#71](https://github.com/albertomh/pycliche/issues/71)) ([cf2d774](https://github.com/albertomh/pycliche/commit/cf2d774ad01e335df1aa58b9f0dddf3c8cfd19e7))
+
 ## [2.10.1](https://github.com/albertomh/pycliche/compare/v2.10.0...v2.10.1) (2024-12-17)
 
 
