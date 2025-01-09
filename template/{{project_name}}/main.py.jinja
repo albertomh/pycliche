@@ -1,5 +1,17 @@
+import structlog
+
+from {{project_name}}.logging import configure_logging
+
+configure_logging()
+
+
 def main():
     """Entrypoint for {{project_name}}."""
+    logger = structlog.get_logger()
+    logger.info(
+        "{{project_name}} entrypoint called. "
+        "Generated using pycliche v{version('{{project_name}}')}"
+    )
     return
 
 
