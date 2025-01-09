@@ -98,6 +98,7 @@ def test_entrypoint_logs_info(
         f"{test_project_name} entrypoint called. Generated using pycliche v"
         in json_stdout["event"]
     )
+    assert json_stdout["level"] == "info"
 
 
 @pytest.mark.integration
