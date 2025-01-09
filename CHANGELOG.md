@@ -8,6 +8,111 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [3.0.0](https://github.com/albertomh/pycliche/compare/v2.12.0...v3.0.0) (2025-01-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* replace cookiecutter.json with copier.yaml
+* turn project template files into Jinja templates
+* remove references to cookiecutter in template files
+* rename '{{cookiecutter.project_name}}' directory to 'template'
+
+### Features
+
+* Add .editorconfig to the project template ([5ce92ae](https://github.com/albertomh/pycliche/commit/5ce92ae5bf2b7f898a7186e2448ccecf4a83d568))
+* Add .gitignore to the project template ([ae14bc8](https://github.com/albertomh/pycliche/commit/ae14bc8cd767ff1e538a54e030717b38a39e4c4c))
+* Add 'is_github_project' as a question ([cc53de5](https://github.com/albertomh/pycliche/commit/cc53de5e3301379d13630a4d56921293fddbf677))
+* Add a {{ _copier_conf.answers_file }} to the project template ([0f63512](https://github.com/albertomh/pycliche/commit/0f63512ba125d418238316b9493e8ca4e0fdee9f))
+* Add a justfile for common development tasks ([b30dcf0](https://github.com/albertomh/pycliche/commit/b30dcf00da99c4837e970087f7623c85a7db08d1))
+* Add a tests/ directory to the project template ([275d6ea](https://github.com/albertomh/pycliche/commit/275d6ea373454d55109534c62d83fe6c6c585103))
+* Add bandit as a pre-commit hook to the project template ([d1933d7](https://github.com/albertomh/pycliche/commit/d1933d7c475072bd779b68eea9e252a37f017e59))
+* Add changelog to the project template ([c63a6cc](https://github.com/albertomh/pycliche/commit/c63a6cc31dff451b91b92cbcb57a937f295c9f01))
+* Add commitlint & markdownlint as pre-commit hooks to the project template ([e9713a8](https://github.com/albertomh/pycliche/commit/e9713a8b2a037e622cd00d40b555dd3690bbc278))
+* Add common pre-commit hooks to project template ([7d195ef](https://github.com/albertomh/pycliche/commit/7d195ef4bf28d9131f9d612568fc635f41c7b016))
+* Add cookiecutter.json and minimal template package structure ([b016a34](https://github.com/albertomh/pycliche/commit/b016a344a98742962eff2aa19edcbd6332ade2ea))
+* Add dependabot config for Python packages & GitHub actions ([#17](https://github.com/albertomh/pycliche/issues/17)) ([5f92b34](https://github.com/albertomh/pycliche/commit/5f92b34a698eb2ee3a964818af1ab28b73d73f52))
+* Add IPython as the default shell for generated projects ([#41](https://github.com/albertomh/pycliche/issues/41)) ([e500d34](https://github.com/albertomh/pycliche/commit/e500d34fa7ad234351f9e2d8691ea3765e97b11f))
+* Add json, case-conflict pre-commit hooks to project template ([#65](https://github.com/albertomh/pycliche/issues/65)) ([359dc26](https://github.com/albertomh/pycliche/commit/359dc2661c3577f54053987bf69a39d2688ab22b))
+* Add mypy as a pre-commit hook to the project template ([0664ded](https://github.com/albertomh/pycliche/commit/0664ded7ef8fcd2242e107ea4448ecc7bb190cb8))
+* Add pre-commit & pytest GitHub Actions to template ([#23](https://github.com/albertomh/pycliche/issues/23)) ([db3612f](https://github.com/albertomh/pycliche/commit/db3612f9fe1cd269ad13a6148df0ef5979e6ee3c))
+* Add pytest and coverage as test dependencies in the project template ([7064407](https://github.com/albertomh/pycliche/commit/7064407e2a5cec689942719024db7867f0297486))
+* Add pytest marks to pyproject.toml in project template ([#63](https://github.com/albertomh/pycliche/issues/63)) ([c787b93](https://github.com/albertomh/pycliche/commit/c787b9343fb4d546819f590cdbc6306d92970d59))
+* Add pyupgrade pre-commit hook to project template ([8c96924](https://github.com/albertomh/pycliche/commit/8c96924969dff1224e5c5821cbde238fb4963977))
+* Add README to project template ([8d6660f](https://github.com/albertomh/pycliche/commit/8d6660fb9ab1d787a8082071ce327ede494291f6))
+* Add Release Please config & GitHub Action to the project template ([#12](https://github.com/albertomh/pycliche/issues/12)) ([2247823](https://github.com/albertomh/pycliche/commit/224782304359d35a1e995f43d3c748460249478f))
+* Add ruff as a pre-commit hook to the project template ([fdf11b7](https://github.com/albertomh/pycliche/commit/fdf11b7488406f603056cd3dce0519589e0543f1))
+* Add structlog to the project template ([#52](https://github.com/albertomh/pycliche/issues/52)) ([67452be](https://github.com/albertomh/pycliche/commit/67452bef8c4c0515efb43ddd7f213c4dba255312))
+* Allow specifying authors for project template ([81287fb](https://github.com/albertomh/pycliche/commit/81287fb1eb982cc79d07a3f05baf33c22589c9da))
+* Bump version of pre-commit hooks used by template ([#73](https://github.com/albertomh/pycliche/issues/73)) ([16dbe5b](https://github.com/albertomh/pycliche/commit/16dbe5b9cbaa3032b3b6d43b7e37fc8c7f457991))
+* Configure pytest to use ipdb as default debugger ([#43](https://github.com/albertomh/pycliche/issues/43)) ([8dc801a](https://github.com/albertomh/pycliche/commit/8dc801a7beec532b2e6f2ef4723ca04c6ff6eda0))
+* Enable additional flake8 plugin rules for ruff linter in project template ([#48](https://github.com/albertomh/pycliche/issues/48)) ([62c3a6f](https://github.com/albertomh/pycliche/commit/62c3a6fba45cc229ae15ae1d40f69c6d54dda996))
+* Enable flake8-bandit linting rules for ruff in project template ([#47](https://github.com/albertomh/pycliche/issues/47)) ([ede56c1](https://github.com/albertomh/pycliche/commit/ede56c18be5670a1bde738ba0fd648f90d1a2798))
+* Enable flake8-bugbear linting rules for ruff in project template ([#45](https://github.com/albertomh/pycliche/issues/45)) ([9fa4c5e](https://github.com/albertomh/pycliche/commit/9fa4c5e259b08cf1626a20c56f5832161ca35bfa))
+* Generated project's entrypoint issues a structlog message ([#75](https://github.com/albertomh/pycliche/issues/75)) ([7231c1e](https://github.com/albertomh/pycliche/commit/7231c1e3063e22957510951771f9eea09edebc6b))
+* Init git repo and generate uv lockfile after creating a project ([#32](https://github.com/albertomh/pycliche/issues/32)) ([933101e](https://github.com/albertomh/pycliche/commit/933101e527209d1147fa59482ef4816f4a70c45c))
+* Make .github/ and Release Please config conditional on 'is_github_project' ([6a4df3f](https://github.com/albertomh/pycliche/commit/6a4df3f19310358e775051cd8deb1dd73972e3ca))
+* Make template README sections conditional on 'is_github_project' ([8a68477](https://github.com/albertomh/pycliche/commit/8a68477b4c0b13b85f9415b51c22c6a79773ae78))
+* Markdownlint ignores changelog since generated by 'Release Please' ([6b33f16](https://github.com/albertomh/pycliche/commit/6b33f168cccfc32f462e4094cb397ea570101661))
+* Pre-commit hook to guard against committing merge conflict markers ([#55](https://github.com/albertomh/pycliche/issues/55)) ([fc16acc](https://github.com/albertomh/pycliche/commit/fc16accfce521cf199a4979d77a14be588151b22))
+* Python version can be passed to template ([f3820a6](https://github.com/albertomh/pycliche/commit/f3820a6f4291dcddc7f732a07bea9d1c87b22b7d))
+* Regex validator for the author_email question ([#37](https://github.com/albertomh/pycliche/issues/37)) ([45d8690](https://github.com/albertomh/pycliche/commit/45d869031289da0115c2a19a5de223952e613439))
+* Regex validator for the project_name question ([#35](https://github.com/albertomh/pycliche/issues/35)) ([1b45246](https://github.com/albertomh/pycliche/commit/1b452468d50d27821a56a276eeeee58c38f319ca))
+* Update ruff, commitlint, markdownlint pre-commit hooks in project template ([#38](https://github.com/albertomh/pycliche/issues/38)) ([b20ccc6](https://github.com/albertomh/pycliche/commit/b20ccc62e52773a03783ebd389dafbe7d65bb0ca))
+* Upgrade 'ruff' & 'bandit' git hooks in template ([#26](https://github.com/albertomh/pycliche/issues/26)) ([006c1f3](https://github.com/albertomh/pycliche/commit/006c1f3d8edbac54871c27f5017fd0d1b6b04d3e))
+
+
+### Bug Fixes
+
+* __version__ sourced from metadata instead of being hardcoded ([#33](https://github.com/albertomh/pycliche/issues/33)) ([a7cec2f](https://github.com/albertomh/pycliche/commit/a7cec2f8a49ff172e775dd44001a253e00075ca0))
+* Add 'deps' as a valid commit type in the project template ([#10](https://github.com/albertomh/pycliche/issues/10)) ([59e29f1](https://github.com/albertomh/pycliche/commit/59e29f1fcf1d1b1cdc9d56b6f4e5e3d80985a034))
+* **docs:** Fix custom copier badge for README ([ae98fd6](https://github.com/albertomh/pycliche/commit/ae98fd65b866e9e696f6a6a4e900575fd5e63ba8))
+* Editorconfig ignores trailing whitespace in markdown files ([#69](https://github.com/albertomh/pycliche/issues/69)) ([27f7e40](https://github.com/albertomh/pycliche/commit/27f7e40d5be52895028b47492cde43f7f377e1c5))
+* Indentation issue in project template's .pre-commit-config.yaml ([#51](https://github.com/albertomh/pycliche/issues/51)) ([e149593](https://github.com/albertomh/pycliche/commit/e149593b96694e6f81cee0bd0befcd5faaf55bdd))
+* Populate 'tool.ruff.target-version' in generated pyproject.toml ([ced39ee](https://github.com/albertomh/pycliche/commit/ced39ee194ffd544351a6a834d638715f0932d78))
+* Tag format in project template's 'Release Please manifest' ([#16](https://github.com/albertomh/pycliche/issues/16)) ([deb0572](https://github.com/albertomh/pycliche/commit/deb05726005f2b63d2cdafe550fb8037a17f8a05))
+
+
+### Dependencies
+
+* Add copier as a test dependency ([c4b8279](https://github.com/albertomh/pycliche/commit/c4b827935459a5110077c6b29cb7af3b469f5bc9))
+* Add pytest as a test dependency ([d947538](https://github.com/albertomh/pycliche/commit/d94753853ece8bd39ba46ad0d00f3511f5d95f4e))
+
+
+### Documentation
+
+* Add a changelog ([ba07991](https://github.com/albertomh/pycliche/commit/ba079919bbe1310cdc6dc23befac2bc3a820ac95))
+* Add demo of generating project using 2.3.0 to README ([#27](https://github.com/albertomh/pycliche/issues/27)) ([d59449b](https://github.com/albertomh/pycliche/commit/d59449beee6fbb0d74a25ac596cdac0e4a4d1d86))
+* Add logo and badges to README ([9d9b381](https://github.com/albertomh/pycliche/commit/9d9b38142ba4a55739b29c1c7c4438ae4ae323a3))
+* Add new wordmark to README ([#58](https://github.com/albertomh/pycliche/issues/58)) ([b28cac0](https://github.com/albertomh/pycliche/commit/b28cac0884396bce5258f783a5bf23806d10f983))
+* Development practices added to README ([fc30ce4](https://github.com/albertomh/pycliche/commit/fc30ce4129484657a4571d7bd9b1bb7859815793))
+* Development style and conventions defined in project template README ([b931b5c](https://github.com/albertomh/pycliche/commit/b931b5cb8b9f2d309906974aa38a659bf60a322a))
+* Document dependency management and updating pre-commit hooks ([48bca13](https://github.com/albertomh/pycliche/commit/48bca132e6cd7eb0a122c807efdece786d4cdfcf))
+* Document how to update existing project to newer version of pycliche ([7b18656](https://github.com/albertomh/pycliche/commit/7b1865646aa06ec94b977471d4cc94a2c4a6475c))
+* Document prerequisites ([72c5ae5](https://github.com/albertomh/pycliche/commit/72c5ae518e5583fdde9aa69b1af1d21f9ae2332a))
+* Document release process and use of Release Please ([#13](https://github.com/albertomh/pycliche/issues/13)) ([16f86cb](https://github.com/albertomh/pycliche/commit/16f86cb714006c7687581b433f0080ee1f25b3f3))
+* Document style conventions in README ([c79e526](https://github.com/albertomh/pycliche/commit/c79e526eb785ff1a2aacb6acdf190d8a318fceaa))
+* Document the GitHub PAT needed to automate Release Please ([824f848](https://github.com/albertomh/pycliche/commit/824f8483927714809c5d86398bcf732515b1e31b))
+* Document the justfile and the 'test' recipe in the project template README ([7abec9b](https://github.com/albertomh/pycliche/commit/7abec9b22b16940c0261f69c28eafe6d634432c1))
+* Document which features of generated projects are conditional on 'is_github_project' ([cb35680](https://github.com/albertomh/pycliche/commit/cb35680e51687ce8134f19a4a8320856436649d2))
+* Expand on how to start a new project ([60479dd](https://github.com/albertomh/pycliche/commit/60479ddd9a279e67d879839b363def69027e314f))
+* How to generate a new project using pycliche ([1992b7c](https://github.com/albertomh/pycliche/commit/1992b7c73751b4d8b1f572afdfea80b366d67910))
+* In changelog, mention it is maintained by Release Please ([#71](https://github.com/albertomh/pycliche/issues/71)) ([cf2d774](https://github.com/albertomh/pycliche/commit/cf2d774ad01e335df1aa58b9f0dddf3c8cfd19e7))
+* License under the MIT License ([8c9da51](https://github.com/albertomh/pycliche/commit/8c9da5117f4fda656c9f2af7543a1e3148a6b54c))
+* Readme section on running pytest tests ([0becfbf](https://github.com/albertomh/pycliche/commit/0becfbfe32051447f69c72db4ac777cea9043422))
+* Update changelog ([4858b3a](https://github.com/albertomh/pycliche/commit/4858b3aa8e54073f1f00d07926fc4460e9a51232))
+* Update changelog with switch to copier ([5410bfe](https://github.com/albertomh/pycliche/commit/5410bfe5ff637ea96a411d46c3d8b28c46bad6e3))
+* Update README to reflect switch to copier ([18b0360](https://github.com/albertomh/pycliche/commit/18b036092a85797087e4bf9a3297ce4f4156bcc5))
+* Updating dependencies in the template ([#31](https://github.com/albertomh/pycliche/issues/31)) ([a400a1e](https://github.com/albertomh/pycliche/commit/a400a1ea3e8506a71b77d666578a5cb0a5070e43))
+
+
+### Code Refactoring
+
+* Remove references to cookiecutter in template files ([fa4cf36](https://github.com/albertomh/pycliche/commit/fa4cf360ea369ed79bb6b29ccfe6759556d23437))
+* Rename '{{cookiecutter.project_name}}' directory to 'template' ([46ad12b](https://github.com/albertomh/pycliche/commit/46ad12b71f9171722f283cc6256da7dc5f976d8d))
+* Replace cookiecutter.json with copier.yaml ([fcaf178](https://github.com/albertomh/pycliche/commit/fcaf1781c4538d95a127fa7d4e9182cbc444a62c))
+* Turn project template files into Jinja templates ([9f87e5e](https://github.com/albertomh/pycliche/commit/9f87e5efc9b7e7e1564630d0b8f21170c7f790d8))
+
 ## [2.12.0](https://github.com/albertomh/pycliche/compare/v2.11.0...v2.12.0) (2025-01-09)
 
 
