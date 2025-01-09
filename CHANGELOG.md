@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.12.0](https://github.com/albertomh/pycliche/compare/v2.11.0...v2.12.0) (2025-01-09)
+
+
+### Features
+
+* Generated project's entrypoint issues a structlog message ([#75](https://github.com/albertomh/pycliche/issues/75)) ([2c17615](https://github.com/albertomh/pycliche/commit/2c17615f32b12c29b88358ba75399bf9aadcce16))
+
 ## [2.11.0](https://github.com/albertomh/pycliche/compare/v2.10.1...v2.11.0) (2025-01-08)
 
 
