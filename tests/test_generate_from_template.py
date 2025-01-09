@@ -1,5 +1,8 @@
+import json
 import os
+import re
 import subprocess
+import sys
 from pathlib import Path
 from typing import Callable
 
@@ -76,6 +79,30 @@ def test_version_is_importable(
     from importlib.metadata import version
 
     assert version(test_project_name) == "0.1.0"
+
+
+@pytest.mark.integration
+@pytest.mark.smoke
+def test_entrypoint_logs_info(
+    install_test_project,
+    test_project_name: str,
+):
+    result = subprocess.run(
+        [sys.executable, "-m", f"{test_project_name}.main"],
+        check=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+
+    json_stdout = json.loads(result.stdout)
+    expected_pattern = (
+        rf"{test_project_name} entrypoint called\. Generated using pycliche "
+        r"v\d+\.\d+\.\d+"
+    )
+    assert re.match(
+        expected_pattern, json_stdout["event"]
+    ), f"Unexpected log: {json_stdout['event']}"
+    assert json_stdout["level"] == "info"
 
 
 @pytest.mark.integration
