@@ -7,6 +7,7 @@ default:
 
 test +args='':
   @uv sync --group test
+  @uv pip install -e .
   @uv run coverage run -m pytest tests/ -s -vvv -W always --pdb "$@"
   @uv run coverage report
   @uv run coverage html
