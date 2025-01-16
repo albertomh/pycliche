@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.12.1](https://github.com/albertomh/pycliche/compare/v2.12.0...v2.12.1) (2025-01-16)
+
+
+### Bug Fixes
+
+* Install the project in editable mode as part of the 'test' recipe ([#80](https://github.com/albertomh/pycliche/issues/80)) ([aa443e6](https://github.com/albertomh/pycliche/commit/aa443e605bb561a0d80b00fbf4f19be22aa76d48))
+
 ## [2.12.0](https://github.com/albertomh/pycliche/compare/v2.11.0...v2.12.0) (2025-01-09)
 
 
