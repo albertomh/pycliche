@@ -95,6 +95,12 @@ Run all tests using `pytest` with:
 just test
 ```
 
+Pass flags as you normally would to pytest eg.
+
+```sh
+just test -k some_keyword_expression
+```
+
 Tests have marks, allowing you to run only a subset:
 
 ```sh
