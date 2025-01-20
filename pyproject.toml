@@ -3,7 +3,7 @@ name = "pycliche"
 version = "2.12.1"
 description = ""
 authors = [
-    {name = "Alberto Morón Hernández", email = "<alberto.moronh@gmail.com>"}
+    {name = "Alberto Morón Hernández", email = "alberto.moronh@gmail.com"}
 ]
 license = "MIT"
 readme = "README.md"
