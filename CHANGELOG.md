@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.13.0](https://github.com/albertomh/pycliche/compare/v2.12.1...v2.13.0) (2025-01-20)
+
+
+### Features
+
+* Add flake8-logging-format as a ruff linter rule ([#82](https://github.com/albertomh/pycliche/issues/82)) ([e4f36ee](https://github.com/albertomh/pycliche/commit/e4f36ee713934cfaec005fb1579b53fb4f1a33f2))
+
+
+### Bug Fixes
+
+* Formatting is consistent in gen. project's .pre-commit-config.yaml ([#84](https://github.com/albertomh/pycliche/issues/84)) ([1a4db0b](https://github.com/albertomh/pycliche/commit/1a4db0be3d74ac3b00cf7bd2b931f9d1f1ca99c9))
+
 ## [2.12.1](https://github.com/albertomh/pycliche/compare/v2.12.0...v2.12.1) (2025-01-16)
 
 
