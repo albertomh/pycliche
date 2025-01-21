@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.13.1](https://github.com/albertomh/pycliche/compare/v2.13.0...v2.13.1) (2025-01-21)
+
+
+### Bug Fixes
+
+* Ensure a venv exists as part of the 'just test' recipe ([#86](https://github.com/albertomh/pycliche/issues/86)) ([46a4f07](https://github.com/albertomh/pycliche/commit/46a4f0789de196f919d6138f679870be07b5efc4))
+
 ## [2.13.0](https://github.com/albertomh/pycliche/compare/v2.12.1...v2.13.0) (2025-01-20)
 
 
