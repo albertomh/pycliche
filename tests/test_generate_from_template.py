@@ -1,13 +1,13 @@
 import json
 import os
 import re
-import subprocess
-import sys
 from pathlib import Path
 from typing import Callable
 
 import pytest
 import yaml
+from sh import ErrorReturnCode, git, python, uv
+from sh import pytest as sh_pytest
 
 from tests._utils import count_dirs_and_files
 
@@ -87,14 +87,9 @@ def test_entrypoint_logs_info(
     install_test_project,
     test_project_name: str,
 ):
-    result = subprocess.run(
-        [sys.executable, "-m", f"{test_project_name}.main"],
-        check=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-    )
+    result = python("-m", f"{test_project_name}.main")
 
-    json_stdout = json.loads(result.stdout)
+    json_stdout = json.loads(result)
     assert re.match(rf"{test_project_name} v\d+\.\d+\.\d+", json_stdout["event"]), (
         f"Unexpected log: {json_stdout['event']}"
     )
@@ -131,21 +126,23 @@ def test_generated_project_tests_run_successfully(
 ):
     copier_copy(copier_input_data)
 
-    install_res = subprocess.run(
-        ["uv", "pip", "install", "-e", "."],
-        cwd=test_project_dir,
-        capture_output=True,
-        text=True,
-    )
-    assert install_res.returncode == 0, (
-        f"Dependency installation failed:\n{install_res.stdout}\n{install_res.stderr}"
-    )
+    try:
+        install_res = uv(
+            "pip",
+            "install",
+            "-e",
+            ".",
+            _cwd=test_project_dir,
+        )
+    except ErrorReturnCode:
+        pytest.fail(
+            f"Dependency installation failed:\n{install_res.stdout}\n{install_res.stderr}"
+        )
 
-    result = subprocess.run(
-        ["pytest"], cwd=test_project_dir, capture_output=True, text=True
-    )
-
-    assert result.returncode == 0, f"Pytest failed:\n{result.stdout}\n{result.stderr}"
+    try:
+        result = sh_pytest(_cwd=test_project_dir)
+    except ErrorReturnCode:
+        pytest.fail(f"Pytest failed:\n{result.stdout}\n{result.stderr}")
 
 
 @pytest.mark.integration
@@ -158,19 +155,20 @@ def test_generated_project_pre_commit_hooks_run_successfully(
     copier_copy(copier_input_data)
 
     # pre-commit will only run against files tracked by git
-    subprocess.run(["git", "init"], cwd=test_project_dir, check=True)
-    subprocess.run(["git", "add", "."], cwd=test_project_dir, check=True)
+    git("init", _cwd=test_project_dir)
+    git("add", ".", _cwd=test_project_dir)
 
     env = os.environ.copy()
     env["SKIP"] = "no-commit-to-branch"
-    pre_commit_result = subprocess.run(
-        ["uv", "run", "pre-commit", "run", "--all-files"],
-        cwd=test_project_dir,
-        env=env,
-        capture_output=True,
-        text=True,
+    pre_commit_res = uv(
+        "run",
+        "pre-commit",
+        "run",
+        "--all-files",
+        _cwd=test_project_dir,
+        _env=env,
+        _return_cmd=True,
     )
-    assert pre_commit_result.returncode == 0, (
-        f"Pre-commit hooks failed:\n{pre_commit_result.stdout}\n"
-        f"{pre_commit_result.stderr}"
+    assert pre_commit_res.exit_code == 0, (
+        f"Pre-commit hooks failed:\n{pre_commit_res.stdout}\n{pre_commit_res.stderr}"
     )

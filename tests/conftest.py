@@ -1,11 +1,10 @@
 import shutil
-import subprocess
-import sys
 from pathlib import Path
 from typing import Callable
 
 import pytest
 from copier.cli import CopierApp
+from sh import ErrorReturnCode, git, python
 
 PYCLICHE_TEST_TEMP_DIR = Path("/", "tmp", "pycliche_test")
 
@@ -99,28 +98,17 @@ def install_test_project(
 ):
     """Generate a test project, install and remove it before/after a test."""
     copier_copy(copier_input_data)
-    subprocess.run(
-        [sys.executable, "-m", "pip", "install", str(test_project_dir)],
-        check=True,
-    )
+    python("-m", "pip", "install", str(test_project_dir))
 
     yield
 
-    subprocess.run(
-        [sys.executable, "-m", "pip", "uninstall", "-y", test_project_name],
-        check=True,
-    )
+    python("-m", "pip", "uninstall", "-y", test_project_name)
 
 
 def is_git_repo(path: Path) -> bool:
     """Check if the given path is a Git repository."""
     try:
-        subprocess.run(
-            ["git", "-C", str(path), "status"],
-            check=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-        )
+        git("-C", str(path), "status")
         return True
-    except subprocess.CalledProcessError:
+    except ErrorReturnCode:
         return False
