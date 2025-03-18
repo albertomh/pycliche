@@ -307,7 +307,7 @@ wheels = [
 
 [[package]]
 name = "pycliche"
-version = "2.12.1"
+version = "2.13.1"
 source = { virtual = "." }
 dependencies = [
     { name = "ipython" },
@@ -325,7 +325,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "ipython", specifier = ">=8.30.0,<9.0.0" },
-    { name = "structlog", specifier = ">=24.4.0,<25.0.0" },
+    { name = "structlog", specifier = ">=25.2.0,<26.0.0" },
 ]
 
 [package.metadata.requires-dev]
@@ -480,11 +480,11 @@ wheels = [
 
 [[package]]
 name = "structlog"
-version = "24.4.0"
+version = "25.2.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/78/a3/e811a94ac3853826805253c906faa99219b79951c7d58605e89c79e65768/structlog-24.4.0.tar.gz", hash = "sha256:b27bfecede327a6d2da5fbc96bd859f114ecc398a6389d664f62085ee7ae6fc4", size = 1348634 }
+sdist = { url = "https://files.pythonhosted.org/packages/78/b8/d3670aec25747e32d54cd5258102ae0d69b9c61c79e7aa326be61a570d0d/structlog-25.2.0.tar.gz", hash = "sha256:d9f9776944207d1035b8b26072b9b140c63702fd7aa57c2f85d28ab701bd8e92", size = 1367438 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/bf/65/813fc133609ebcb1299be6a42e5aea99d6344afb35ccb43f67e7daaa3b92/structlog-24.4.0-py3-none-any.whl", hash = "sha256:597f61e80a91cc0749a9fd2a098ed76715a1c8a01f73e336b746504d1aad7610", size = 67180 },
+    { url = "https://files.pythonhosted.org/packages/51/eb/244741c1abf7b4092686db0798a4c43491298f40ddec4226f5c4f6b5d3eb/structlog-25.2.0-py3-none-any.whl", hash = "sha256:0fecea2e345d5d491b72f3db2e5fcd6393abfc8cd06a4851f21fcd4d1a99f437", size = 68448 },
 ]
 
 [[package]]
