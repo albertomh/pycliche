@@ -40,9 +40,9 @@ def test_pycliche_jinja_templates_converted(
     for file_name in template_file_names:
         expected_file_path = test_project_dir / file_name
 
-        assert (
-            expected_file_path.exists()
-        ), f"Expected file {expected_file_path} not found."
+        assert expected_file_path.exists(), (
+            f"Expected file {expected_file_path} not found."
+        )
 
 
 @pytest.mark.integration
@@ -95,9 +95,9 @@ def test_entrypoint_logs_info(
     )
 
     json_stdout = json.loads(result.stdout)
-    assert re.match(
-        rf"{test_project_name} v\d+\.\d+\.\d+", json_stdout["event"]
-    ), f"Unexpected log: {json_stdout['event']}"
+    assert re.match(rf"{test_project_name} v\d+\.\d+\.\d+", json_stdout["event"]), (
+        f"Unexpected log: {json_stdout['event']}"
+    )
     assert json_stdout["level"] == "info"
 
 
@@ -137,9 +137,9 @@ def test_generated_project_tests_run_successfully(
         capture_output=True,
         text=True,
     )
-    assert (
-        install_res.returncode == 0
-    ), f"Dependency installation failed:\n{install_res.stdout}\n{install_res.stderr}"
+    assert install_res.returncode == 0, (
+        f"Dependency installation failed:\n{install_res.stdout}\n{install_res.stderr}"
+    )
 
     result = subprocess.run(
         ["pytest"], cwd=test_project_dir, capture_output=True, text=True
@@ -170,6 +170,7 @@ def test_generated_project_pre_commit_hooks_run_successfully(
         capture_output=True,
         text=True,
     )
-    assert (
-        pre_commit_result.returncode == 0
-    ), f"Pre-commit hooks failed:\n{pre_commit_result.stdout}\n{pre_commit_result.stderr}"
+    assert pre_commit_result.returncode == 0, (
+        f"Pre-commit hooks failed:\n{pre_commit_result.stdout}\n"
+        f"{pre_commit_result.stderr}"
+    )
