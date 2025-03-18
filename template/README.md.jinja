@@ -10,7 +10,9 @@
 [![pytest](https://img.shields.io/badge/pytest-0A9EDC?logo=pytest&logoColor=white)](https://github.com/pytest-dev/pytest)
 [![coverage](https://img.shields.io/badge/😴_coverage-59aabd)](https://coverage.readthedocs.io/)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
-{%if is_github_project%}[![Release Please](https://img.shields.io/badge/📦_Release_Please-6C97BB)](https://github.com/googleapis/release-please){%endif%}
+{%if is_github_project%}
+[![Release Please](https://img.shields.io/badge/📦_Release_Please-6C97BB)](https://github.com/googleapis/release-please)
+{%endif%}
 
 ## Prerequisites
 
@@ -78,9 +80,11 @@ Dependencies are defined in the `pyproject.toml` file, with exact versions captu
 # add a dependency to the project
 uv add some-package
 ```
+
 {%if is_github_project%}
 Dependabot is configured to run weekly and update Python packages (minor & patch) and
 GitHub Actions. See [.github/dependabot.yaml](.github/dependabot.yaml).
+
 {%endif%}
 ### Logging
 
@@ -134,6 +138,7 @@ just test -m "not smoke"
 ```
 
 See the `tool.pytest.ini_options` table in `pyproject.toml` for a list of all marks.
+
 {%if is_github_project%}
 ## Release
 
@@ -159,6 +164,7 @@ pull-requests: write
 ```
 
 For more information, consult the [release-please-action project](https://github.com/googleapis/release-please-action).
+
 {%endif%}
 ---
 

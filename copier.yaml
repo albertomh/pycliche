@@ -52,3 +52,8 @@ is_github_project:
 _tasks:
     - "git init"
     - "uv lock"
+
+_envops:
+  # Jinja settings to remove whitespace
+  lstrip_blocks: true
+  trim_blocks: true
