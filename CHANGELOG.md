@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.14.1](https://github.com/albertomh/pycliche/compare/v2.14.0...v2.14.1) (2025-03-18)
+
+
+### Documentation
+
+* Add shields to generated projects' README ([#98](https://github.com/albertomh/pycliche/issues/98)) ([beff5ea](https://github.com/albertomh/pycliche/commit/beff5ea37ba12ee670ad75a14bdcbdd8b869818f))
+
 ## [2.14.0](https://github.com/albertomh/pycliche/compare/v2.13.1...v2.14.0) (2025-03-18)
 
 
