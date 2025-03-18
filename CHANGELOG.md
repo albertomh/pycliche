@@ -8,6 +8,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.14.0](https://github.com/albertomh/pycliche/compare/v2.13.1...v2.14.0) (2025-03-18)
+
+
+### Features
+
+* **ci:** Update uv.lock as part of Release Please action ([#96](https://github.com/albertomh/pycliche/issues/96)) ([4c8c823](https://github.com/albertomh/pycliche/commit/4c8c823542b450579eacf42d50bfa0612341c82e))
+* **deps:** Update ipython to v9 in project template ([#92](https://github.com/albertomh/pycliche/issues/92)) ([4aa5a30](https://github.com/albertomh/pycliche/commit/4aa5a3089502f7f2aa1539d9e043df25a6732968))
+* **deps:** Update pre-commit hooks in project template ([#93](https://github.com/albertomh/pycliche/issues/93)) ([d626e3b](https://github.com/albertomh/pycliche/commit/d626e3bd4fbb753344c9be388cb78451f405958e))
+* **deps:** Update structlog to v25 in project template ([#90](https://github.com/albertomh/pycliche/issues/90)) ([97b1896](https://github.com/albertomh/pycliche/commit/97b18964d5e1adc72906a1de75e347c2f95a96c2))
+
+
+### Bug Fixes
+
+* **ci:** Avoid redundant 'CI' workflow if merged PR was from Release Please ([#95](https://github.com/albertomh/pycliche/issues/95)) ([3c15910](https://github.com/albertomh/pycliche/commit/3c15910c0512b2ab797ae46ce5efaaccb377bcf3))
+
 ## [2.13.1](https://github.com/albertomh/pycliche/compare/v2.13.0...v2.13.1) (2025-01-21)
 
 
