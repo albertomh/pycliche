@@ -101,11 +101,12 @@ wheels = [
 
 [[package]]
 name = "ipython"
-version = "8.30.0"
+version = "9.0.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "colorama", marker = "sys_platform == 'win32'" },
     { name = "decorator" },
+    { name = "ipython-pygments-lexers" },
     { name = "jedi" },
     { name = "matplotlib-inline" },
     { name = "pexpect", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
@@ -114,9 +115,21 @@ dependencies = [
     { name = "stack-data" },
     { name = "traitlets" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/d8/8b/710af065ab8ed05649afa5bd1e07401637c9ec9fb7cfda9eac7e91e9fbd4/ipython-8.30.0.tar.gz", hash = "sha256:cb0a405a306d2995a5cbb9901894d240784a9f341394c6ba3f4fe8c6eb89ff6e", size = 5592205 }
+sdist = { url = "https://files.pythonhosted.org/packages/7d/ce/012a0f40ca58a966f87a6e894d6828e2817657cbdf522b02a5d3a87d92ce/ipython-9.0.2.tar.gz", hash = "sha256:ec7b479e3e5656bf4f58c652c120494df1820f4f28f522fb7ca09e213c2aab52", size = 4366102 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1d/f3/1332ba2f682b07b304ad34cad2f003adcfeb349486103f4b632335074a7c/ipython-8.30.0-py3-none-any.whl", hash = "sha256:85ec56a7e20f6c38fce7727dcca699ae4ffc85985aa7b23635a8008f918ae321", size = 820765 },
+    { url = "https://files.pythonhosted.org/packages/20/3a/917cb9e72f4e1a4ea13c862533205ae1319bd664119189ee5cc9e4e95ebf/ipython-9.0.2-py3-none-any.whl", hash = "sha256:143ef3ea6fb1e1bffb4c74b114051de653ffb7737a3f7ab1670e657ca6ae8c44", size = 600524 },
+]
+
+[[package]]
+name = "ipython-pygments-lexers"
+version = "1.1.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pygments" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ef/4c/5dd1d8af08107f88c7f741ead7a40854b8ac24ddf9ae850afbcf698aa552/ipython_pygments_lexers-1.1.1.tar.gz", hash = "sha256:09c0138009e56b6854f9535736f4171d855c8c08a563a0dcd8022f78355c7e81", size = 8393 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d9/33/1f075bf72b0b747cb3288d011319aaf64083cf2efef8354174e3ed4540e2/ipython_pygments_lexers-1.1.1-py3-none-any.whl", hash = "sha256:a9462224a505ade19a605f71f8fa63c2048833ce50abc86768a0d81d876dc81c", size = 8074 },
 ]
 
 [[package]]
@@ -324,7 +337,7 @@ test = [
 
 [package.metadata]
 requires-dist = [
-    { name = "ipython", specifier = ">=8.30.0,<9.0.0" },
+    { name = "ipython", specifier = ">=9.0.2,<10.0.0" },
     { name = "structlog", specifier = ">=25.2.0,<26.0.0" },
 ]
 
