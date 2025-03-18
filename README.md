@@ -9,6 +9,9 @@
 
 `pycliche` - a Python project template with opinionated tooling.
 
+Embracing [Boring Technology](https://boringtechnology.club/), fighting bloat, striving for
+simplicity.
+
 [![python: 3.10](https://img.shields.io/badge/>=3.10-4584b6?logo=python&logoColor=ffde57)](https://docs.python.org/3.10/whatsnew/3.10.html)
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/albertomh/pycliche/main/docs/media/copier-badge.json)](https://github.com/copier-org/copier)
 [![justfile](https://img.shields.io/badge/🤖_justfile-EFF1F3)](https://github.com/casey/just)
