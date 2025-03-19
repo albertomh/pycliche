@@ -321,7 +321,7 @@ wheels = [
 
 [[package]]
 name = "pycliche"
-version = "2.14.1"
+version = "2.14.2"
 source = { virtual = "." }
 dependencies = [
     { name = "ipython" },
