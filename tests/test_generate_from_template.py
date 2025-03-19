@@ -90,8 +90,11 @@ def test_entrypoint_logs_info(
     result = python("-m", f"{test_project_name}.main")
 
     json_stdout = json.loads(result)
-    assert re.match(rf"{test_project_name} v\d+\.\d+\.\d+", json_stdout["event"]), (
+    assert re.match(rf"{test_project_name}", json_stdout["event"]), (
         f"Unexpected log: {json_stdout['event']}"
+    )
+    assert re.match(r"v\d+\.\d+\.\d+", json_stdout["version"]), (
+        f"Unexpected log: {json_stdout['version']}"
     )
     assert json_stdout["level"] == "info"
 
