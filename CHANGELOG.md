@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.14.2](https://github.com/albertomh/pycliche/compare/v2.14.1...v2.14.2) (2025-03-19)
+
+
+### Bug Fixes
+
+* **ci:** Install project before running unit tests in CI ([#102](https://github.com/albertomh/pycliche/issues/102)) ([468cf46](https://github.com/albertomh/pycliche/commit/468cf46f12d4aba9fd366bc3e0de6992e3b17ae5))
+* Have structlog properly serialize unicode characters ([#100](https://github.com/albertomh/pycliche/issues/100)) ([5d90830](https://github.com/albertomh/pycliche/commit/5d90830709cf9fb008a1c32d7d7d7849442e225e))
+
 ## [2.14.1](https://github.com/albertomh/pycliche/compare/v2.14.0...v2.14.1) (2025-03-18)
 
 
