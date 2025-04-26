@@ -1,13 +1,13 @@
 # {{project_name}}
 
 [![python {{python_version}}](https://img.shields.io/badge/{{python_version}}-4584b6?logo=python&logoColor=ffde57)](https://docs.python.org/{{python_version}}/whatsnew/{{python_version}}.html)
-[![justfile](https://img.shields.io/badge/🤖_justfile-EFF1F3)](https://github.com/casey/just)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json&labelColor=261230&color=de60e9)](https://github.com/astral-sh/uv)
 [![IPython](https://img.shields.io/badge/IP[y]:-3465a4)](https://ipython.readthedocs.io/en/stable/)
 [![structlog](https://img.shields.io/badge/🪵_structlog-b9a198)](https://github.com/hynek/structlog)
 [![pre-commit](https://img.shields.io/badge/pre--commit-FAB040?logo=pre-commit&logoColor=1f2d23)](https://github.com/pre-commit/pre-commit)
 [![ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json&labelColor=261230&color=d8ff64)](https://github.com/astral-sh/ruff)
 [![pytest](https://img.shields.io/badge/pytest-0A9EDC?logo=pytest&logoColor=white)](https://github.com/pytest-dev/pytest)
+[![nox](https://img.shields.io/badge/%F0%9F%A6%8A-Nox-D85E00.svg)](https://github.com/wntrblm/nox)
 [![coverage](https://img.shields.io/badge/😴_coverage-59aabd)](https://coverage.readthedocs.io/)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 {%if is_github_project%}
@@ -20,11 +20,6 @@ To use `{{project_name}}` the following must be available locally:
 
 - [Python {{python_version}}](https://docs.python.org/{{python_version}}/) or above
 - [uv](https://docs.astral.sh/uv/)
-- [just](https://github.com/casey/just)
-
-## Quickstart: run locally
-
-A `justfile` defines common development tasks. Run `just` to show all available recipes.
 
 ## Develop
 
@@ -126,15 +121,15 @@ Valid commit types are defined in `.commitlintrc.ts`.
 Run all tests and report on code coverage:
 
 ```sh
-just test <marker>
+nox
 ```
 
 Tests can have marks, allowing you to run only a subset:
 
 ```sh
-just test -m unit
+nox -- -m unit
 # or
-just test -m "not smoke"
+nox -- -m "not smoke"
 ```
 
 See the `tool.pytest.ini_options` table in `pyproject.toml` for a list of all marks.
