@@ -92,21 +92,21 @@ pre-commit hook. Valid commit types are defined in `.commitlintrc.ts`.
 Run all tests using `pytest` with:
 
 ```sh
-just test
+nox
 ```
 
 Pass flags as you normally would to pytest eg.
 
 ```sh
-just test -k some_keyword_expression
+nox -- -k some_keyword_expression
 ```
 
 Tests have marks, allowing you to run only a subset:
 
 ```sh
-just test -m unit
+nox -- -m unit
 # or
-just test -m "not smoke"
+nox -- -m "not smoke"
 ```
 
 See the `tool.pytest.ini_options` table in `pyproject.toml` for a list of all marks.
