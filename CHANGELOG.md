@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.15.0](https://github.com/albertomh/pycliche/compare/v2.14.2...v2.15.0) (2025-04-26)
+
+
+### Features
+
+* **ci:** Run tests using nox & a matrix strategy in gen. project ([#107](https://github.com/albertomh/pycliche/issues/107)) ([817c647](https://github.com/albertomh/pycliche/commit/817c6479047499d01385b8a28e514d142b599257))
+
 ## [2.14.2](https://github.com/albertomh/pycliche/compare/v2.14.1...v2.14.2) (2025-03-19)
 
 
