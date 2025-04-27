@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/pre-commit
 
-  generate-nox-py-versions:
+  generate-nox-sessions:
     needs:
       - pre_commit
     runs-on: ubuntu-24.04
@@ -32,11 +32,11 @@ jobs:
 
   test:
     needs:
-      - generate-nox-py-versions
+      - generate-nox-sessions
     strategy:
       fail-fast: false
       matrix:
-        session: ${{ fromJson(needs.generate-nox-py-versions.outputs.session) }}
+        session: ${{ fromJson(needs.generate-nox-sessions.outputs.session) }}
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
