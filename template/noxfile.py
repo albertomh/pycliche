@@ -8,8 +8,10 @@ OLDEST_PY, *MIDDLE_PY, LATEST_PY = py_versions
 
 nox.options.default_venv_backend = "uv"
 
+run_tests_args = ["pytest", "tests/", "-s", "-vvv", "-W", "always", "--pdb"]
 
-def _run_tests(session: nox.Session) -> None:
+
+def _install_deps(session: nox.Session) -> None:
     session.run_install(
         "uv",
         "sync",
@@ -17,40 +19,28 @@ def _run_tests(session: nox.Session) -> None:
         f"--python={session.virtualenv.location}",
         env={"UV_PROJECT_ENVIRONMENT": session.virtualenv.location},
     )
-
     # Needed for assertions against `importlib.metadata.version`.
     session.install("-e", ".")
 
-    session.run(
-        "pytest", "tests/", "-s", "-vvv", "-W", "always", "--pdb", *session.posargs
-    )
+
+@nox.session(python=MIDDLE_PY)
+def tests(session: nox.Session) -> None:
+    _install_deps(session)
+
+    session.run(*run_tests_args)
 
 
-def _cov(session: nox.Session) -> None:
+@nox.session(python=[OLDEST_PY, LATEST_PY])
+def tests_with_coverage(session: nox.Session) -> None:
+    _install_deps(session)
+    session.run("coverage", "erase")
     session.run(
         "coverage",
         "run",
+        # "--source", ".",
         "-m",
-        "pytest",
-        "tests/",
-        "-s",
-        "-vvv",
-        "-W",
-        "always",
-        "--pdb",
+        *run_tests_args,
         *session.posargs,
     )
     session.run("coverage", "report")
     session.run("coverage", "html")
-
-
-@nox.session(python=[OLDEST_PY, LATEST_PY])
-def tests_with_coverage(session):
-    _run_tests(session)
-
-    _cov(session)
-
-
-@nox.session(python=MIDDLE_PY)
-def tests(session):
-    _run_tests(session)
