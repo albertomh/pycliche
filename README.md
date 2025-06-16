@@ -119,3 +119,4 @@ The developer README ([docs/README-dev.md](docs/README-dev.md)) covers how to wo
 Several tooling choices have been guided by the work of [Adam Johnson](https://adamj.eu/tech/).
 
 The `pycliche` logo is typeset in [Allerta Stencil](https://fonts.google.com/specimen/Allerta+Stencil).
+Python icon generated using DALL·E.
