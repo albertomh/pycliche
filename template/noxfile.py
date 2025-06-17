@@ -33,6 +33,7 @@ def tests(session: nox.Session) -> None:
 @nox.session(python=[OLDEST_PY, LATEST_PY])
 def tests_with_coverage(session: nox.Session) -> None:
     _install_deps(session)
+
     session.run("coverage", "erase")
     session.run(
         "coverage",
