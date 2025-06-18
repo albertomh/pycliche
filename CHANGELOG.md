@@ -8,6 +8,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.16.1](https://github.com/albertomh/pycliche/compare/v2.16.0...v2.16.1) (2025-06-17)
+
+
+### Dependencies
+
+* **ci:** Bump stefanzweifel/git-auto-commit-action from 5 to 6 ([#120](https://github.com/albertomh/pycliche/issues/120)) ([5f0a473](https://github.com/albertomh/pycliche/commit/5f0a473b6ae8946c55f3d9ed66bd3e3bb8af3448))
+
+
+### Documentation
+
+* Document nox and matrix strategy for test automation across Python versions ([#121](https://github.com/albertomh/pycliche/issues/121)) ([2f4b8f1](https://github.com/albertomh/pycliche/commit/2f4b8f186fbe8edbc7580dce6df814f6f2fe20eb))
+* Update pycliche logo ([#118](https://github.com/albertomh/pycliche/issues/118)) ([78afa5e](https://github.com/albertomh/pycliche/commit/78afa5e740d9031abc51c849537308f886369063))
+
 ## [2.16.0](https://github.com/albertomh/pycliche/compare/v2.15.0...v2.16.0) (2025-06-11)
 
 
