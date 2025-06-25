@@ -107,6 +107,7 @@ The developer README ([docs/README-dev.md](docs/README-dev.md)) covers how to wo
 
 - [Test](docs/README-dev.md#test)
 
+- [Tests in GitHub Actions](docs/README-dev.md#tests-in-github-actions)
 - [Release](docs/README-dev.md#release)
   - [GitHub Personal Access Token](docs/README-dev.md#github-personal-access-token)
 
