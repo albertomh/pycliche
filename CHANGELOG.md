@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.16.2](https://github.com/albertomh/pycliche/compare/v2.16.1...v2.16.2) (2025-06-25)
+
+
+### Bug Fixes
+
+* Ensure setuptools can find the app package ([#123](https://github.com/albertomh/pycliche/issues/123)) ([bcae014](https://github.com/albertomh/pycliche/commit/bcae0147e1b0376a7bded7f7a4bf78112ad7a369))
+
 ## [2.16.1](https://github.com/albertomh/pycliche/compare/v2.16.0...v2.16.1) (2025-06-17)
 
 
