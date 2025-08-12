@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.17.0](https://github.com/albertomh/pycliche/compare/v2.16.2...v2.17.0) (2025-08-12)
+
+
+### Features
+
+* **ci:** Bump actions/checkout from 4 to 5 in gen. project ([#126](https://github.com/albertomh/pycliche/issues/126)) ([a155a79](https://github.com/albertomh/pycliche/commit/a155a7975417355649dc146043d6562bf2964b17))
+
 ## [2.16.2](https://github.com/albertomh/pycliche/compare/v2.16.1...v2.16.2) (2025-06-25)
 
 
