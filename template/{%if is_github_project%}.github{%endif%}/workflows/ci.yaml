@@ -15,7 +15,7 @@ jobs:
     if: ${{ github.event.pull_request.merged && github.head_ref != 'release-please--branches--main' }}
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/pre-commit
 
   generate-nox-sessions:
@@ -27,7 +27,7 @@ jobs:
     outputs:
       session: ${{ steps.set-matrix.outputs.session }}
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - uses: wntrblm/nox@main
     - id: set-matrix
       shell: bash
@@ -42,7 +42,7 @@ jobs:
         session: ${{ fromJson(needs.generate-nox-sessions.outputs.session) }}
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: astral-sh/setup-uv@v6
         with:
           version: "0.6.17"
