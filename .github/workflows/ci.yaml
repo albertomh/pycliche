@@ -10,40 +10,5 @@ on:
       - main
 
 jobs:
-  pre_commit:
-    if: ${{ github.event.pull_request.merged }}
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v5
-      - uses: ./.github/actions/pre-commit
-
-  generate-nox-py-versions:
-    needs:
-      - pre_commit
-    runs-on: ubuntu-24.04
-    outputs:
-      py_version: ${{ steps.set-matrix.outputs.py_version }}
-    steps:
-    - uses: actions/checkout@v5
-    - uses: wntrblm/nox@main
-    - id: set-matrix
-      shell: bash
-      run: echo py_version=$(nox --json -l | jq -c '[.[].python]') | tee --append $GITHUB_OUTPUT
-
-  test:
-    needs:
-      - generate-nox-py-versions
-    strategy:
-      fail-fast: false
-      matrix:
-        py_version: ${{ fromJson(needs.generate-nox-py-versions.outputs.py_version) }}
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v5
-      - uses: astral-sh/setup-uv@v6
-        with:
-          version: "0.6.17"
-      - uses: wntrblm/nox@2025.05.01
-        with:
-          python-versions: "${{ matrix.py_version }}"
-      - run: nox --session "tests-${{ matrix.py_version }}"
+  checks:
+    uses: ./.github/workflows/_checks.yaml
