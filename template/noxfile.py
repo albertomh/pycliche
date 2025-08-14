@@ -7,6 +7,7 @@ py_versions = ["3.12", "3.13"]
 OLDEST_PY, *MIDDLE_PY, LATEST_PY = py_versions
 
 nox.options.default_venv_backend = "uv"
+nox.options.sessions = [f"tests_with_coverage-{LATEST_PY}"]
 
 run_tests_args = ["pytest", "tests/", "-s", "-vvv", "-W", "always", "--pdb"]
 
