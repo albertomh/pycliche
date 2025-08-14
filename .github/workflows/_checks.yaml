@@ -30,8 +30,8 @@ jobs:
     - id: set-matrix
       shell: bash
       run: |
-        # Extract all nox session names (both selected and skipped) into a JSON array.
-        # Session lines start with '*' or '-'.
+        # Extract Python versions from nox session names (both selected and skipped)
+        # into a JSON array. Session lines start with '*' or '-'.
         py_version_json="$(
         nox --list \
             | grep -E '^[*-] ' \
