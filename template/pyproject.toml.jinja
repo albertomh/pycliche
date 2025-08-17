@@ -25,6 +25,7 @@ packages = ["{{project_name}}"]
 
 [tool.pytest.ini_options]
 addopts = [
+    "--strict-markers",
     "--pdbcls=IPython.terminal.debugger:TerminalPdb",
 ]
 markers = [
