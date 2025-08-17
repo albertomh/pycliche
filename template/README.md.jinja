@@ -138,6 +138,8 @@ Pass flags as you normally would to `pytest` by placing them after `--` eg.
 nox -- -k some_keyword_expression
 ```
 
+### Test marks
+
 Tests can have marks, allowing you to run only a subset:
 
 ```sh
@@ -147,6 +149,14 @@ nox -- -m "not smoke"
 ```
 
 See the `tool.pytest.ini_options` table in `pyproject.toml` for a list of all marks.
+
+### Slow tests
+
+Tests with the `@pytest.mark.slow` mark will only be included in test runs happening in a
+CI pipeline. This behaviour is configured in `conftest.py`, where you can add more marks
+that should be treated similarly.
+
+### Python versions & coverage
 
 Nox is used to automate testing across different Python versions. Test sessions are
 configured via `noxfile.py`. `coverage` reporting will only run for test runs for the
