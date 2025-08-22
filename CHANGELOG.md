@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.18.0](https://github.com/albertomh/pycliche/compare/v2.17.1...v2.18.0) (2025-08-17)
+
+
+### Features
+
+* Skip slow tests locally, only run in CI ([#133](https://github.com/albertomh/pycliche/issues/133)) ([eda3677](https://github.com/albertomh/pycliche/commit/eda367737177405c2da7d5e7847b748889eb259d))
+
 ## [2.17.1](https://github.com/albertomh/pycliche/compare/v2.17.0...v2.17.1) (2025-08-14)
 
 
