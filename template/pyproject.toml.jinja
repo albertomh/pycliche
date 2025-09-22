@@ -38,13 +38,23 @@ markers = [
 
 [tool.coverage.report]
 omit = [
-  "*/tests/*"
+    "*/__init__.py",
+    "noxfile.py",
+    "*/tests/*"
 ]
 exclude_lines = [
     "pragma: no cover",
     "def __repr__",
     "def __str__",
     "if settings.debug",
+]
+
+[tool.coverage.run]
+source = [
+    "./{{project_name}}/",
+]
+omit = [
+    "*/tests/*"
 ]
 
 [tool.ruff]
@@ -82,11 +92,3 @@ select = [
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**.py" = ["S"]
-
-[tool.coverage.run]
-source = [
-  "./{{project_name}}/",
-]
-omit = [
-  "*/tests/*"
-]
