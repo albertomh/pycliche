@@ -89,10 +89,12 @@ pre-commit hook. Valid commit types are defined in `.commitlintrc.ts`.
 
 ## Test
 
-Run all `pytest` tests with:
-
 ```sh
+# Run all `pytest` tests (in parallel by default)
 nox
+
+# Run tests with the debugger enabled (serial execution due to `pdb`)
+nox -- --pdb
 ```
 
 By default this will only run the `nox` session for the latest supported Python release.
