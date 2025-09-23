@@ -1,4 +1,5 @@
 import shutil
+import uuid
 from pathlib import Path
 from typing import Callable
 
@@ -25,7 +26,7 @@ def pycliche_test_temp_dir() -> Path:
 
 @pytest.fixture
 def test_project_name() -> str:
-    return "test_project"
+    return f"test_project_{uuid.uuid4().hex[:8]}"
 
 
 @pytest.fixture
@@ -86,7 +87,7 @@ def copier_copy(
 def pytest_sessionstart(session):
     """Hook to perform initial setup before all tests."""
     if not PYCLICHE_TEST_TEMP_DIR.exists():
-        PYCLICHE_TEST_TEMP_DIR.mkdir()
+        PYCLICHE_TEST_TEMP_DIR.mkdir(exist_ok=True)
 
 
 @pytest.fixture
