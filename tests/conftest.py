@@ -35,10 +35,10 @@ def test_project_dir(pycliche_test_temp_dir: Path, test_project_name: str) -> Pa
 
 
 @pytest.fixture
-def copier_input_data() -> dict:
+def copier_input_data(test_project_name: str) -> dict:
     """Answers to core pycliche template questions."""
     return {
-        "project_name": "test_project",
+        "project_name": test_project_name,
         "author_name": "Miguel de Cervantes",
         "author_email": "mike@alcala.net",
     }
