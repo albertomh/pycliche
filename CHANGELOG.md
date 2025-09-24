@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.18.0](https://github.com/albertomh/pycliche/compare/v2.17.1...v2.18.0) (2025-09-23)
+
+
+### Features
+
+* Skip slow tests locally, only run in CI ([#133](https://github.com/albertomh/pycliche/issues/133)) ([eda3677](https://github.com/albertomh/pycliche/commit/eda367737177405c2da7d5e7847b748889eb259d))
+* **test:** Randomise order of tests in gen. project ([#136](https://github.com/albertomh/pycliche/issues/136)) ([c239f19](https://github.com/albertomh/pycliche/commit/c239f19770012a2b10ebd4358ef616b5f631fde3))
+* **tests:** Add exclusions to reduce noise in coverage report ([#138](https://github.com/albertomh/pycliche/issues/138)) ([e1d91f1](https://github.com/albertomh/pycliche/commit/e1d91f15f3b45df0893f0f2ada5ed49f4fd08533))
+* **tests:** Run gen. project's tests in parallel, serial if pdb ([#141](https://github.com/albertomh/pycliche/issues/141)) ([f8d760d](https://github.com/albertomh/pycliche/commit/f8d760dfcec9e5cc131fad8645297ef5fd730fbc))
+
 ## [2.17.1](https://github.com/albertomh/pycliche/compare/v2.17.0...v2.17.1) (2025-08-14)
 
 
