@@ -24,7 +24,7 @@ jobs:
       py_version: ${{ steps.set-matrix.outputs.py_version }}
     steps:
     - uses: actions/checkout@v5
-    - uses: wntrblm/nox@main
+    - uses: wntrblm/nox@2025.05.01
     - id: set-matrix
       shell: bash
       run: |
