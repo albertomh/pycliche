@@ -1,5 +1,5 @@
 default_language_version:
-  python: python{{python_version}}
+  python: python{{min_python_version}}
 default_install_hook_types: ["commit-msg", "pre-commit"]
 default_stages: ["pre-commit"]
 
@@ -23,7 +23,7 @@ repos:
     rev: v3.20.0
     hooks:
       - id: pyupgrade
-        args: ["--py{{python_version.replace('.', '')}}-plus"]
+        args: ["--py{{min_python_version.replace('.', '')}}-plus"]
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.18.2
