@@ -23,20 +23,34 @@ jobs:
     outputs:
       session: ${{ steps.set-matrix.outputs.session }}
     steps:
-    - uses: actions/checkout@v5
-    - uses: wntrblm/nox@2025.05.01
-    - id: set-matrix
-      shell: bash
-      run: |
-        # Extract all nox session names (both selected and skipped) into a JSON array.
-        # Session lines start with '*' or '-'.
-        sessions_json="$(
-        nox --list \
-            | grep -E '^[*-] ' \
-            | cut -d' ' -f2 \
-            | jq -R -s -c 'split("\n")[:-1]'
-        )"
-        echo "session=$sessions_json" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v5
+      - name: Cache nox session list
+        id: cache-nox-sessions
+        uses: actions/cache@v4
+        with:
+          path: .nox-sessions.json
+          key: nox-sessions-${{ runner.os }}-${{ hashFiles('noxfile.py', 'pyproject.toml') }}
+      - uses: wntrblm/nox@2025.05.01
+        if: steps.cache-nox-sessions.outputs.cache-hit != 'true'
+      - id: set-matrix
+        shell: bash
+        env:
+          CACHE_SESSIONS_HIT: ${{ steps.cache-nox-sessions.outputs.cache-hit }}
+        run: |
+          # Extract all nox session names (both selected and skipped) into a JSON array.
+          # Session lines start with '*' or '-'.
+          if [[ $CACHE_SESSIONS_HIT == "true" ]]; then
+            sessions_json="$(cat .nox-sessions.json)"
+          else
+            sessions_json="$(
+              nox --list \
+                | grep -E '^[*-] ' \
+                | cut -d' ' -f2 \
+                | jq -R -s -c 'split("\n")[:-1]'
+            )"
+            echo "$sessions_json" > .nox-sessions.json
+          fi
+          echo "session=$sessions_json" >> "$GITHUB_OUTPUT"
 
   test:
     needs:
