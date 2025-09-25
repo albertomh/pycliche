@@ -8,6 +8,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.19.0](https://github.com/albertomh/pycliche/compare/v2.18.0...v2.19.0) (2025-09-25)
+
+
+### Features
+
+* **ci:** Cache generating sessions used by nox ([#146](https://github.com/albertomh/pycliche/issues/146)) ([b6a20d3](https://github.com/albertomh/pycliche/commit/b6a20d390381f88f9b86f5ddf6b93895680c5b8e))
+* **ci:** Enable caching for the setup-uv step ([#142](https://github.com/albertomh/pycliche/issues/142)) ([8638e5b](https://github.com/albertomh/pycliche/commit/8638e5bad61ce2f9077af0d45f93a86511804c6d))
+* Derive nox Python versions from user's min Python choice ([#148](https://github.com/albertomh/pycliche/issues/148)) ([08055e9](https://github.com/albertomh/pycliche/commit/08055e93659e1c3624e0e421c309622a5b77560d))
+
+
+### Documentation
+
+* **ci:** Document minting PATs for Release Please CI jobs ([#147](https://github.com/albertomh/pycliche/issues/147)) ([8dedae3](https://github.com/albertomh/pycliche/commit/8dedae3eb014bbfcaf2c7e4ecc60f5fe181ab3b3))
+
 ## [2.18.0](https://github.com/albertomh/pycliche/compare/v2.17.1...v2.18.0) (2025-09-23)
 
 
