@@ -13,6 +13,10 @@ dependencies = [
     "structlog>=25.2.0,<26.0.0",
 ]
 
+[project.urls]
+Changelog = "https://github.com/albertomh/pycliche/blob/main/CHANGELOG.md"
+Repository = "https://github.com/albertomh/pycliche"
+
 [dependency-groups]
 test = [
     "copier>=9.4.1,<10.0.0",
