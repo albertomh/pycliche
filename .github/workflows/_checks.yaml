@@ -68,6 +68,7 @@ jobs:
         with:
           version: "0.8.22"
           enable-cache: true
+          prune-cache: false
       - uses: wntrblm/nox@2025.05.01
         with:
           python-versions: "${{ matrix.py_version }}"
