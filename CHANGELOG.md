@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.20.0](https://github.com/albertomh/pycliche/compare/v2.19.0...v2.20.0) (2025-10-02)
+
+
+### Features
+
+* Add project.urls table to pyproject.toml ([#149](https://github.com/albertomh/pycliche/issues/149)) ([ecdd136](https://github.com/albertomh/pycliche/commit/ecdd13691a5a09983e856e22b7e2fae7c73d13cf))
+
+
+### Bug Fixes
+
+* **ci:** Avoid 'setup-uv' hanging with 'prune-cache: false' ([#151](https://github.com/albertomh/pycliche/issues/151)) ([91b1c14](https://github.com/albertomh/pycliche/commit/91b1c14a974f5bed31125189cfe7400a896a8c50))
+
 ## [2.19.0](https://github.com/albertomh/pycliche/compare/v2.18.0...v2.19.0) (2025-09-25)
 
 
