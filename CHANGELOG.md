@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.21.0](https://github.com/albertomh/pycliche/compare/v2.20.0...v2.21.0) (2025-10-04)
+
+
+### Features
+
+* Add 'typos' pre-commit hook ([#152](https://github.com/albertomh/pycliche/issues/152)) ([364ece8](https://github.com/albertomh/pycliche/commit/364ece88d717276703ca0fc2ba2efb54d1756bd6))
+
 ## [2.20.0](https://github.com/albertomh/pycliche/compare/v2.19.0...v2.20.0) (2025-10-02)
 
 
