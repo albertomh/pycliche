@@ -8,12 +8,11 @@ from pathlib import Path
 import nox
 
 # https://endoflife.date/python
-py_versions = ["3.12", "3.13"]
+py_versions = ["3.13", "3.14"]
 OLDEST_PY, *MIDDLE_PY, LATEST_PY = py_versions
 PYCLICHE_TEST_TEMP_DIR = Path("/", "tmp", "pycliche_test")
 
-
-nox.options.default_venv_backend = "uv"
+nox.options.default_venv_backend = "uv|virtualenv"
 nox.options.sessions = [f"tests-{LATEST_PY}"]
 
 
