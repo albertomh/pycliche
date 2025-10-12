@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.23.0](https://github.com/albertomh/pycliche/compare/v2.22.0...v2.23.0) (2025-10-12)
+
+
+### Features
+
+* **deps:** Update dependencies in gen. project & metaproject ([#156](https://github.com/albertomh/pycliche/issues/156)) ([ed02543](https://github.com/albertomh/pycliche/commit/ed025431ee64b58243a8e145c4aa40184ebccff6))
+
+
+### Bug Fixes
+
+* **ci:** Remove prune-cache from setup-uv (fixed upstream) ([#157](https://github.com/albertomh/pycliche/issues/157)) ([e6ae832](https://github.com/albertomh/pycliche/commit/e6ae83268793049108e5cb33b25adc37c3ca206e))
+
 ## [2.22.0](https://github.com/albertomh/pycliche/compare/v2.21.0...v2.22.0) (2025-10-10)
 
 
