@@ -1,8 +1,8 @@
 import json
 import os
 import re
+from collections.abc import Callable
 from pathlib import Path
-from typing import Callable
 
 import pytest
 import yaml
@@ -113,7 +113,7 @@ def test_generated_yaml_is_valid(
     copier_copy(copier_input_data)
 
     for file_path in yaml_files:
-        with open(file_path, "r") as f:
+        with open(file_path) as f:
             try:
                 yaml.safe_load(f)
             except yaml.YAMLError as e:
