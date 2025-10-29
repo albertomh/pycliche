@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.24.0](https://github.com/albertomh/pycliche/compare/v2.23.0...v2.24.0) (2025-10-29)
+
+
+### Features
+
+* **deps:** Bump wntrblm/nox to 2025.10.16 ([#163](https://github.com/albertomh/pycliche/issues/163)) ([6dc5c37](https://github.com/albertomh/pycliche/commit/6dc5c372cdb0914348acc8faa67df009cacfe7de))
+
 ## [2.23.0](https://github.com/albertomh/pycliche/compare/v2.22.0...v2.23.0) (2025-10-12)
 
 
