@@ -15,3 +15,9 @@ config:
     siblings_only: true
 
 fix: true
+
+{% if is_github_project %}
+ignores:
+  # on account of this being generated automatically by 'Release Please'
+  - "CHANGELOG.md"
+{% endif %}
