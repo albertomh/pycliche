@@ -12,7 +12,7 @@
 Embracing [Boring Technology](https://boringtechnology.club/), fighting bloat, striving for
 simplicity.
 
-[![python: 3.12](https://img.shields.io/badge/>=3.12-4584b6?logo=python&logoColor=ffde57)](https://docs.python.org/3.12/whatsnew/3.12.html)
+[![python: 3.13](https://img.shields.io/badge/>=3.13-4584b6?logo=python&logoColor=ffde57)](https://docs.python.org/3.13/whatsnew/3.13.html)
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/albertomh/pycliche/main/docs/media/copier-badge.json)](https://github.com/copier-org/copier)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json&labelColor=261230&color=de60e9)](https://github.com/astral-sh/uv)
 [![IPython](https://img.shields.io/badge/IP[y]:-3465a4)](https://ipython.readthedocs.io/en/stable/)
@@ -57,7 +57,7 @@ Optionally, for projects intended to be hosted on GitHub, also include:
 
 To use `pycliche` the following must be available locally:
 
-- [Python 3.12](https://docs.python.org/3.12/) or above
+- [Python 3.13](https://docs.python.org/3.13/) or above
 - [uv](https://docs.astral.sh/uv/)
 
 ## Bootstrap a new Python project
