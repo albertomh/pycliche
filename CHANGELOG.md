@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.25.0](https://github.com/albertomh/pycliche/compare/v2.24.0...v2.25.0) (2025-11-10)
+
+
+### Features
+
+* **deps:** Add 'pytest-cov' for coverage reporting with xdist ([#166](https://github.com/albertomh/pycliche/issues/166)) ([567528c](https://github.com/albertomh/pycliche/commit/567528cdcce6175ae4326bb89aa040742f59ec3e))
+* **deps:** Bump dependencies; upgrade to pytest v9 ([#170](https://github.com/albertomh/pycliche/issues/170)) ([a2a51e0](https://github.com/albertomh/pycliche/commit/a2a51e04e3e355c296d0bcbd56390ab33b17cded))
+* **test:** Omit reporting files with 100% coverage ([#169](https://github.com/albertomh/pycliche/issues/169)) ([b603b66](https://github.com/albertomh/pycliche/commit/b603b6607d9b1ef5122a48ebd4f7c1285c669a51))
+
 ## [2.24.0](https://github.com/albertomh/pycliche/compare/v2.23.0...v2.24.0) (2025-10-29)
 
 
