@@ -119,7 +119,7 @@ nox -- -m unit
 nox -- -m "not smoke"
 ```
 
-See the `tool.pytest.ini_options` table in `pyproject.toml` for a list of all marks.
+See the `tool.pytest` table in `pyproject.toml` for a list of all marks.
 
 Nox is used to automate testing across different Python versions. Test sessions are
 configured via `noxfile.py`.

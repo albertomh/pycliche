@@ -10,14 +10,14 @@ readme = "README.md"
 license-files = ["LICENSE"]
 requires-python = ">={{min_python_version}}"
 dependencies = [
-    "ipython>=9.6.0,<10.0.0",
-    "structlog>=25.4.0,<26.0.0",
+    "ipython>=9.7.0,<10.0.0",
+    "structlog>=25.5.0,<26.0.0",
 ]
 
 [dependency-groups]
 test = [
-    "coverage>=7.10.7,<8.0.0",
-    "pytest>=8.4.2,<9.0.0",
+    "coverage>=7.11.3,<8.0.0",
+    "pytest>=9.0.0,<10.0.0",
     "pytest-cov>=7.0.0,<8.0.0",
     "pytest-randomly>=4.0.1,<5.0.0",
     "pytest-xdist>=3.8.0,<4.0.0",
@@ -31,7 +31,7 @@ Repository = "https://github.com"
 [tool.setuptools]
 packages = ["{{project_name}}"]
 
-[tool.pytest.ini_options]
+[tool.pytest]
 addopts = [
     "--strict-markers",
     "--pdbcls=IPython.terminal.debugger:TerminalPdb",

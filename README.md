@@ -60,6 +60,9 @@ To use `pycliche` the following must be available locally:
 - [Python 3.13](https://docs.python.org/3.13/) or above
 - [uv](https://docs.astral.sh/uv/)
 
+`pycliche` supports the last two versions of Python - the ones with bugfix support as per
+<https://devguide.python.org/versions/>.
+
 ## Bootstrap a new Python project
 
 Bootstrap a new Python project using `pycliche`:
