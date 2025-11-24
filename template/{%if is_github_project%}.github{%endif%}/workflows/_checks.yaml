@@ -15,7 +15,7 @@ jobs:
   pre_commit:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: ./.github/actions/pre-commit
 
   generate-nox-sessions:
@@ -23,14 +23,14 @@ jobs:
     outputs:
       session: ${{ steps.set-matrix.outputs.session }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Cache nox session list
         id: cache-nox-sessions
         uses: actions/cache@v4
         with:
           path: .nox-sessions.json
           key: nox-sessions-${{ runner.os }}-${{ hashFiles('noxfile.py', 'pyproject.toml') }}
-      - uses: wntrblm/nox@2025.10.16
+      - uses: wntrblm/nox@2025.11.12
         if: steps.cache-nox-sessions.outputs.cache-hit != 'true'
       - id: set-matrix
         shell: bash
@@ -62,10 +62,10 @@ jobs:
         session: ${{ fromJson(needs.generate-nox-sessions.outputs.session) }}
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v7
         with:
-          version: "0.8.22"
+          version: "0.9.11"
           enable-cache: true
-      - uses: wntrblm/nox@2025.10.16
+      - uses: wntrblm/nox@2025.11.12
       - run: nox --session "${{ matrix.session }}"
