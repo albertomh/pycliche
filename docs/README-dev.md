@@ -124,7 +124,7 @@ See the `tool.pytest` table in `pyproject.toml` for a list of all marks.
 Nox is used to automate testing across different Python versions. Test sessions are
 configured via `noxfile.py`.
 
-## Tests in GitHub Actions
+### Tests in GitHub Actions
 
 A matrix strategy is used for the `test` GitHub Action. This runs each Nox session
 (i.e. Python version test run) as a separate pipeline job.
