@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.26.0](https://github.com/albertomh/pycliche/compare/v2.25.0...v2.26.0) (2025-11-25)
+
+
+### Features
+
+* **deps:** Bump dependencies ([#176](https://github.com/albertomh/pycliche/issues/176)) ([809bc05](https://github.com/albertomh/pycliche/commit/809bc05e824cd4956b31041598681cd2d6f67f0a))
+
+
+### Dependencies
+
+* **ci:** Bump versions of third-party CI actions ([#173](https://github.com/albertomh/pycliche/issues/173)) ([348c0dd](https://github.com/albertomh/pycliche/commit/348c0dde754d3c27b79e87829b2580fe59283910))
+
 ## [2.25.0](https://github.com/albertomh/pycliche/compare/v2.24.0...v2.25.0) (2025-11-10)
 
 
