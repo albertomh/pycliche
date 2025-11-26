@@ -92,6 +92,39 @@ uvx copier update --skip-answered --trust [--vcs-ref=<TAG>]
 
 If the `--vcs-ref` flag is not specified `copier` will use the latest `pycliche` tag.
 
+## Make your package installable
+
+Projects generated using `pycliche` use the [hatchling build system](https://pypi.org/project/hatchling/)
+and the `uv` toolchain to package releases. Build a release by:
+
+```sh
+# merge a release-please PR to create a tag and a GitHub Release
+
+# check out the tag locally
+
+# in your project's root directory
+uv build
+
+# upload the artefacts as an asset linked to the release at
+# <https://github.com/myusername/mypackage/releases/tag/vM.m.p>
+```
+
+To use your package as a dependency in a project:
+
+```sh
+# add the following line to the dependencies table in `pyproject.toml`:
+"mypackage @ https://github.com/myusername/mypackage/releases/download/vM.m.p/mypackage-M.m.p-py3-none-any.whl"
+
+# update the project's virtual environment
+uv sync
+```
+
+You can also run modules directly once your package is installed as a dependency:
+
+```sh
+uv run python -m mypackage.some_module
+```
+
 ---
 
 ## Develop
