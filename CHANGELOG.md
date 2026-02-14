@@ -8,6 +8,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.27.0](https://github.com/albertomh/pycliche/compare/v2.26.0...v2.27.0) (2026-02-14)
+
+
+### Features
+
+* Use 'prek' for pre-commit hooks in generated projects ([#183](https://github.com/albertomh/pycliche/issues/183)) ([64f1038](https://github.com/albertomh/pycliche/commit/64f1038281deed74efaba843f9c7a96ed53144cc))
+
+
+### Dependencies
+
+* **test:** Bump pip to 26.0.1 ([#181](https://github.com/albertomh/pycliche/issues/181)) ([8b45cb0](https://github.com/albertomh/pycliche/commit/8b45cb0bc772e10fe883bde82d37dcaeeedd0abd))
+
+
+### Documentation
+
+* How to build installable packages from a project ([#177](https://github.com/albertomh/pycliche/issues/177)) ([6fc9bc3](https://github.com/albertomh/pycliche/commit/6fc9bc3140a1b217d26121521ad480a20d1c7bf1))
+
 ## [2.26.0](https://github.com/albertomh/pycliche/compare/v2.25.0...v2.26.0) (2025-11-25)
 
 
