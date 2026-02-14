@@ -25,7 +25,7 @@ hooks = [{ id = "pyupgrade", args = ["--py313-plus"] }]
 
 [[repos]]
 repo = "https://github.com/astral-sh/ruff-pre-commit"
-rev = "v0.14.6"
+rev = "v0.15.1"
 hooks = [
     # `--config` to stop ruff from using {{project_name}}/pyproject.toml
     # https://github.com/astral-sh/ruff/issues/9585
@@ -35,7 +35,7 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/DavidAnson/markdownlint-cli2"
-rev = "v0.19.1"
+rev = "v0.20.0"
 hooks = [
     { id = "markdownlint-cli2", args = [
         "--config",
@@ -45,12 +45,12 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/crate-ci/typos"
-rev = "v1.39.2"
+rev = "v1.43.4"
 hooks = [{ id = "typos", args = ["--force-exclude"] }]
 
 [[repos]]
 repo = "https://github.com/alessandrojcm/commitlint-pre-commit-hook"
-rev = "v9.23.0"
+rev = "v9.24.0"
 hooks = [
     { id = "commitlint", stages = [
         "commit-msg",
