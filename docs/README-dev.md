@@ -7,7 +7,7 @@
 In addition to the [Prerequisites](../README.md#prerequisites) listed in the README you
 will need the following to develop `pycliche`:
 
-- [pre-commit](https://pre-commit.com/)
+- [prek](https://prek.j178.dev/)
 
 ### Recursive pycliche
 
@@ -44,13 +44,13 @@ uv add some-package
 
 There are two places where dependencies are currently declared in the template:
 
-1. `.pre-commit-config.yaml`
+1. `prek.toml`
 1. `pyproject.toml.jinja`
 
 Update git hooks in the former via:
 
 ```sh
-cd template/ && pre-commit autoupdate
+cd template/ && prek autoupdate
 ```
 
 Update Python packages in the latter manually. Automated option pending on account of
@@ -70,22 +70,22 @@ uvx copier copy --vcs-ref=HEAD pycliche $TEST_PROJECT_NAME
 
 ### Style
 
-Code style is enforced by pre-commit hooks. Linter rules are configured in the `ruff`
-tables in `pyproject.toml`.
+Code style is enforced by `prek` pre-commit hooks. Linter rules are configured in the
+`ruff` tables in `pyproject.toml`.
 
 ```sh
 # before you start developing, install pre-commit hooks
-pre-commit install
+prek install
 
 # update pre-commit hooks
-pre-commit autoupdate
+prek autoupdate
 ```
 
 Docstrings should follow the conventions set out in the [Google styleguide](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings).
 
 Please follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
-guidelines when writing commit messages. `commitlint` is enabled as
-pre-commit hook. Valid commit types are defined in `.commitlintrc.ts`.
+guidelines when writing commit messages. `commitlint` is enabled as a pre-commit hook.
+Valid commit types are defined in `.commitlintrc.ts`.
 
 ## Test
 

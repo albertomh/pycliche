@@ -107,7 +107,6 @@ def test_generated_yaml_is_valid(
 ):
     yaml_files = [
         test_project_dir / ".markdownlint-cli2.yaml",
-        test_project_dir / ".pre-commit-config.yaml",
     ]
 
     copier_copy(copier_input_data)
@@ -163,15 +162,15 @@ def test_generated_project_pre_commit_hooks_run_successfully(
 
     env = os.environ.copy()
     env["SKIP"] = "no-commit-to-branch"
-    pre_commit_res = uv(
+    prek_res = uv(
         "run",
-        "pre-commit",
+        "prek",
         "run",
         "--all-files",
         _cwd=test_project_dir,
         _env=env,
         _return_cmd=True,
     )
-    assert pre_commit_res.exit_code == 0, (
-        f"Pre-commit hooks failed:\n{pre_commit_res.stdout}\n{pre_commit_res.stderr}"
+    assert prek_res.exit_code == 0, (
+        f"prek pre-commit hooks failed:\n{prek_res.stdout}\n{prek_res.stderr}"
     )

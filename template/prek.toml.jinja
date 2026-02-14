@@ -2,9 +2,7 @@
 repo = "https://github.com/pre-commit/pre-commit-hooks"
 rev = "v6.0.0"
 hooks = [
-    { id = "check-added-large-files", exclude = { glob = [
-        "docs/media/pycliche_wordmark-logo.xcf",
-    ] } },
+    { id = "check-added-large-files" },
     { id = "check-docstring-first" },
     { id = "check-merge-conflict" },
     { id = "check-json" },
@@ -22,36 +20,41 @@ hooks = [
 [[repos]]
 repo = "https://github.com/asottile/pyupgrade"
 rev = "v3.21.2"
-hooks = [{ id = "pyupgrade", args = ["--py313-plus"] }]
+hooks = [{ id = "pyupgrade", args = ["--py{{min_python_version.replace('.', '')}}-plus"] }]
+
+[[repos]]
+repo = "https://github.com/pre-commit/mirrors-mypy"
+rev = "v1.18.2"
+hooks = [{ id = "mypy", exclude = { glob = [".pdbrc"] } }]
 
 [[repos]]
 repo = "https://github.com/astral-sh/ruff-pre-commit"
-rev = "v0.15.1"
+rev = "v0.14.6"
 hooks = [
     # `--config` to stop ruff from using {{project_name}}/pyproject.toml
     # https://github.com/astral-sh/ruff/issues/9585
-    { id = "ruff-check", args = ["--fix", "--config", "pyproject.toml"] },
-    { id = "ruff-format", args = ["--config", "pyproject.toml"] },
+    { id = "ruff-check", args = ["--fix"] },
+    { id = "ruff-format" },
 ]
 
 [[repos]]
 repo = "https://github.com/DavidAnson/markdownlint-cli2"
-rev = "v0.20.0"
+rev = "v0.19.1"
 hooks = [
     { id = "markdownlint-cli2", args = [
         "--config",
         ".markdownlint-cli2.yaml",
-    ], language_version = "22.10.0" },
+    ] },
 ]
 
 [[repos]]
 repo = "https://github.com/crate-ci/typos"
-rev = "v1.43.4"
+rev = "v1.39.2"
 hooks = [{ id = "typos", args = ["--force-exclude"] }]
 
 [[repos]]
 repo = "https://github.com/alessandrojcm/commitlint-pre-commit-hook"
-rev = "v9.24.0"
+rev = "v9.23.0"
 hooks = [
     { id = "commitlint", stages = [
         "commit-msg",
