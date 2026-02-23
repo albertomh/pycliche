@@ -30,7 +30,7 @@ jobs:
         with:
           path: .nox-sessions.json
           key: nox-sessions-${{ runner.os }}-${{ hashFiles('noxfile.py', 'pyproject.toml') }}
-      - uses: wntrblm/nox@2025.11.12
+      - uses: wntrblm/nox@2026.02.09
         if: steps.cache-nox-sessions.outputs.cache-hit != 'true'
       - id: set-matrix
         shell: bash
@@ -67,5 +67,5 @@ jobs:
         with:
           version: "0.9.11"
           enable-cache: true
-      - uses: wntrblm/nox@2025.11.12
+      - uses: wntrblm/nox@2026.02.09
       - run: nox --session "${{ matrix.session }}"
