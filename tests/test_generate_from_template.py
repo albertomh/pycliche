@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import tomllib
 from collections.abc import Callable
 from pathlib import Path
 
@@ -100,16 +101,36 @@ def test_entrypoint_logs_info(
 
 
 @pytest.mark.integration
+def test_generated_toml_is_valid(
+    copier_copy: Callable[[dict], None],
+    copier_input_data: dict,
+    test_project_dir: Path,
+):
+    copier_copy(copier_input_data)
+
+    toml_files = list(test_project_dir.rglob("*.toml"))
+    assert toml_files, "No TOML files found in the generated project."
+
+    for file_path in toml_files:
+        try:
+            with open(file_path, "rb") as f:  # must be binary for tomllib
+                tomllib.load(f)
+        except tomllib.TOMLDecodeError as e:
+            pytest.fail(f"Invalid TOML file: {file_path}\nError: {e}")
+
+
+@pytest.mark.integration
 def test_generated_yaml_is_valid(
     copier_copy: Callable[[dict], None],
     copier_input_data: dict,
     test_project_dir: Path,
 ):
-    yaml_files = [
-        test_project_dir / ".markdownlint-cli2.yaml",
-    ]
-
     copier_copy(copier_input_data)
+
+    yaml_files = list(test_project_dir.rglob("*.yaml")) + list(
+        test_project_dir.rglob("*.yml")
+    )
+    assert yaml_files, "No YAML files found in the generated project."
 
     for file_path in yaml_files:
         with open(file_path) as f:
@@ -156,7 +177,7 @@ def test_generated_project_pre_commit_hooks_run_successfully(
 ):
     copier_copy(copier_input_data)
 
-    # pre-commit will only run against files tracked by git
+    # prek will only run against files tracked by git
     git("init", _cwd=test_project_dir)
     git("add", ".", _cwd=test_project_dir)
 
