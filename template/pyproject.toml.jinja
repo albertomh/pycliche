@@ -14,6 +14,10 @@ dependencies = [
     "structlog>=25.5.0,<26.0.0",
 ]
 
+[build-system]
+requires = ["uv_build>=0.10.5,<0.11.0"]
+build-backend = "uv_build"
+
 [dependency-groups]
 test = [
     "coverage>=7.12.0,<8.0.0",
@@ -28,8 +32,9 @@ test = [
 Repository = "https://github.com"
 {% endif %}
 
-[tool.setuptools]
-packages = ["{{project_name}}"]
+[tool.uv.build-backend]
+module-name = ["{{project_name}}"]
+module-root = "."
 
 [tool.pytest]
 addopts = [
