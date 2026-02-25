@@ -18,11 +18,6 @@ hooks = [
 ]
 
 [[repos]]
-repo = "https://github.com/asottile/pyupgrade"
-rev = "v3.21.2"
-hooks = [{ id = "pyupgrade", args = ["--py{{min_python_version.replace('.', '')}}-plus"] }]
-
-[[repos]]
 repo = "https://github.com/pre-commit/mirrors-mypy"
 rev = "v1.19.1"
 hooks = [{ id = "mypy", exclude = { glob = [".pdbrc"] } }]
