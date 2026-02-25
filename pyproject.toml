@@ -71,6 +71,8 @@ select = [
     "S",
     # flake8-tidy-imports
     "TID",
+    # tryceratops-try
+    "TRY",
     # flake8-print
     "T20",
     # pycodestyle warnings
