@@ -75,6 +75,8 @@ select = [
     "TRY",
     # flake8-print
     "T20",
+    # pyupgrade-up
+    "UP",
     # pycodestyle warnings
     "W",
 ]
