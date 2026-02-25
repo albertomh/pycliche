@@ -63,6 +63,8 @@ select = [
     "G",
     # flake8-logging
     "LOG",
+    # flake8-pytest-style
+    "PT",
     # flake8-bandit
     "S",
     # flake8-tidy-imports
