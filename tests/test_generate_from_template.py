@@ -51,6 +51,7 @@ def test_pycliche_jinja_templates_converted(
     ("is_github_project", "expected_directory_count", "expected_file_count"),
     [(True, 4, 17), (False, 3, 15)],
 )
+# ruff: noqa: PLR0913
 def test_is_github_project(
     is_github_project: bool,
     expected_directory_count: int,
@@ -77,6 +78,7 @@ def test_version_is_importable(
     install_test_project,
     test_project_name: str,
 ):
+    # ruff: noqa: PLC0415
     from importlib.metadata import version
 
     assert version(test_project_name) == "0.0.0"
