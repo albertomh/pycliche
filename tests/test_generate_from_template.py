@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 import yaml
-from sh import ErrorReturnCode, git, python, uv
+from sh import ErrorReturnCode, git, uv
 from sh import pytest as sh_pytest
 
 from tests._utils import count_dirs_and_files
@@ -90,7 +90,11 @@ def test_entrypoint_logs_info(
     install_test_project,
     test_project_name: str,
 ):
-    result = python("-m", f"{test_project_name}.main")
+    from sh import Command
+
+    # Test the CLI entrypoint script defined in [project.scripts]
+    project_cmd = Command(test_project_name)
+    result = project_cmd()
 
     json_stdout = json.loads(result)
     assert re.match(rf"{test_project_name}", json_stdout["event"]), (
