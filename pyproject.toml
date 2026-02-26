@@ -29,8 +29,12 @@ test = [
 Changelog = "https://github.com/albertomh/pycliche/blob/main/CHANGELOG.md"
 Repository = "https://github.com/albertomh/pycliche"
 
-[tool.pytest]
+[tool.pytest.ini_options]
 addopts = ["--pdbcls=IPython.terminal.debugger:Pdb"]
+filterwarnings = [
+    "ignore::copier.errors.DirtyLocalWarning",
+    "ignore::DeprecationWarning:sh",
+]
 markers = [
     "integration",
     "slow",

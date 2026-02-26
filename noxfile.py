@@ -41,7 +41,6 @@ def tests(session: nox.Session) -> None:
         "--capture=no",
         "--verbosity=3",
         "--showlocals",
-        "--pythonwarnings=always",
     ]
 
     if not use_pdb:

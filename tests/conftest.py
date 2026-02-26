@@ -3,8 +3,8 @@ import uuid
 from collections.abc import Callable
 from pathlib import Path
 
+import copier
 import pytest
-from copier.cli import CopierApp
 from sh import ErrorReturnCode, git, python
 
 PYCLICHE_TEST_TEMP_DIR = Path("/", "tmp", "pycliche_test")
@@ -54,31 +54,17 @@ def copier_copy(
     destination directories respectively, so tests should use these fixtures
     """
 
-    def _quote_if_has_space(string: str) -> str:
-        if isinstance(string, str) and " " in string:
-            return f"'{string}'"
-        return string
-
     def _run(copier_input_data: dict):
         if test_project_dir.exists():
             shutil.rmtree(test_project_dir)
 
-        copier_args = ["--vcs-ref=HEAD", "--defaults", "--trust"]
-        copier_args.extend(
-            [f"--data={k}={_quote_if_has_space(v)}" for k, v in copier_input_data.items()]
-        )
-
-        # Use `CopierApp.run` because `run_copy` does not accept `--trust` as a flag,
-        # which is needed in order for post-creation tasks to run.
-        CopierApp.run(
-            [
-                "copier",
-                "copy",
-                *copier_args,
-                str(pycliche_root_dir),
-                str(test_project_dir),
-            ],
-            exit=False,
+        copier.run_copy(
+            str(pycliche_root_dir),
+            test_project_dir,
+            data=copier_input_data,
+            vcs_ref="HEAD",
+            defaults=True,
+            unsafe=True,
         )
 
     return _run
