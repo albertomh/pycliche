@@ -48,7 +48,6 @@ extend-exclude = ["*project_name*"]
 force-exclude = true
 indent-width = 4
 line-length = 90
-target-version = "py314"
 
 [tool.ruff.lint]
 ignore = []
