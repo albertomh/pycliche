@@ -47,6 +47,10 @@ is_github_project:
     type: bool
     default: yes
 
+_message_after_copy: |
+    Your project is ready!
+    REMINDER: Please update the LICENSE file with your license details.
+
 _tasks:
     - "git init"
     - "uv lock"
