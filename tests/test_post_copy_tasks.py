@@ -10,7 +10,7 @@ from tests.conftest import is_git_repo
 
 @pytest.mark.integration
 @pytest.mark.smoke
-def test_is_git_repo(
+def test_project_is_initialized_as_git_repo(
     copier_copy: Callable[[dict], None],
     copier_input_data: dict,
     test_project_dir: Path,

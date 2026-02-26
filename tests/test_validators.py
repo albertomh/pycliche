@@ -17,7 +17,7 @@ import pytest
         ("initial_version", "", "Must have value"),
     ],
 )
-def test_validator_is_empty(
+def test_required_fields_validator(
     question: str,
     answer: str,
     error_msg: str | None,

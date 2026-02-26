@@ -52,7 +52,7 @@ def test_pycliche_jinja_templates_converted(
     [(True, 4, 17), (False, 3, 15)],
 )
 # ruff: noqa: PLR0913
-def test_is_github_project(
+def test_github_project_flag_affects_file_structure(
     is_github_project: bool,
     expected_directory_count: int,
     expected_file_count: int,
