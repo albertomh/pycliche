@@ -14,6 +14,9 @@ dependencies = [
     "structlog>=25.5.0,<26.0.0",
 ]
 
+[project.scripts]
+{{project_name}} = "{{project_name}}.main:main"
+
 [build-system]
 requires = ["uv_build>=0.10.5,<0.11.0"]
 build-backend = "uv_build"
