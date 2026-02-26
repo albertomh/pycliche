@@ -84,8 +84,20 @@ GitHub Actions. See [.github/dependabot.yaml](.github/dependabot.yaml).
 ### Logging
 
 `{{project_name}}` uses [structlog](https://www.structlog.org/en/stable/) for structured logging.
-The logging configuration is defined in `logging.py`. Use the `configure_logging` function
-to set up logging when the application starts:
+The logging configuration is defined in `log_config.py`. By default, it uses a console
+renderer when running in a TTY and a JSON renderer otherwise.
+
+You can override this behavior using the `LOG_FORMAT` environment variable:
+
+```sh
+# Force JSON output even in a TTY
+LOG_FORMAT=json uv run {{project_name}}
+
+# Force console output
+LOG_FORMAT=console uv run {{project_name}}
+```
+
+Use the `configure_logging` function to set up logging when the application starts:
 
 ```python
 import structlog
