@@ -4,7 +4,7 @@ import pytest
 import structlog
 
 from {{project_name}} import main as entrypoint
-from {{project_name}}.logging import configure_logging
+from {{project_name}}.log_config import configure_logging
 
 
 def test_main_runs_without_error():
@@ -15,7 +15,23 @@ def test_main_runs_without_error():
         pytest.fail(f"main() raised an exception: {e}")
 
 
-def test_logging_configuration():
+def test_logging_configuration_console_on_tty(monkeypatch):
+    monkeypatch.setattr("sys.stderr.isatty", lambda: True)
+    configure_logging()
+    config = structlog.get_config()
+    assert isinstance(config["processors"][-1], structlog.dev.ConsoleRenderer)
+
+
+def test_logging_configuration_json_on_non_tty(monkeypatch):
+    monkeypatch.setattr("sys.stderr.isatty", lambda: False)
+    configure_logging()
+    config = structlog.get_config()
+    assert isinstance(config["processors"][-1], structlog.processors.JSONRenderer)
+
+
+def test_logging_output_is_json_on_non_tty(monkeypatch):
+    """Test that log output is JSON when not in a TTY."""
+    monkeypatch.setattr("sys.stderr.isatty", lambda: False)
     configure_logging()
 
     capturing_logger = structlog.testing.CapturingLogger()
