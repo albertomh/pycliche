@@ -37,7 +37,7 @@ Repository = "https://github.com"
 
 [tool.uv.build-backend]
 module-name = ["{{project_name}}"]
-module-root = "."
+module-root = "src"
 
 [tool.pytest]
 addopts = [
@@ -66,7 +66,7 @@ exclude_lines = [
 
 [tool.coverage.run]
 source = [
-    "./{{project_name}}/",
+    "src/{{project_name}}/",
 ]
 omit = [
     "*/tests/*"
