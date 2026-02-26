@@ -1,16 +1,26 @@
 import json
 import logging
+import os
 import sys
 
 import structlog
 
 
 def configure_logging():
+    log_format = os.getenv("LOG_FORMAT", "").lower()
+
+    if log_format == "json":
+        use_json = True
+    elif log_format == "console":
+        use_json = False
+    else:
+        use_json = not sys.stderr.isatty()
+
     renderer = (
         structlog.processors.JSONRenderer(
             serializer=lambda obj, **kwargs: json.dumps(obj, ensure_ascii=False)
         )
-        if not sys.stderr.isatty()
+        if use_json
         else structlog.dev.ConsoleRenderer()
     )
 
