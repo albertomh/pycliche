@@ -1,5 +1,5 @@
 import json
-from importlib.metadata import version
+from unittest.mock import MagicMock
 
 import structlog
 
@@ -7,10 +7,14 @@ from {{project_name}} import main as entrypoint
 from {{project_name}}.log_config import configure_logging
 
 
-def test_main_logs_version():
+def test_main_logs_version(monkeypatch):
+    mock_config = MagicMock()
+    monkeypatch.setattr("{{project_name}}.main.configure_logging", mock_config)
+
     with structlog.testing.capture_logs() as captured:
         entrypoint.main()
 
+    assert mock_config.called
     assert len(captured) == 1
     log_event = captured[0]
     assert log_event["log_level"] == "info"
@@ -19,35 +23,43 @@ def test_main_logs_version():
 
 
 def test_logging_configuration_console_on_tty(monkeypatch):
+    mock_configure = MagicMock()
+    monkeypatch.setattr("structlog.configure", mock_configure)
     monkeypatch.setattr("sys.stderr.isatty", lambda: True)
+
     configure_logging()
-    config = structlog.get_config()
-    assert isinstance(config["processors"][-1], structlog.dev.ConsoleRenderer)
+
+    assert mock_configure.called
+    _, kwargs = mock_configure.call_args
+    assert isinstance(kwargs["processors"][-1], structlog.dev.ConsoleRenderer)
 
 
 def test_logging_configuration_json_on_non_tty(monkeypatch):
+    mock_configure = MagicMock()
+    monkeypatch.setattr("structlog.configure", mock_configure)
     monkeypatch.setattr("sys.stderr.isatty", lambda: False)
+
     configure_logging()
-    config = structlog.get_config()
-    assert isinstance(config["processors"][-1], structlog.processors.JSONRenderer)
+
+    assert mock_configure.called
+    _, kwargs = mock_configure.call_args
+    assert isinstance(kwargs["processors"][-1], structlog.processors.JSONRenderer)
 
 
 def test_logging_output_is_json_on_non_tty(monkeypatch):
     """Test that log output is JSON when not in a TTY."""
+    mock_configure = MagicMock()
+    monkeypatch.setattr("structlog.configure", mock_configure)
     monkeypatch.setattr("sys.stderr.isatty", lambda: False)
+
     configure_logging()
 
-    capturing_logger = structlog.testing.CapturingLogger()
-    structlog.configure(logger_factory=lambda: capturing_logger)
+    assert mock_configure.called
+    _, kwargs = mock_configure.call_args
+    renderer = kwargs["processors"][-1]
 
-    logger = structlog.get_logger()
-    logger.info("test_event", key="value")
+    log_output = renderer(None, None, {"event": "test_event", "key": "value"})
+    event_data = json.loads(log_output)
 
-    assert len(capturing_logger.calls) == 1
-    call = capturing_logger.calls[0]
-    method_name, event_tuple, _ = call
-    event_data = json.loads(event_tuple[0])
-
-    assert method_name == "info"
     assert event_data["event"] == "test_event"
     assert event_data["key"] == "value"
