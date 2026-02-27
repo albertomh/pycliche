@@ -10,7 +10,6 @@ readme = "README.md"
 license-files = ["LICENSE"]
 requires-python = ">={{min_python_version}}"
 dependencies = [
-    "ipython>=9.7.0,<10.0.0",
     "structlog>=25.5.0,<26.0.0",
 ]
 
@@ -22,6 +21,9 @@ requires = ["uv_build>=0.10.5,<0.11.0"]
 build-backend = "uv_build"
 
 [dependency-groups]
+dev = [
+    "ipython>=9.7.0,<10.0.0",
+]
 test = [
     "coverage>=7.12.0,<8.0.0",
     "pytest>=9.0.0,<10.0.0",
