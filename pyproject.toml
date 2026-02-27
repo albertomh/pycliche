@@ -54,7 +54,7 @@ ignore = []
 select = [
     # flake8-bugbear
     "B",
-    # pydocstyle
+    # pycodestyle errors
     "E",
     # isort
     "I",
