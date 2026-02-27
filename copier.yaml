@@ -49,7 +49,9 @@ is_github_project:
 
 _message_after_copy: |
     Your project is ready!
-    REMINDER: Please update the LICENSE file with your license details.
+    REMINDER:
+    - Fill out the `description` and `repository` fields in pyproject.toml.
+    - Please update the LICENSE file with your license details.
 
 _tasks:
     - "git init"

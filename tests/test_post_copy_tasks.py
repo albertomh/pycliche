@@ -43,5 +43,8 @@ def test_generated_project_message_after_copy(
     copier_copy(copier_input_data)
     captured = capsys.readouterr()
 
-    assert "Your project is ready!" in captured.err
-    assert "Please update the LICENSE file" in captured.err
+    assert (
+        "Fill out the `description` and `repository` fields in pyproject.toml."
+        in captured.err
+    )
+    assert "Please update the LICENSE file with your license details." in captured.err
