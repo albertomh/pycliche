@@ -48,10 +48,10 @@ def copier_input_data(test_project_name: str) -> dict:
 def copier_copy(
     pycliche_root_dir: Path, test_project_dir: Path
 ) -> Callable[[dict], None]:
-    """
-    Fixture to run `copier copy`, cleaning up destination directory beforehand.
+    """Fixture to run `copier copy`, cleaning up destination directory beforehand.
+
     Uses the `pycliche_root_dir` & `test_project_dir` fixtures as source and
-    destination directories respectively, so tests should use these fixtures
+    destination directories respectively, so tests should use these fixtures.
     """
 
     def _run(copier_input_data: dict):
