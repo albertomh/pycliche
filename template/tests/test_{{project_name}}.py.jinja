@@ -3,6 +3,7 @@ from unittest.mock import MagicMock
 
 import structlog
 
+from {{project_name}} import __version__
 from {{project_name}} import main as entrypoint
 from {{project_name}}.log_config import configure_logging
 
@@ -19,7 +20,7 @@ def test_main_logs_version(monkeypatch):
     log_event = captured[0]
     assert log_event["log_level"] == "info"
     assert log_event["event"] == "{{project_name}}"
-    assert log_event["version"] == f"v{version('{{project_name}}')}"
+    assert log_event["version"] == f"v{__version__}"
 
 
 def test_logging_configuration_console_on_tty(monkeypatch):

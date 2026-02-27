@@ -1,7 +1,6 @@
-from importlib.metadata import version
-
 import structlog
 
+from {{project_name}} import __version__
 from {{project_name}}.log_config import configure_logging
 
 
@@ -9,7 +8,7 @@ def main():
     """Entrypoint for {{project_name}}."""
     configure_logging()
     logger = structlog.get_logger()
-    logger.info("{{project_name}}", version=f"v{version('{{project_name}}')}")
+    logger.info("{{project_name}}", version=f"v{__version__}")
 
 
 if __name__ == "__main__":  # pragma: no cover
