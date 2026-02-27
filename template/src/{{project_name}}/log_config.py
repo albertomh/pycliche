@@ -26,7 +26,11 @@ def configure_logging():
 
     structlog.configure(
         processors=[
-            structlog.stdlib.add_log_level,
+            structlog.contextvars.merge_contextvars,
+            structlog.processors.add_log_level,
+            structlog.processors.StackInfoRenderer(),
+            structlog.processors.format_exc_info,
+            structlog.processors.UnicodeDecoder(),
             structlog.processors.TimeStamper(fmt="iso"),
             renderer,
         ],
