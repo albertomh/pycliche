@@ -1,6 +1,6 @@
 [project]
 name = "pycliche"
-version = "2.27.0"
+version = "2.28.0"
 description = ""
 authors = [
     {name = "Alberto Morón Hernández", email = "alberto.moronh@gmail.com"}

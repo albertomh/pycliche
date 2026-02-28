@@ -8,6 +8,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.28.0](https://github.com/albertomh/pycliche/compare/v2.27.0...v2.28.0) (2026-02-28)
+
+
+### Features
+
+* Add extra Ruff rules for more opinionated linting ([#189](https://github.com/albertomh/pycliche/issues/189)) ([80f1d18](https://github.com/albertomh/pycliche/commit/80f1d18a272ffcbcb6bd9195e164c52c0f011bbc))
+* Add post-copy reminder to fill out pyproject.toml fields ([#196](https://github.com/albertomh/pycliche/issues/196)) ([e18845f](https://github.com/albertomh/pycliche/commit/e18845fb47d7ba8783dd8fee15d804586d336e42))
+* Add reminders for post-copy tasks ([#194](https://github.com/albertomh/pycliche/issues/194)) ([70238df](https://github.com/albertomh/pycliche/commit/70238df4e3c3d42e325a71f6530ea27fe9d8b8de))
+* Add script CLI entrypoint via [project.scripts] ([#192](https://github.com/albertomh/pycliche/issues/192)) ([f76c7f5](https://github.com/albertomh/pycliche/commit/f76c7f54122f7928d9e416de2c9ddc1c190cd06a))
+* Add stack trace and context support to logger ([#201](https://github.com/albertomh/pycliche/issues/201)) ([9ccadf2](https://github.com/albertomh/pycliche/commit/9ccadf230084b9f0b4e9a6d3544569970c709919))
+* Adopt src layout for generated projects ([#195](https://github.com/albertomh/pycliche/issues/195)) ([d7d52c2](https://github.com/albertomh/pycliche/commit/d7d52c2035cf3a730ae915394ea19f74da6b5b0f))
+* Declare uv-build as the build backend ([#188](https://github.com/albertomh/pycliche/issues/188)) ([e7032c0](https://github.com/albertomh/pycliche/commit/e7032c04ba25cc0f6c3eab2b50293d3ac743ea9c))
+* **deps:** Bump wntrblm/nox to 2026.02.09 ([#186](https://github.com/albertomh/pycliche/issues/186)) ([2b8ded4](https://github.com/albertomh/pycliche/commit/2b8ded49f13059d7acb7aca6de4407e345edfbe0))
+* Implement dual-mode logging (JSON on non-TTY, Console on TTY) ([#190](https://github.com/albertomh/pycliche/issues/190)) ([0e7099a](https://github.com/albertomh/pycliche/commit/0e7099ab8b145ceb6b73464253b150a57e4cd410))
+* Read LOG_FORMAT to override detected log environment ([#193](https://github.com/albertomh/pycliche/issues/193)) ([54afef1](https://github.com/albertomh/pycliche/commit/54afef13631fd06e2573803da18383de29a61fd2))
+* **test:** Check behaviour of gen. project entrypoint ([#199](https://github.com/albertomh/pycliche/issues/199)) ([5ca91e1](https://github.com/albertomh/pycliche/commit/5ca91e1af01db732cc98d0106c108ffcf756192c))
+
+
+### Bug Fixes
+
+* Simplify version imports ([#202](https://github.com/albertomh/pycliche/issues/202)) ([7e7bc7b](https://github.com/albertomh/pycliche/commit/7e7bc7badf97b92963465ddd42abc1be04365ee7))
+* **tests:** Resolve pytest warnings ([#191](https://github.com/albertomh/pycliche/issues/191)) ([ed55b20](https://github.com/albertomh/pycliche/commit/ed55b206425f814fa24d155c82b89fc30ae2ff6d))
+
+
+### Dependencies
+
+* Move ipython to dev dependencies ([#198](https://github.com/albertomh/pycliche/issues/198)) ([0ebcca8](https://github.com/albertomh/pycliche/commit/0ebcca8396131f10f8b5a44fd79a1b015cae988e))
+
+
+### Documentation
+
+* Simplify project setup instructions using 'uv' ([#200](https://github.com/albertomh/pycliche/issues/200)) ([639ef60](https://github.com/albertomh/pycliche/commit/639ef60b16456b0fd3035590e6f0737b0d6263a3))
+
 ## [2.27.0](https://github.com/albertomh/pycliche/compare/v2.26.0...v2.27.0) (2026-02-14)
 
 
