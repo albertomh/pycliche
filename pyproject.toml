@@ -70,6 +70,8 @@ select = [
     "PL",
     # flake8-pytest-style
     "PT",
+    # ruff-specific-rules-ruf
+    "RUF",
     # flake8-bandit
     "S",
     # flake8-tidy-imports

@@ -36,7 +36,7 @@ def test_required_fields_validator(
         try:
             _copier_copy_with_project_name()
         except Exception as e:
-            pytest.fail(f"Unexpected exception raised: {str(e)}")
+            pytest.fail(f"Unexpected exception raised: {e!s}")
 
     else:
         with pytest.raises(ValueError, match=rf".*{re.escape(error_msg)}$") as exc_info:
@@ -82,7 +82,7 @@ def test_validator_project_name(
         try:
             _copier_copy_with_project_name()
         except Exception as e:
-            pytest.fail(f"Unexpected exception raised: {str(e)}")
+            pytest.fail(f"Unexpected exception raised: {e!s}")
 
 
 @pytest.mark.unit
@@ -123,4 +123,4 @@ def test_validator_author_email(
         try:
             _copier_copy_with_author_email()
         except Exception as e:
-            pytest.fail(f"Unexpected exception raised: {str(e)}")
+            pytest.fail(f"Unexpected exception raised: {e!s}")
