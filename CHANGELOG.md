@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.29.0](https://github.com/albertomh/pycliche/compare/v2.28.0...v2.29.0) (2026-03-31)
+
+
+### Features
+
+* Limit candidate packages to those older than seven days ([#206](https://github.com/albertomh/pycliche/issues/206)) ([efde63f](https://github.com/albertomh/pycliche/commit/efde63f67186ba322149858f1596663f2a0195c4))
+* Run ruff-specific lint rules ([#204](https://github.com/albertomh/pycliche/issues/204)) ([9c44976](https://github.com/albertomh/pycliche/commit/9c449762150ed09e8860f5476e24d46f810dbb80))
+
 ## [2.28.0](https://github.com/albertomh/pycliche/compare/v2.27.0...v2.28.0) (2026-02-28)
 
 
