@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.30.0](https://github.com/albertomh/pycliche/compare/v2.29.0...v2.30.0) (2026-05-04)
+
+
+### Features
+
+* **deps:** Bump wntrblm/nox to 2026.04.10 ([#218](https://github.com/albertomh/pycliche/issues/218)) ([871e279](https://github.com/albertomh/pycliche/commit/871e2797d5a125bc5aed97d5db5a053140b087c0))
+* Stop ignoring major versions in dependabot checks ([#216](https://github.com/albertomh/pycliche/issues/216)) ([9fc4f21](https://github.com/albertomh/pycliche/commit/9fc4f21f8cb7a86c7468d66ca7967a45c8335ab2))
+
 ## [2.29.0](https://github.com/albertomh/pycliche/compare/v2.28.0...v2.29.0) (2026-03-31)
 
 
