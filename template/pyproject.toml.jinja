@@ -27,7 +27,6 @@ dev = [
 test = [
     "coverage>=7.12.0,<8.0.0",
     "pytest>=9.0.0,<10.0.0",
-    "pytest-cov>=7.0.0,<8.0.0",
     "pytest-randomly>=4.0.1,<5.0.0",
     "pytest-xdist>=3.8.0,<4.0.0",
 ]
@@ -76,6 +75,8 @@ source = [
 omit = [
     "*/tests/*"
 ]
+parallel = true
+concurrency = ["multiprocessing"]
 
 [tool.ruff]
 exclude = [".pdbrc"]
