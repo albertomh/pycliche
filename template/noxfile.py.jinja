@@ -23,8 +23,6 @@ def _install_deps(session: nox.Session) -> None:
         f"--python={session.virtualenv.location}",
         env={"UV_PROJECT_ENVIRONMENT": session.virtualenv.location},
     )
-    # Needed for assertions against `importlib.metadata.version`.
-    session.install("-e", ".")
 
 
 def make_pytest_args(posargs: list) -> list[str]:
