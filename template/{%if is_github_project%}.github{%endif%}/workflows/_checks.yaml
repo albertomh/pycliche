@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@v6
       - name: Cache nox session list
         id: cache-nox-sessions
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: .nox-sessions.json
           key: nox-sessions-${{ runner.os }}-${{ hashFiles('noxfile.py', 'pyproject.toml') }}
