@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.31.0](https://github.com/albertomh/pycliche/compare/v2.30.0...v2.31.0) (2026-06-30)
+
+
+### Features
+
+* Failsafe version fetch for envs where package not installed ([#229](https://github.com/albertomh/pycliche/issues/229)) ([a5be2b9](https://github.com/albertomh/pycliche/commit/a5be2b9aa3f406b912f21474de8051314cc669b9))
+
+
+### Bug Fixes
+
+* **test:** Ensure coverage data files are combined for accuracy ([#228](https://github.com/albertomh/pycliche/issues/228)) ([c7ecebb](https://github.com/albertomh/pycliche/commit/c7ecebb8fd2995c14343c6a07a65fbdba01def4d))
+
 ## [2.30.0](https://github.com/albertomh/pycliche/compare/v2.29.0...v2.30.0) (2026-05-04)
 
 
