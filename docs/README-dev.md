@@ -8,6 +8,7 @@ In addition to the [Prerequisites](../README.md#prerequisites) listed in the REA
 will need the following to develop `pycliche`:
 
 - [prek](https://prek.j178.dev/)
+- [shellcheck](https://www.shellcheck.net/) (needed by the `actionlint` pre-commit hook)
 
 ### Recursive pycliche
 
