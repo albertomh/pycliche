@@ -23,8 +23,6 @@ def _install_deps(session: nox.Session) -> None:
         f"--python={session.virtualenv.location}",
         env={"UV_PROJECT_ENVIRONMENT": session.virtualenv.location},
     )
-    # Needed for assertions against `importlib.metadata.version`.
-    session.install("-e", ".")
 
 
 def make_pytest_args(posargs: list) -> list[str]:
@@ -54,13 +52,23 @@ def tests_with_coverage(session: nox.Session) -> None:
     _install_deps(session)
 
     session.run("coverage", "erase")
+
+    env = {
+        "COVERAGE_PROCESS_START": ".coveragerc",
+    }
     pytest_args = make_pytest_args(list(session.posargs))
     session.run(
+        "coverage",
+        "run",
+        "-m",
         "pytest",
-        "--cov={{ project_name }}",
-        "--cov-report=term:skip-covered",
-        "--cov-report=html",
         "tests/",
         *pytest_args,
         *session.posargs,
+        env=env,
     )
+
+    # combine data from parallel processes
+    session.run("coverage", "combine")
+    session.run("coverage", "report")
+    session.run("coverage", "html")
