@@ -47,8 +47,8 @@ def test_logging_configuration_json_on_non_tty(monkeypatch):
     assert isinstance(kwargs["processors"][-1], structlog.processors.JSONRenderer)
 
 
-def test_logging_output_is_json_on_non_tty(monkeypatch):
-    """Test that log output is JSON when not in a TTY."""
+def test_logging_output_preserves_unicode_on_non_tty(monkeypatch):
+    """Test that JSON renderer doesn't escape non-ASCII characters."""
     mock_configure = MagicMock()
     monkeypatch.setattr("structlog.configure", mock_configure)
     monkeypatch.setattr("sys.stderr.isatty", lambda: False)
@@ -59,8 +59,29 @@ def test_logging_output_is_json_on_non_tty(monkeypatch):
     _, kwargs = mock_configure.call_args
     renderer = kwargs["processors"][-1]
 
-    log_output = renderer(None, None, {"event": "test_event", "key": "value"})
-    event_data = json.loads(log_output)
+    log_output = renderer(None, None, {"event": "test_event", "key": "café"})
 
-    assert event_data["event"] == "test_event"
-    assert event_data["key"] == "value"
+    # spellchecker:ignore-next-line
+    assert "café" in log_output  # would be "caf\u00e9" if ensure_ascii=True
+    event_data = json.loads(log_output)
+    assert event_data["key"] == "café"
+
+
+def test_logging_configuration_json_when_log_format_env_json(monkeypatch):
+    mock_configure = MagicMock()
+    monkeypatch.setattr("structlog.configure", mock_configure)
+    monkeypatch.setenv("LOG_FORMAT", "json")
+    configure_logging()
+    assert mock_configure.called
+    _, kwargs = mock_configure.call_args
+    assert isinstance(kwargs["processors"][-1], structlog.processors.JSONRenderer)
+
+
+def test_logging_configuration_console_when_log_format_env_console(monkeypatch):
+    mock_configure = MagicMock()
+    monkeypatch.setattr("structlog.configure", mock_configure)
+    monkeypatch.setenv("LOG_FORMAT", "console")
+    configure_logging()
+    assert mock_configure.called
+    _, kwargs = mock_configure.call_args
+    assert isinstance(kwargs["processors"][-1], structlog.dev.ConsoleRenderer)
