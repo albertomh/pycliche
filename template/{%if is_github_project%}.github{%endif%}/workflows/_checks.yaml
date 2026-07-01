@@ -13,13 +13,13 @@ on:
 
 jobs:
   pre_commit:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v7
       - uses: ./.github/actions/prek
 
   generate-nox-sessions:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       session: ${{ steps.set-matrix.outputs.session }}
     steps:
@@ -60,7 +60,7 @@ jobs:
       fail-fast: false
       matrix:
         session: ${{ fromJson(needs.generate-nox-sessions.outputs.session) }}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v8.2.0
