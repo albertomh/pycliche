@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.31.1](https://github.com/albertomh/pycliche/compare/v2.31.0...v2.31.1) (2026-07-19)
+
+
+### Bug Fixes
+
+* **ci:** Fix PR workflow trigger condition ([#232](https://github.com/albertomh/pycliche/issues/232)) ([2479136](https://github.com/albertomh/pycliche/commit/247913612223fbd42adca68d32d73f03ac8b5529))
+
 ## [2.31.0](https://github.com/albertomh/pycliche/compare/v2.30.0...v2.31.0) (2026-06-30)
 
 
