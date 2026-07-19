@@ -30,7 +30,7 @@ jobs:
         with:
           path: .nox-sessions.json
           key: nox-sessions-${{ runner.os }}-${{ hashFiles('noxfile.py', 'pyproject.toml') }}
-      - uses: wntrblm/nox@2026.04.10
+      - uses: wntrblm/nox@2026.07.11
         if: steps.cache-nox-sessions.outputs.cache-hit != 'true'
       - id: set-matrix
         shell: bash
@@ -63,9 +63,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v8.2.0
+      - uses: astral-sh/setup-uv@v8.3.2
         with:
           version: "0.9.11"
           enable-cache: true
-      - uses: wntrblm/nox@2026.04.10
+      - uses: wntrblm/nox@2026.07.11
       - run: nox --session "${{ matrix.session }}"
