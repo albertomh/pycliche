@@ -22,7 +22,7 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/astral-sh/ruff-pre-commit"
-rev = "v0.15.8"
+rev = "v0.16.0"
 hooks = [
     { id = "ruff-check", args = ["--fix"] },
     { id = "ruff-format" },
@@ -30,7 +30,7 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/DavidAnson/markdownlint-cli2"
-rev = "v0.22.0"
+rev = "v0.23.2"
 hooks = [
     { id = "markdownlint-cli2", args = [
         "--config",
@@ -40,7 +40,7 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/crate-ci/typos"
-rev = "v1.44.0"
+rev = "v1.48.0"
 hooks = [{ id = "typos", args = ["--force-exclude"] }]
 
 [[repos]]
@@ -56,5 +56,5 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/pre-commit/mirrors-mypy"
-rev = "v1.19.1"
+rev = "v2.3.0"
 hooks = [{ id = "mypy", exclude = { glob = [".pdbrc"] } }]
