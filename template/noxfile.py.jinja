@@ -58,6 +58,7 @@ def tests_with_coverage(session: nox.Session) -> None:
     env = {
         **os.environ,
         "COVERAGE_PROCESS_START": ".coveragerc",
+        "PYTHONWARNINGS": "error",
     }
     pytest_args = make_pytest_args(list(session.posargs))
     session.run(
