@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.32.0](https://github.com/albertomh/pycliche/compare/v2.31.1...v2.32.0) (2026-08-09)
+
+
+### Features
+
+* **test:** Treat warnings as errors in nox test runs ([#244](https://github.com/albertomh/pycliche/issues/244)) ([542a6b3](https://github.com/albertomh/pycliche/commit/542a6b33c63e238a84ec0369654877914ebac244))
+
+
+### Bug Fixes
+
+* Allow nox env to inherit system env vars ([#242](https://github.com/albertomh/pycliche/issues/242)) ([4ec1bc6](https://github.com/albertomh/pycliche/commit/4ec1bc6d28231e166a9d9a63c5f4ea06adb61132))
+
 ## [2.31.1](https://github.com/albertomh/pycliche/compare/v2.31.0...v2.31.1) (2026-08-03)
 
 
