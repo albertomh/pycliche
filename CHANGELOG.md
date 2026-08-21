@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.32.1](https://github.com/albertomh/pycliche/compare/v2.32.0...v2.32.1) (2026-08-21)
+
+
+### Miscellaneous Chores
+
+* **ci:** Use Ubuntu 26.04 as the GitHub Actions runner image ([#225](https://github.com/albertomh/pycliche/issues/225)) ([4a471ef](https://github.com/albertomh/pycliche/commit/4a471ef86b17b2493613b87f9eabcff205dba64d))
+
 ## [2.32.0](https://github.com/albertomh/pycliche/compare/v2.31.1...v2.32.0) (2026-08-09)
 
 
