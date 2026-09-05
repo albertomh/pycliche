@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.33.0](https://github.com/albertomh/pycliche/compare/v2.32.1...v2.33.0) (2026-09-05)
+
+
+### Features
+
+* **ci:** Automate project tooling updates ([#254](https://github.com/albertomh/pycliche/issues/254)) ([f904955](https://github.com/albertomh/pycliche/commit/f904955395188e05d3bf68f2844c283ab7266399))
+* **ci:** Automate updating GitHub Actions SHA pins ([#251](https://github.com/albertomh/pycliche/issues/251)) ([c98fa20](https://github.com/albertomh/pycliche/commit/c98fa20d467a651f8521dbfbf67e228d22326b5f))
+
 ## [2.32.1](https://github.com/albertomh/pycliche/compare/v2.32.0...v2.32.1) (2026-08-21)
 
 
