@@ -76,8 +76,9 @@ uv add some-package
 ```
 
 {%if is_github_project%}
-Dependabot is configured to run weekly and update Python packages (minor & patch) and
-GitHub Actions. See [.github/dependabot.yaml](.github/dependabot.yaml).
+The `update-project-tooling` workflow is configured to run weekly and open pull
+requests for `prek` hook revisions. Dependabot is configured separately for Python
+dependency updates.
 
 {%endif%}
 ### Logging

@@ -43,19 +43,15 @@ uv add some-package
 
 #### Updating dependencies in the template
 
-There are two places where dependencies are currently declared in the template:
+Python dependencies and `prek` hook revisions are updated by the weekly
+`update-project-tooling` workflow. In this repository, the workflow runs
+`.github/scripts/update-project-tooling.py`, updates the root `pyproject.toml`,
+refreshes `uv.lock`, and updates the template `pyproject.toml.jinja` and
+`prek.toml.jinja` files.
 
-1. `prek.toml`
-1. `pyproject.toml.jinja`
-
-Update git hooks in the former via:
-
-```sh
-cd template/ && prek autoupdate
-```
-
-Update Python packages in the latter manually. Automated option pending on account of
-commands like `uv lock --upgrade-package` not taking kindly to Jinja templates.
+Generated GitHub projects include their own `update-project-tooling` workflow and script.
+That generated workflow updates the generated project's `prek.toml`; Dependabot remains
+configured in generated projects for Python dependency updates.
 
 ### Generate project using development version
 
