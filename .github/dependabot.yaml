@@ -12,8 +12,3 @@ updates:
       # prek follows zero-based versioning, so ignore patch versions to reduce noise
       - dependency-name: "prek"
         update-types: ["version-update:semver-patch"]
-
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
