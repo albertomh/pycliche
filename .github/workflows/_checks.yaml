@@ -15,7 +15,7 @@ jobs:
   pre_commit:
     runs-on: ubuntu-26.04
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: ./.github/actions/prek
 
   generate-nox-py-versions:
@@ -23,14 +23,14 @@ jobs:
     outputs:
       py_version: ${{ steps.set-matrix.outputs.py_version }}
     steps:
-    - uses: actions/checkout@v7
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
     - name: Cache nox Python versions list
       id: cache-nox-py-versions
-      uses: actions/cache@v6
+      uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
       with:
         path: .nox-py-versions.json
         key: nox-py-versions-${{ runner.os }}-${{ hashFiles('noxfile.py', 'pyproject.toml') }}
-    - uses: wntrblm/nox@2026.08.10
+    - uses: wntrblm/nox@57f9e10c4eef84277dcd692d0056420c947674f9 # 2026.08.10
       if: steps.cache-nox-py-versions.outputs.cache-hit != 'true'
     - id: set-matrix
       shell: bash
@@ -63,12 +63,12 @@ jobs:
         py_version: ${{ fromJson(needs.generate-nox-py-versions.outputs.py_version) }}
     runs-on: ubuntu-26.04
     steps:
-      - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           version: "0.12.9"
           enable-cache: true
-      - uses: wntrblm/nox@2026.08.10
+      - uses: wntrblm/nox@57f9e10c4eef84277dcd692d0056420c947674f9 # 2026.08.10
         with:
           python-versions: "${{ matrix.py_version }}"
       - run: nox --session "tests-${{ matrix.py_version }}"
