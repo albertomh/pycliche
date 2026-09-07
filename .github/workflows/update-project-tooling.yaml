@@ -43,7 +43,7 @@ jobs:
           REMOTE_SHA="$(git ls-remote --heads origin "${BRANCH_NAME}" | cut -f1)"
           git checkout -B "${BRANCH_NAME}"
           git add pyproject.toml uv.lock prek.toml template
-          git commit -m "chore: update project tooling"
+          git commit -m "deps: update Python dependencies & pre-commit hooks"
           if [ -n "${REMOTE_SHA}" ]; then
             git push --force-with-lease="refs/heads/${BRANCH_NAME}:${REMOTE_SHA}" origin "${BRANCH_NAME}"
           else
@@ -53,8 +53,8 @@ jobs:
           gh pr create \
             --base "${GITHUB_REF_NAME}" \
             --head "${BRANCH_NAME}" \
-            --title "chore: update project tooling" \
+            --title "deps: update Python dependencies & pre-commit hooks" \
             --body "${PR_BODY}" \
           || gh pr edit "${BRANCH_NAME}" \
-            --title "chore: update project tooling" \
+            --title "deps: update Python dependencies & pre-commit hooks" \
             --body "${PR_BODY}"

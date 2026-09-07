@@ -33,14 +33,14 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "${BRANCH_NAME}"
           git add .github template
-          git commit -m "ci: update github actions sha pins"
+          git commit -m "ci: update GitHub Actions SHA pins"
           git push --force-with-lease origin "${BRANCH_NAME}"
 
           gh pr create \
             --base "${GITHUB_REF_NAME}" \
             --head "${BRANCH_NAME}" \
-            --title "ci: update github actions sha pins" \
+            --title "ci: update GitHub Actions SHA pins" \
             --body "${PR_BODY}" \
           || gh pr edit "${BRANCH_NAME}" \
-            --title "ci: update github actions sha pins" \
+            --title "ci: update GitHub Actions SHA pins" \
             --body "${PR_BODY}"
