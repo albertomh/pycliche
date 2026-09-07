@@ -21,11 +21,14 @@ jobs:
           version: "0.12.9"
           enable-cache: true
 
-      - name: Update dependency and prek pins
-        run: python3 .github/scripts/update-project-tooling.py
+      - name: Update Python dependency pins
+        run: .github/scripts/update-project-python-deps.sh
 
       - name: Refresh lockfile
         run: uv lock
+
+      - name: Update pre-commit hook revisions
+        run: .github/scripts/update-project-pre-commit-hooks.sh
 
       - name: Open pull request
         env:

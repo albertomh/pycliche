@@ -47,6 +47,7 @@ class Version:
 def project_files() -> list[Path]:
     candidates = [
         REPO_ROOT / "prek.toml",
+        REPO_ROOT / "template" / "prek.toml.jinja",
     ]
     return [path for path in candidates if path.exists()]
 
