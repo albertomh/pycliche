@@ -22,7 +22,7 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/astral-sh/ruff-pre-commit"
-rev = "v0.17.3"
+rev = "v0.17.4"
 hooks = [
     { id = "ruff-check", args = ["--fix"] },
     { id = "ruff-format" },
@@ -40,7 +40,7 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/crate-ci/typos"
-rev = "v1.51.1"
+rev = "v1.52.0"
 hooks = [{ id = "typos", args = ["--force-exclude"] }]
 
 [[repos]]
@@ -61,7 +61,7 @@ hooks = [{ id = "mypy", exclude = { glob = [".pdbrc"] } }]
 
 [[repos]]
 repo = "https://github.com/kjanat/actionlint"
-rev = "v1.17.0"
+rev = "v1.17.1"
 hooks = [
     { id = "actionlint" },
 ]
