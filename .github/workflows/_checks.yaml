@@ -12,25 +12,40 @@ on:
   workflow_call:
 
 jobs:
+  lockfile:
+    runs-on: ubuntu-slim
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - run: gh extension install github/gh-actions-lock --pin v0.4.1
+      - run: gh actions-lock --verify
+
   pre_commit:
     runs-on: ubuntu-26.04
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: ./.github/actions/prek
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: $/.github/actions/prek
 
   generate-nox-py-versions:
     runs-on: ubuntu-26.04
     outputs:
       py_version: ${{ steps.set-matrix.outputs.py_version }}
     steps:
-    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+    - uses: actions/checkout@v7.0.1
+      with:
+        persist-credentials: false
     - name: Cache nox Python versions list
       id: cache-nox-py-versions
-      uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+      uses: actions/cache@v6.1.0
       with:
         path: .nox-py-versions.json
         key: nox-py-versions-${{ runner.os }}-${{ hashFiles('noxfile.py', 'pyproject.toml') }}
-    - uses: wntrblm/nox@afa3983bbac3143bab5c8406244327581f76a3d7 # 2026.10.20
+    - uses: wntrblm/nox@2026.10.20
       if: steps.cache-nox-py-versions.outputs.cache-hit != 'true'
     - id: set-matrix
       shell: bash
@@ -63,12 +78,16 @@ jobs:
         py_version: ${{ fromJson(needs.generate-nox-py-versions.outputs.py_version) }}
     runs-on: ubuntu-26.04
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@v10.3.3
         with:
           version: "0.12.9"
           enable-cache: true
-      - uses: wntrblm/nox@afa3983bbac3143bab5c8406244327581f76a3d7 # 2026.10.20
+      - uses: wntrblm/nox@2026.10.20
         with:
           python-versions: "${{ matrix.py_version }}"
-      - run: nox --session "tests-${{ matrix.py_version }}"
+      - run: nox --session "$NOX_SESSION"
+        env:
+          NOX_SESSION: tests-${{ matrix.py_version }}
