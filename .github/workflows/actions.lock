@@ -7,7 +7,7 @@ workflows:
         - 'actions/cache@v6.1.0'
         - 'actions/checkout@v7.0.1'
         - 'astral-sh/setup-uv@v10.3.3'
-        - 'j178/prek-action@v2.0.6'
+        - 'j178/prek-action@v3.1.1'
         - 'wntrblm/nox@2026.10.20'
     '.github/workflows/ci.yaml': []
     '.github/workflows/pr.yaml': []
@@ -49,9 +49,9 @@ dependencies:
         commit: 'sha1-45996ed1f6d02564a971a2fa1b5860e934307cf7'
         owner_id: 16785467
         repo_id: 262236530
-    'j178/prek-action@v2.0.6':
-        ref: 'v2.0.6'
-        commit: 'sha1-5337cb91e0fa35a7ff31b9ca345126d8bbbcdf16'
+    'j178/prek-action@v3.1.1':
+        ref: 'v3.1.1'
+        commit: 'sha1-7b101f8338a08d2bd6fdb3625e4e7692428763a3'
         owner_id: 10510431
         repo_id: 1052387486
     'stefanzweifel/git-auto-commit-action@v7.2.1':
