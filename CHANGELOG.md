@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.33.1](https://github.com/albertomh/pycliche/compare/v2.33.0...v2.33.1) (2026-11-21)
+
+
+### Bug Fixes
+
+* **ci:** Update uv lock on release PR refresh ([#272](https://github.com/albertomh/pycliche/issues/272)) ([35da655](https://github.com/albertomh/pycliche/commit/35da655de7ed63f635ee6b139996b1b855f039f4))
+
 ## [2.33.0](https://github.com/albertomh/pycliche/compare/v2.32.1...v2.33.0) (2026-09-05)
 
 
