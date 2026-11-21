@@ -57,19 +57,19 @@ jobs:
       # Otherwise the 'checkout' step fails because the 'release-...' branch does not exist.
       # Avoids attempting a uv.lock update immediately after a release-please PR is merged.
       - uses: actions/checkout@v7.0.1
-        if: ${{ steps.release.outputs.prs_created == 'true' }}
+        if: ${{ steps.release.outputs.pr != '' }}
         with:
           ref: ${{ fromJson(steps.release.outputs.pr).headBranchName }}
           persist-credentials: false
       - uses: astral-sh/setup-uv@v10.3.3
-        if: ${{ steps.release.outputs.prs_created == 'true' }}
+        if: ${{ steps.release.outputs.pr != '' }}
         with:
           version: "0.12.9"
       - run: uv lock
-        if: ${{ steps.release.outputs.prs_created == 'true' }}
+        if: ${{ steps.release.outputs.pr != '' }}
         shell: bash
       - uses: stefanzweifel/git-auto-commit-action@v7.2.1
-        if: ${{ steps.release.outputs.prs_created == 'true' }}
+        if: ${{ steps.release.outputs.pr != '' }}
         with:
           file_pattern: 'uv.lock'
           commit_message: 'chore: update uv.lock with new version from release-please'
