@@ -17,5 +17,4 @@ runs:
         # Skip hook since it causes issues when merging PRs, and already enforced by GitHub config.
         echo "SKIP=no-commit-to-branch" >> "$GITHUB_ENV"
       shell: bash
-    # Composite-action definitions are not covered by workflow lockfiles.
-    - uses: j178/prek-action@v2.0.6 # zizmor: ignore[unpinned-uses]
+    - uses: j178/prek-action@v3.1.1 # zizmor: ignore[unpinned-uses]
