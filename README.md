@@ -12,7 +12,7 @@
 Embracing [Boring Technology](https://boringtechnology.club/), fighting bloat, striving for
 simplicity.
 
-[![python: 3.13](https://img.shields.io/badge/>=3.13-4584b6?logo=python&logoColor=ffde57)](https://docs.python.org/3.13/whatsnew/3.13.html)
+[![python: 3.14](https://img.shields.io/badge/>=3.14-4584b6?logo=python&logoColor=ffde57)](https://docs.python.org/3.14/whatsnew/3.14.html)
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/albertomh/pycliche/main/docs/media/copier-badge.json)](https://github.com/copier-org/copier)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json&labelColor=261230&color=de60e9)](https://github.com/astral-sh/uv)
 [![IPython](https://img.shields.io/badge/IP[y]:-3465a4)](https://ipython.readthedocs.io/en/stable/)

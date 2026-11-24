@@ -169,9 +169,9 @@ def test_generated_project_tests_run_successfully(
         )
 
     try:
-        result = sh_pytest(_cwd=test_project_dir)
-    except ErrorReturnCode:
-        pytest.fail(f"Pytest failed:\n{result.stdout}\n{result.stderr}")
+        sh_pytest(_cwd=test_project_dir)
+    except ErrorReturnCode as exc:
+        pytest.fail(f"Pytest failed:\n{exc.stdout}\n{exc.stderr}")
 
 
 @pytest.mark.integration

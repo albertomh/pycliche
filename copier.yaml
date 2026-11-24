@@ -14,9 +14,9 @@ min_python_version:
     help: "What is the minimum compatible version of Python?"
     type: str
     choices:
-        - "3.13"
         - "3.14"
-    default: "3.13"
+        - "3.15"
+    default: "3.15"
 
 author_name:
     help: "Who is the project's author?"
