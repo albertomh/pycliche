@@ -88,32 +88,32 @@ Valid commit types are defined in `.commitlintrc.ts`.
 
 ```sh
 # Run all `pytest` tests (in parallel by default)
-nox
+uvx nox
 
 # Run tests with the debugger enabled (serial execution due to `pdb`)
-nox -- --pdb
+uvx nox -- --pdb
 ```
 
-By default this will only run the `nox` session for the latest supported Python release.
+By default, `uvx nox` only runs the session for the latest supported Python release.
 
-To run all `nox` sessions (ie. for all supported Python releases):
+To run all sessions (i.e. for all supported Python releases):
 
 ```sh
-nox -k tests
+uvx nox -k tests
 ```
 
-Pass flags as you normally would to `pytest` by placing them after `--` eg.
+Pass flags to `pytest` by placing them after `--`, e.g.:
 
 ```sh
-nox -- -k some_keyword_expression
+uvx nox -- -k some_keyword_expression
 ```
 
 Tests have marks, allowing you to run only a subset:
 
 ```sh
-nox -- -m unit
+uvx nox -- -m unit
 # or
-nox -- -m "not smoke"
+uvx nox -- -m "not smoke"
 ```
 
 See the `tool.pytest` table in `pyproject.toml` for a list of all marks.

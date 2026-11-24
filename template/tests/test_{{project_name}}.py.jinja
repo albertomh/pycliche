@@ -27,6 +27,7 @@ def test_logging_configuration_console_on_tty(monkeypatch):
     mock_configure = MagicMock()
     monkeypatch.setattr("structlog.configure", mock_configure)
     monkeypatch.setattr("sys.stderr.isatty", lambda: True)
+    monkeypatch.delenv("LOG_FORMAT", raising=False)
 
     configure_logging()
 
@@ -39,6 +40,7 @@ def test_logging_configuration_json_on_non_tty(monkeypatch):
     mock_configure = MagicMock()
     monkeypatch.setattr("structlog.configure", mock_configure)
     monkeypatch.setattr("sys.stderr.isatty", lambda: False)
+    monkeypatch.delenv("LOG_FORMAT", raising=False)
 
     configure_logging()
 
@@ -52,6 +54,7 @@ def test_logging_output_preserves_unicode_on_non_tty(monkeypatch):
     mock_configure = MagicMock()
     monkeypatch.setattr("structlog.configure", mock_configure)
     monkeypatch.setattr("sys.stderr.isatty", lambda: False)
+    monkeypatch.delenv("LOG_FORMAT", raising=False)
 
     configure_logging()
 

@@ -1,4 +1,5 @@
 import shutil
+import sys
 import uuid
 from collections.abc import Callable
 from pathlib import Path
@@ -39,6 +40,7 @@ def copier_input_data(test_project_name: str) -> dict:
     """Answers to core pycliche template questions."""
     return {
         "project_name": test_project_name,
+        "min_python_version": f"{sys.version_info.major}.{sys.version_info.minor}",
         "author_name": "Miguel de Cervantes",
         "author_email": "mike@alcala.net",
     }
