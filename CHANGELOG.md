@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This file is automatically updated by Release Please.
 
+## [2.34.0](https://github.com/albertomh/pycliche/compare/v2.33.1...v2.34.0) (2026-11-24)
+
+
+### Features
+
+* Enable creating Python 3.15 projects ([#275](https://github.com/albertomh/pycliche/issues/275)) ([e5a3292](https://github.com/albertomh/pycliche/commit/e5a3292dca0f9f328f0cc91eb4c2917e8c12e682))
+
 ## [2.33.1](https://github.com/albertomh/pycliche/compare/v2.33.0...v2.33.1) (2026-11-21)
 
 
